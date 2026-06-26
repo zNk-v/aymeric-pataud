@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------------------
+   DESIGN TOKENS — thème clair éditorial
+   Fond crème (entre beige et blanc) · encre chaude · accent vert pastel
+   Pour changer les couleurs : modifie uniquement ces variables.
+   (Les noms charbon/ivoire/or sont conservés pour la compat des classes,
+    mais portent désormais des valeurs CLAIRES — voir le commentaire de chacun.)
+---------------------------------------------------------------------------- */
+@theme {
+  --color-charbon: #f3eee4; /* FOND crème principal */
+  --color-charbon-soft: #ece5d7; /* zone légèrement plus chaude */
+  --color-charbon-card: #fbf8f2; /* carte / surface surélevée (presque blanc) */
+
+  --color-ivoire: #1d1a14; /* TEXTE encre chaude (quasi noir) */
+  --color-ivoire-dim: #6f6657; /* texte secondaire / muted */
+
+  --color-or: #4f6b49; /* accent VERT lisible (labels, liens, bordures) */
+  --color-or-bright: #5f7d57; /* hover accent */
+
+  --color-sauge: #a9cba4; /* vert pastel des halos / blooms */
+  --color-sauge-deep: #7c9a76;
+
+  --color-line: rgba(29, 26, 20, 0.12); /* filets fins sombres sur clair */
+
+  --font-display: var(--font-grotesk), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ----------------------------------------------------------------------------
+   BASE
+---------------------------------------------------------------------------- */
+html {
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--color-charbon);
+  color: var(--color-ivoire);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv01";
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-sauge);
+  color: #1d1a14;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-or);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Grain très léger pour casser l'aplat du fond clair */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ----------------------------------------------------------------------------
+   HALOS VERTS — blooms en dégradé flou, posés dans des zones
+   <span class="halo" /> dans un parent en position:relative + overflow visible
+---------------------------------------------------------------------------- */
+.halo {
+  position: absolute;
+  z-index: -10;
+  border-radius: 9999px;
+  pointer-events: none;
+  filter: blur(90px);
+  background: radial-gradient(
+    circle,
+    rgba(169, 203, 164, 0.55),
+    rgba(169, 203, 164, 0) 70%
+  );
+}
+.halo-soft {
+  background: radial-gradient(
+    circle,
+    rgba(169, 203, 164, 0.35),
+    rgba(169, 203, 164, 0) 70%
+  );
+}
+
+.glow-or {
+  background: radial-gradient(
+    circle at center,
+    rgba(169, 203, 164, 0.4),
+    transparent 68%
+  );
+  filter: blur(20px);
+}
+
+/* Carte surélevée douce */
+.card-soft {
+  background: var(--color-charbon-card);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 18px 48px -28px rgba(29, 26, 20, 0.35);
+}
+
+/* Titres display */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  line-height: 1.04;
+}
+
+.kicker {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-or);
+}
+
+/* Spotlight vert au hover des cartes (suit le curseur) */
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-soft);
+  background: radial-gradient(
+    340px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(169, 203, 164, 0.28),
+    transparent 60%
+  );
+  z-index: -1;
+}
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 38s linear infinite;
+}
+
+/* Curseur custom (desktop fin) */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-or);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s var(--ease-soft), height 0.25s var(--ease-soft),
+    background 0.25s var(--ease-soft);
+}
+.cursor-dot.is-hover {
+  width: 38px;
+  height: 38px;
+  background: rgba(169, 203, 164, 0.35);
+}
+
+/* prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .marquee-track {
+    animation: none;
+  }
+}
