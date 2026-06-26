@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Reveal, Stagger, StaggerItem, WordReveal, Spotlight } from "./motion-primitives";
 import LiteYouTube from "./LiteYouTube";
 import { Decor } from "./Decor";
+import { asset } from "@/lib/asset";
 
 /* ============================================================== MANIFESTE === */
 export function Manifeste() {
@@ -162,7 +163,7 @@ export function Approche() {
           <Reveal>
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-line">
               <Image
-                src="/images/portrait-2.webp"
+                src={asset("/images/portrait-2.webp")}
                 alt="Aymeric Pataud au travail"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -278,7 +279,7 @@ export function Endurance() {
           <Reveal>
             <div className="relative aspect-[5/4] overflow-hidden rounded-2xl border border-line">
               <Image
-                src="/images/ambiance.webp"
+                src={asset("/images/ambiance.webp")}
                 alt="Plat d'effort et nutrition sportive"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -323,7 +324,7 @@ export function SocialProof() {
           <LiteYouTube
             id="1lvunYpGKrI"
             title="Aymeric Pataud — Ils me font confiance"
-            thumb="/images/video-thumb.jpg"
+            thumb={asset("/images/video-thumb.jpg")}
           />
         </Reveal>
 
@@ -337,7 +338,7 @@ export function SocialProof() {
           {CLIENTS.map((c) => (
             <StaggerItem key={c.alt}>
               <Image
-                src={c.src}
+                src={asset(c.src)}
                 alt={c.alt}
                 width={130}
                 height={70}

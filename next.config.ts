@@ -17,6 +17,11 @@ const nextConfig: NextConfig = {
   },
   basePath: isPages ? repo : "",
   assetPrefix: isPages ? `${repo}/` : "",
+  // Exposé au client : next/image n'applique pas le basePath aux images
+  // en export statique, on préfixe donc nous-mêmes via lib/asset.ts.
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isPages ? repo : "",
+  },
 };
 
 export default nextConfig;

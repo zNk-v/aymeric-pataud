@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { WordReveal } from "./motion-primitives";
+import { asset } from "@/lib/asset";
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -28,7 +29,7 @@ export default function Hero() {
         className="absolute inset-0 -z-10"
       >
         <Image
-          src="/images/hero-portrait.webp"
+          src={asset("/images/hero-portrait.webp")}
           alt="Aymeric Pataud, chef et expert du goût"
           fill
           priority

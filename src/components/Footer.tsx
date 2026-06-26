@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 const NAV = [
   { href: "#manifeste", label: "Manifeste" },
@@ -43,7 +44,7 @@ export default function Footer() {
         <div className="flex flex-col justify-between gap-12 md:flex-row">
           <div className="max-w-sm">
             <Image
-              src="/images/logo-header.png"
+              src={asset("/images/logo-header.png")}
               alt="Aymeric Pataud"
               width={220}
               height={38}

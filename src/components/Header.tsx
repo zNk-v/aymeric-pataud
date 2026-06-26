@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { asset } from "@/lib/asset";
 
 const NAV = [
   { href: "#manifeste", label: "Manifeste" },
@@ -42,7 +43,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
         <a href="#top" aria-label="Aymeric Pataud — accueil" className="relative z-50">
           <Image
-            src="/images/logo-header.png"
+            src={asset("/images/logo-header.png")}
             alt="Aymeric Pataud, expert du goût"
             width={210}
             height={36}
