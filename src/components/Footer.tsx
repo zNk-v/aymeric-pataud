@@ -86,7 +86,17 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-line pt-8 text-sm text-ivoire-dim/70 sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} Aymeric Pataud — Expert du goût.</p>
+          <p>
+            © {new Date().getFullYear()} Aymeric Pataud — Expert du goût. · Site créé par{" "}
+            <a
+              href="https://sitaly.fr"
+              target="_blank"
+              rel="noopener"
+              className="underline underline-offset-2 transition-colors hover:text-or"
+            >
+              Sitaly
+            </a>
+          </p>
           <a href="#" className="transition-colors hover:text-or">
             Mentions légales
           </a>
