@@ -1,4 +1,8 @@
-name: Deploy to GitHub Pages
+name: Aperçu client (GitHub Pages)
+
+# Build d'aperçu, servi sur znk-v.github.io/aymeric-pataud.
+# Sert à faire valider le site avant mise en production.
+# Ces pages sont en noindex : voir src/app/layout.tsx.
 
 on:
   push:
@@ -24,7 +28,7 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - name: Build static site
+      - name: Build statique (avec basePath)
         run: npm run build
         env:
           PAGES: "true"

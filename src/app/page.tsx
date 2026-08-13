@@ -1,35 +1,40 @@
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Footer from "@/components/Footer";
+import type { Metadata } from "next";
 import {
-  Manifeste,
-  Essentiel,
-  PostureFaire,
-  Approche,
-  Huiles,
-  Endurance,
-  SocialProof,
-  PourQui,
-  FinalCTA,
-} from "@/components/Sections";
+  Atelier,
+  ConsultingTeaser,
+  FeaturedReferences,
+  Hero,
+  Hydrosolubles,
+  LabelArgument,
+  Posture,
+  ProfileFork,
+  ProofBar,
+} from "@/components/home";
+import { CtaBand, LogoWall, TedxBlock, Testimonials } from "@/components/blocks";
+
+export const metadata: Metadata = {
+  title: "Aymeric Pataud — Expert du goût",
+  description:
+    "Chef de formation et expert du goût. Je crée, reformule et signe des recettes pour les industriels de l'agroalimentaire, les chefs et les artisans. Huiles essentielles culinaires lipo et hydrosolubles.",
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <main>
-        <Hero />
-        <Manifeste />
-        <Essentiel />
-        <PostureFaire />
-        <Approche />
-        <Huiles />
-        <Endurance />
-        <SocialProof />
-        <PourQui />
-        <FinalCTA />
-      </main>
-      <Footer />
+      <Hero />
+      <ProofBar />
+      <Posture />
+      <ProfileFork />
+      <LabelArgument />
+      <Hydrosolubles />
+      <TedxBlock />
+      <FeaturedReferences />
+      <LogoWall tone="deep" />
+      <Atelier />
+      <ConsultingTeaser />
+      <Testimonials limit={6} />
+      <CtaBand />
     </>
   );
 }

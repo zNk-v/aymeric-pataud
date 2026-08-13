@@ -1,72 +1,110 @@
-# Aymeric Pataud — Expert du goût
+# aymericpataud.fr
 
-Site vitrine one-page premium. Next.js 15 (App Router) · TypeScript · Tailwind CSS v4 · Framer Motion · Lenis (smooth scroll).
+Site de production d'Aymeric Pataud, chef consultant et expert du goût.
+
+Next.js 15 en export statique. Pas de serveur, pas de base de données, pas de
+plugin. Le build produit un dossier `out/` de fichiers plats.
+
+---
+
+## Documentation
+
+| Document | Contenu |
+|---|---|
+| [`docs/A-VALIDER.md`](docs/A-VALIDER.md) | Ce qui attend une réponse du client : emplacements vides, points à trancher, formulaire |
+| [`docs/CHOIX-EDITORIAUX.md`](docs/CHOIX-EDITORIAUX.md) | Les arbitrages faits pendant la refonte, et pourquoi |
+| [`docs/INVENTAIRE-WORDPRESS.md`](docs/INVENTAIRE-WORDPRESS.md) | Contenu récupéré, URLs conservées, redirections 301 |
+| [`archive-wordpress/`](archive-wordpress/) | L'archive brute du WordPress, avant toute modification |
+
+---
 
 ## Démarrer
 
 ```bash
-cd site
 npm install
-npm run dev      # http://localhost:3000
 ```
-
-Build de production :
 
 ```bash
-npm run build && npm run start
+npm run dev
 ```
 
-## Où changer quoi
+```bash
+npm run build
+```
 
-### Couleurs
-Tout est centralisé dans le bloc `@theme` de **`src/app/globals.css`** :
+Le build écrit dans `out/`. Aucune variable d'environnement n'est nécessaire en
+local.
 
-Thème clair éditorial (crème + accent vert pastel). Les noms de variables
-gardent les anciens libellés (`charbon`/`ivoire`/`or`) pour la compat des
-classes Tailwind, mais portent des valeurs CLAIRES :
-
-| Variable             | Rôle                              | Valeur     |
-| -------------------- | --------------------------------- | ---------- |
-| `--color-charbon`    | Fond crème principal              | `#F3EEE4`  |
-| `--color-charbon-card` | Carte / surface surélevée       | `#FBF8F2`  |
-| `--color-ivoire`     | Texte encre chaude                | `#1D1A14`  |
-| `--color-ivoire-dim` | Texte secondaire                  | `#6F6657`  |
-| `--color-or`         | Accent vert lisible (labels/liens)| `#4F6B49`  |
-| `--color-sauge`      | Vert pastel des halos / blooms    | `#A9CBA4`  |
-
-Les halos verts en dégradé sont des `<span class="halo" />` (voir `globals.css`,
-classe `.halo` / `.halo-soft`) posés dans les sections en `position:relative`.
-Couleur des blooms : `rgba(169, 203, 164, …)` = le vert `#A9CBA4`.
-
-### Textes
-Chaque section est un composant dans **`src/components/`** :
-- `Hero.tsx` — titre, sous-titre, CTA
-- `Sections.tsx` — manifeste, l'essentiel (bento), posture, approche, huiles, endurance, preuve sociale, pour qui, CTA final
-- `Header.tsx` / `Footer.tsx` — navigation, réseaux
-
-Les textes reprennent le verbatim du site d'origine. Les tableaux en haut de `Sections.tsx` (`ESSENTIEL`, `FAIRE`, `TEMPS`, `POURQUI`, `CLIENTS`) pilotent les listes.
-
-### Images
-Dans **`public/images/`**. Remplace un fichier en gardant le même nom, ou change le `src` dans le composant. Toutes les images passent par `next/image` (AVIF/WebP automatique).
-
-### Vidéo (preuve sociale)
-`src/components/LiteYouTube.tsx` — façade légère : la miniature s'affiche, l'iframe YouTube ne se charge qu'au clic (bon pour le Lighthouse). Pour changer la vidéo : modifier l'`id` dans `Sections.tsx` (`<LiteYouTube id="..." />`) et la miniature `public/images/video-thumb.jpg`.
-
-## Animations
-- **Lenis** : smooth scroll global (`SmoothScroll.tsx`)
-- **Framer Motion** : reveals, stagger, text reveal mot à mot, parallax hero (`motion-primitives.tsx`)
-- **Spotlight doré** au hover des cartes, **marquee** en footer
-- `prefers-reduced-motion` respecté partout
+---
 
 ## Structure
 
 ```
-site/
-├── public/images/        # tous les visuels
-├── src/
-│   ├── app/
-│   │   ├── globals.css   # palette + tokens + grain
-│   │   ├── layout.tsx    # fonts (Fraunces + Inter), metadata
-│   │   └── page.tsx      # assemblage des sections
-│   └── components/        # Header, Hero, Sections, Footer, LiteYouTube, etc.
+src/
+  app/                    une page par route, plus sitemap.ts et robots.ts
+    [slug]/               les 8 articles, à la racine, slugs WordPress inchangés
+  components/
+    layout/               en-tête et pied de page
+    ui.tsx                primitives : Container, Section, Button, Placeholder
+    blocks.tsx            blocs partagés : hero de page, TEDx, témoignages, CTA
+    page-blocks.tsx       blocs de contenu : split, étapes, grilles, citations
+    home.tsx              les sections propres à l'accueil
+  content/                le contenu éditorial, séparé de la mise en page
+    articles.ts           généré depuis l'archive WordPress
+    references.ts         les 14 collaborations
+    testimonials.ts       citations signées et anonymes
+    oils.ts               le catalogue
+    profiles.ts           les 3 profils cibles
+  lib/site.ts             coordonnées, navigation, constantes
+public/
+  .htaccess               redirections 301, cache, en-têtes de sécurité
+  images/                 visuels en WebP
 ```
+
+Le contenu vit dans `src/content/`. Pour corriger un texte de référence ou
+ajouter une huile au catalogue, il n'y a pas besoin de toucher aux composants.
+
+---
+
+## Déploiement
+
+Deux workflows GitHub Actions, deux cibles.
+
+### Aperçu client — `deploy.yml`
+
+Publie sur GitHub Pages à chaque push sur `main`, sous
+`znk-v.github.io/aymeric-pataud`. Les pages sont en `noindex` pour ne pas
+concurrencer la production. Sert à faire valider avant mise en ligne.
+
+### Production — `production.yml`
+
+Envoie `out/` par FTPS vers l'hébergement du domaine. **Inactif tant que la
+variable `DEPLOY_FTP` n'est pas passée à `true`** dans les réglages du dépôt,
+ce qui évite les builds en échec.
+
+Pour l'activer, voir l'en-tête de
+[`.github/workflows/production.yml`](.github/workflows/production.yml).
+
+Le déploiement ne touche ni aux DNS, ni à la messagerie. Il écrit uniquement
+dans la racine web, et laisse les dossiers `wp-*` en place tant que le client
+n'a pas confirmé qu'ils peuvent partir.
+
+---
+
+## Points d'attention
+
+**Les URLs d'articles ne doivent pas changer.** Elles sont partagées sur
+LinkedIn depuis des années. Elles vivent à la racine via `src/app/[slug]/`, et
+toute modification de slug doit s'accompagner d'une 301 dans `public/.htaccess`.
+
+**Le `.htaccess` doit rester dans `public/`.** Il est copié tel quel dans `out/`
+au build, et le workflow de production vérifie sa présence avant l'envoi.
+
+**Aucun contenu ne doit être inventé.** Les blocs `<Placeholder>` marquent ce
+qui manque. Ils sont visibles à l'écran exprès, et recensés dans
+[`docs/A-VALIDER.md`](docs/A-VALIDER.md).
+
+**Pas de `localStorage` ni de `sessionStorage`.**
+
+**L'arborescence reste ouverte.** Une étude de mots-clés viendra en seconde
+passe. Les pages profil et produit peuvent se démultiplier sans refonte.

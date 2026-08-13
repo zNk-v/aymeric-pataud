@@ -1,0 +1,63 @@
+URL: https://www.aymericpataud.fr/mentions-legales/
+TYPE: page  |  STATUS: publish  |  ID: 1970
+DATE: 2022-08-12  |  MODIFIED: 2026-03-04
+TITLE: Mentions légales
+SEO TITLE: Mentions légales - Aymeric Pataud®
+META DESC: 
+OG IMAGE: https://www.aymericpataud.fr/wp-content/uploads/2023/04/Studio-Aymeric-Pataud-20221129-6221-scaled.jpg
+----------------------------------------------------------------------
+## Configuration recommandée 
+
+- Navigateurs 
+
+ Pour une navigation optimale, nous vous conseillons d’utiliser :
+
+ Mozilla Firefox (PC & Mac) ou Internet Explorer 8 minimum (PC) ou Safari (Mac) ou Chrome 
+
+- Configuration écran 
+
+ Préférez un écran paramétré en milliers de couleurs , avec une résolution minimum de 1024×768 pixels .
+
+## Mentions Légales 
+
+- Crédits 
+
+ CRDAP 
+213 rue Jules Barni – 80000 Amiens
+
+ SIRET : 
+ 941 526 105 00015 
+
+ Numéro de TVA : 
+ 
+ FR19941526105
+
+ Forme juridique : SASU 
+
+ Tél : 06 71 80 31 93
+
+- Directeur de la publication : Aymeric Pataud 
+
+- Refonte du site internet (2025) : La Mordue du Web 
+
+- Développement du site Internet : NET CONCEPT 
+
+- Hébergement du site internet : OVH – 2 rue Kellermann – 59100 Roubaix – France. 
+
+ Pour tout problème de consultation rencontré sur le site merci d’adresser vos réclamations à : ap@aymericpataud.fr 
+
+- Exercice du droit d’accès 
+
+ Conformément à l’article 34 de la Loi Informatique et Libertés, vous disposez d’un droit d’accès, de modification, de rectification et de suppression des données qui vous concernent. Pour exercer ce droit d’accès, adressez-vous à ap@aymericpataud.fr 
+
+- Protection des données personnelles 
+
+ L’internaute peut être amené à déposer certaines données personnelles en répondant aux formulaires qui lui sont proposés. La saisie de ces données est nécessaire au traitement de la demande de l’internaute, par Aymeric Pataud.
+
+ Aymeric Pataud s’engage à respecter les dispositions de la loi n°78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés modifiée et prendre toute précaution nécessaire pour préserver la sécurité des informations nominatives confiées. Aucune information à caractère personnel ne sera communiquée à des sociétés tierces sans l’accord préalable et éclairé de l’internaute.
+
+- Google Analytics 
+
+ Ce site utilise Google Analytics , un service d’analyse de site internet fourni par Google Inc. (« Google »). Google Analytics utilise des cookies, qui sont des fichiers texte placés sur votre ordinateur, pour aider le site internet à analyser l’utilisation du site par ses utilisateurs. Les données générées par les cookies concernant votre utilisation du site (y compris votre adresse IP) seront transmises et stockées par Google sur des serveurs situés aux Etats-Unis. Google utilisera cette information dans le but d’évaluer votre utilisation du site, de compiler des rapports sur l’activité du site à destination de son éditeur et de fournir d’autres services relatifs à l’activité du site et à l’utilisation d’Internet.
+
+ Google est susceptible de communiquer ces données à des tiers en cas d’obligation légale ou lorsque ces tiers traitent ces données pour le compte de Google, y compris notamment l’éditeur de ce site. Google ne recoupera pas votre adresse IP avec toute autre donnée détenue par Google. Vous pouvez désactiver l’utilisation de cookies en sélectionnant les paramètres appropriés de votre navigateur. Cependant, une telle désactivation pourrait empêcher l’utilisation de certaines fonctionnalités de ce site. En utilisant ce site internet, vous consentez expressément au traitement de vos données nominatives par Google dans les conditions et pour les finalités décrites ci-dessus.

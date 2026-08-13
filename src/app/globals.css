@@ -1,40 +1,44 @@
 @import "tailwindcss";
 
-/* ----------------------------------------------------------------------------
-   DESIGN TOKENS — thème clair éditorial
-   Fond crème (entre beige et blanc) · encre chaude · accent vert pastel
-   Pour changer les couleurs : modifie uniquement ces variables.
-   (Les noms charbon/ivoire/or sont conservés pour la compat des classes,
-    mais portent désormais des valeurs CLAIRES — voir le commentaire de chacun.)
----------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------
+   TOKENS
+   Palette extraite du logo : encre quasi noire légèrement verte (#282c2b),
+   sauge (#a7c1b6). Un seul accent, le reste en neutres chauds.
+   Le sauge du logo est trop clair pour du texte : la version lisible est
+   --color-vert (6.6:1 sur le crème, au-dessus de AA).
+--------------------------------------------------------------------------- */
 @theme {
-  --color-charbon: #f3eee4; /* FOND crème principal */
-  --color-charbon-soft: #ece5d7; /* zone légèrement plus chaude */
-  --color-charbon-card: #fbf8f2; /* carte / surface surélevée (presque blanc) */
+  --color-creme: #f6f2ea; /* fond principal */
+  --color-creme-deep: #eee8dc; /* bandes plus chaudes */
+  --color-surface: #fcfaf6; /* cartes, surfaces surélevées */
 
-  --color-ivoire: #1d1a14; /* TEXTE encre chaude (quasi noir) */
-  --color-ivoire-dim: #6f6657; /* texte secondaire / muted */
+  --color-encre: #161a18; /* texte principal */
+  --color-encre-soft: #6b6a62; /* texte secondaire */
 
-  --color-or: #4f6b49; /* accent VERT lisible (labels, liens, bordures) */
-  --color-or-bright: #5f7d57; /* hover accent */
+  --color-vert: #3f5c50; /* accent lisible : liens, labels, boutons */
+  --color-vert-clair: #547567; /* hover */
+  --color-vert-fonce: #26382f; /* fonds inversés */
 
-  --color-sauge: #a9cba4; /* vert pastel des halos / blooms */
-  --color-sauge-deep: #7c9a76;
+  --color-sauge: #a7c1b6; /* décor : halos, filets, aplats */
+  --color-sauge-pale: #d3e0d9;
 
-  --color-line: rgba(29, 26, 20, 0.12); /* filets fins sombres sur clair */
+  --color-line: rgba(22, 26, 24, 0.12);
+  --color-line-soft: rgba(22, 26, 24, 0.07);
 
-  --font-display: var(--font-grotesk), system-ui, sans-serif;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 
   --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ----------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------
    BASE
----------------------------------------------------------------------------- */
+--------------------------------------------------------------------------- */
 html {
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 html.lenis,
@@ -44,46 +48,88 @@ html.lenis body {
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
 
 body {
-  background-color: var(--color-charbon);
-  color: var(--color-ivoire);
+  background-color: var(--color-creme);
+  color: var(--color-encre);
   font-family: var(--font-sans);
-  font-feature-settings: "ss01", "cv01";
-  line-height: 1.6;
+  line-height: 1.65;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
   background: var(--color-sauge);
-  color: #1d1a14;
+  color: #161a18;
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-or);
+  outline: 2px solid var(--color-vert);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
-/* Grain très léger pour casser l'aplat du fond clair */
+/* Lien d'évitement clavier */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-vert);
+  color: var(--color-creme);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 0.5rem 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   TYPOGRAPHIE
+--------------------------------------------------------------------------- */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-variation-settings: "SOFT" 20, "WONK" 0, "opsz" 96;
+  letter-spacing: -0.018em;
+  line-height: 1.06;
+}
+
+/* Titres très grands : on ferme encore l'interlignage */
+.display-xl {
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.kicker {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-vert);
+}
+
+.lede {
+  font-size: clamp(1.125rem, 0.4vw + 1.05rem, 1.375rem);
+  line-height: 1.55;
+  color: var(--color-encre-soft);
+}
+
+/* ---------------------------------------------------------------------------
+   DÉCOR
+--------------------------------------------------------------------------- */
 .grain::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.035;
+  opacity: 0.03;
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* ----------------------------------------------------------------------------
-   HALOS VERTS — blooms en dégradé flou, posés dans des zones
-   <span class="halo" /> dans un parent en position:relative + overflow visible
----------------------------------------------------------------------------- */
 .halo {
   position: absolute;
   z-index: -10;
@@ -92,52 +138,25 @@ body {
   filter: blur(90px);
   background: radial-gradient(
     circle,
-    rgba(169, 203, 164, 0.55),
-    rgba(169, 203, 164, 0) 70%
+    rgba(167, 193, 182, 0.5),
+    rgba(167, 193, 182, 0) 70%
   );
 }
 .halo-soft {
   background: radial-gradient(
     circle,
-    rgba(169, 203, 164, 0.35),
-    rgba(169, 203, 164, 0) 70%
+    rgba(167, 193, 182, 0.3),
+    rgba(167, 193, 182, 0) 70%
   );
 }
 
-.glow-or {
-  background: radial-gradient(
-    circle at center,
-    rgba(169, 203, 164, 0.4),
-    transparent 68%
-  );
-  filter: blur(20px);
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 20px 50px -34px rgba(22, 26, 24, 0.4);
 }
 
-/* Carte surélevée douce */
-.card-soft {
-  background: var(--color-charbon-card);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset,
-    0 18px 48px -28px rgba(29, 26, 20, 0.35);
-}
-
-/* Titres display */
-.font-display {
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.022em;
-  line-height: 1.04;
-}
-
-.kicker {
-  font-family: var(--font-sans);
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--color-or);
-}
-
-/* Spotlight vert au hover des cartes (suit le curseur) */
 .spotlight {
   position: relative;
   isolation: isolate;
@@ -148,11 +167,11 @@ body {
   inset: 0;
   border-radius: inherit;
   opacity: 0;
-  transition: opacity 0.4s var(--ease-soft);
+  transition: opacity 0.45s var(--ease-soft);
   background: radial-gradient(
-    340px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(169, 203, 164, 0.28),
-    transparent 60%
+    360px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(167, 193, 182, 0.26),
+    transparent 62%
   );
   z-index: -1;
 }
@@ -160,7 +179,18 @@ body {
   opacity: 1;
 }
 
-/* Marquee */
+/* Lien souligné qui se dessine au survol */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.4s var(--ease-soft);
+}
+.link-underline:hover {
+  background-size: 100% 1px;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -170,39 +200,125 @@ body {
   }
 }
 .marquee-track {
-  animation: marquee 38s linear infinite;
+  animation: marquee 50s linear infinite;
+}
+.marquee-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
 }
 
-/* Curseur custom (desktop fin) */
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--color-or);
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.25s var(--ease-soft), height 0.25s var(--ease-soft),
-    background 0.25s var(--ease-soft);
+/* ---------------------------------------------------------------------------
+   PROSE — corps des articles de blog
+--------------------------------------------------------------------------- */
+.prose {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--color-encre);
 }
-.cursor-dot.is-hover {
-  width: 38px;
-  height: 38px;
-  background: rgba(169, 203, 164, 0.35);
+.prose > * + * {
+  margin-top: 1.5rem;
+}
+.prose h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 1.4vw + 1.2rem, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+  margin-top: 3.5rem;
+  margin-bottom: -0.25rem;
+}
+.prose h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.3rem, 0.8vw + 1.1rem, 1.65rem);
+  line-height: 1.2;
+  margin-top: 2.75rem;
+  margin-bottom: -0.5rem;
+}
+.prose h4 {
+  font-weight: 600;
+  font-size: 1.0625rem;
+  margin-top: 2rem;
+  margin-bottom: -0.75rem;
+}
+.prose strong {
+  font-weight: 600;
+}
+.prose a {
+  color: var(--color-vert);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.prose a:hover {
+  color: var(--color-vert-clair);
+}
+.prose ul,
+.prose ol {
+  padding-left: 1.35rem;
+}
+.prose ul {
+  list-style: none;
+  padding-left: 0;
+}
+.prose ul > li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+.prose ul > li + li {
+  margin-top: 0.6rem;
+}
+.prose ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0.1rem;
+  top: 0.72em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 9999px;
+  background: var(--color-sauge);
+}
+.prose ol {
+  list-style: decimal;
+}
+.prose ol > li + li {
+  margin-top: 0.6rem;
+}
+.prose li > p {
+  margin: 0;
+}
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--color-line);
+  margin: 3rem 0;
+}
+.prose blockquote {
+  border-left: 2px solid var(--color-sauge);
+  padding-left: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.4;
+  color: var(--color-vert);
 }
 
-/* prefers-reduced-motion */
+/* ---------------------------------------------------------------------------
+   ACCESSIBILITÉ
+--------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *,
   *::before,
   *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
   }
   .marquee-track {
     animation: none;

@@ -4,22 +4,26 @@ import Image from "next/image";
 import { useState } from "react";
 
 /**
- * Façade YouTube légère (type lite-youtube) : on n'affiche que la miniature.
- * L'iframe ne se charge qu'au clic → préserve le Lighthouse.
+ * Façade YouTube légère : seule la miniature est chargée au rendu.
+ * L'iframe n'arrive qu'au clic, ce qui évite ~600 ko de JS tiers au chargement.
  */
 export default function LiteYouTube({
   id,
   title,
   thumb,
+  className = "",
 }: {
   id: string;
   title: string;
   thumb: string;
+  className?: string;
 }) {
   const [active, setActive] = useState(false);
 
   return (
-    <div className="group relative aspect-video w-full overflow-hidden rounded-2xl border border-line shadow-[0_30px_70px_-32px_rgba(29,26,20,0.45)] transition-shadow duration-500 hover:shadow-[0_0_70px_-12px_rgba(169,203,164,0.65)]">
+    <div
+      className={`group relative aspect-video w-full overflow-hidden rounded-2xl border border-line bg-vert-fonce shadow-[0_40px_90px_-45px_rgba(22,26,24,0.55)] ${className}`}
+    >
       {active ? (
         <iframe
           className="absolute inset-0 h-full w-full"
@@ -37,19 +41,17 @@ export default function LiteYouTube({
         >
           <Image
             src={thumb}
-            alt={title}
+            alt=""
             fill
-            sizes="(max-width: 1024px) 100vw, 60vw"
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 1024px) 100vw, 65vw"
+            className="object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
           />
-          <span className="absolute inset-0 bg-gradient-to-t from-charbon/70 via-transparent to-charbon/20" />
-          {/* Bouton play doré custom */}
-          <span className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-or/50 bg-charbon/40 backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:bg-or">
-            <span className="absolute inset-0 rounded-full bg-or/20 animate-ping [animation-duration:2.5s] group-hover:hidden" />
+          <span className="absolute inset-0 bg-gradient-to-t from-encre/70 via-encre/10 to-transparent" />
+          <span className="absolute left-1/2 top-1/2 flex h-[4.5rem] w-[4.5rem] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-creme/40 bg-encre/30 backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:border-creme group-hover:bg-creme">
             <svg
               viewBox="0 0 24 24"
-              className="ml-1 h-8 w-8 fill-or transition-colors duration-500 group-hover:fill-charbon"
-              aria-hidden
+              aria-hidden="true"
+              className="ml-1 h-7 w-7 fill-creme transition-colors duration-500 group-hover:fill-vert-fonce"
             >
               <path d="M8 5v14l11-7z" />
             </svg>
