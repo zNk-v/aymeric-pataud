@@ -58,7 +58,9 @@ export default function Page() {
       />
 
       <QuoteBanner>
-        Un goût perçu comme faible est presque toujours un goût mal construit.
+        Un goût perçu comme faible est souvent un goût mal construit. Mon rôle
+        est d&apos;identifier ce qui brouille le message, puis de rétablir une
+        structure juste.
       </QuoteBanner>
 
       <SplitBlock
@@ -69,16 +71,9 @@ export default function Page() {
         ratio="5/4"
       >
         <p>
-          Trop de recettes sont aromatisées sans être comprises. On ajoute une
-          note, on la plaque, on espère que ça tienne. En bouche, le message
-          reste confus.
-        </p>
-        <p>
-          Mon rôle n&apos;est pas d&apos;ajouter. C&apos;est d&apos;écouter, de
-          démonter, de rééquilibrer, puis de traduire une intention en
-          sensation. Je travaille une recette comme un chef travaille une
-          assiette, qu&apos;il s&apos;agisse d&apos;un plat, d&apos;une boisson
-          ou d&apos;un produit destiné à la ligne de production.
+          Je travaille une recette comme un chef travaille une assiette. Que ce
+          soit pour un plat, une boisson, un dessert ou un produit destiné à la
+          ligne de production, la logique reste identique.
         </p>
         <p>
           Le goût doit être compris immédiatement, puis durer sans lasser.

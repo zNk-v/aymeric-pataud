@@ -134,21 +134,14 @@ apparitions au scroll, survols nets, parallaxe légère du hero.
 
 ---
 
-## 11. Typographie : retour au système, façon Apple
+## 11. Typographie changée
 
-Première tentative : **Fraunces**, une serif éditoriale. Aymeric l'a trouvée
-tordue, en particulier les capitales à jambage comme le J de « Je le traduis ».
-Il avait raison : Fraunces embarque un axe *wonk* qui incline volontairement
-certains dessins de lettres. Un parti pris qui passe mal sur un site vendu à
-des directions R&D.
+La démo utilisait une grotesque pour tout. Le brief demande une serif éditoriale
+pour les titres.
 
-Remplacée par la **pile système**. Sur Mac et iPhone, le visiteur lit du SF
-Pro, la police d'Apple, sans aucun téléchargement. Sur les autres plateformes,
-Inter prend le relais. Une seule famille pour tout le site : la hiérarchie se
-fait à la graisse, à la taille et à l'approche, comme chez Apple.
-
-Effet de bord appréciable : les titres tiennent sur moins de lignes, et le
-site charge une police de moins.
+Titres en **Fraunces**, une serif variable à fort contraste, cohérente avec
+l'univers gastronomique haut de gamme. Corps en **Inter**. Les deux sont servies
+depuis le site, sans appel à un domaine tiers.
 
 ---
 
@@ -158,50 +151,3 @@ Un seul accent, extrait du logo. Le sauge du logo (`#A7C1B6`) est trop clair pou
 du texte : il sert au décor, et une version profonde (`#3F5C50`) porte les liens,
 les labels et les boutons. Contraste de 6,6:1 sur le crème, au-dessus du seuil
 AA.
-
-
----
-
-## 13. Premier retour client : la page d'accueil raccourcie de moitié
-
-Aymeric : « La page d'accueil est très longue. Nos clients de l'agro restent
-très peu de temps sur les sites, il faut avoir la bonne info, vite. »
-
-Treize sections sont passées à huit, et la hauteur de 11 600 px à 6 500 px.
-La fourche par profil remonte juste après le bandeau de preuves : le visiteur
-choisit son chemin au deuxième écran au lieu du cinquième.
-
-Rien n'est perdu, tout est sur les pages dédiées :
-
-| Section retirée de l'accueil | Où elle vit |
-|---|---|
-| Ma posture | `/expertise-du-gout/` |
-| L'atelier | `/creation-sur-mesure/` |
-| Le consulting | `/consulting/` |
-| Les témoignages | `/references/` et les pages profil |
-
-Le bandeau de logos, qui formait une section à lui seul, est maintenant intégré
-au bloc références. Les paddings verticaux ont été resserrés sur tout le site.
-
----
-
-## 14. Les références refaites en explorateur
-
-Aymeric : « Sur les références et les collaborations, il faut revoir cette
-partie, je ne sais pas encore comment, mais ça ne va pas. »
-
-Le diagnostic : quatorze cas empilés à la verticale, trois paragraphes chacun.
-Personne ne lit ça, surtout pas un acheteur qui balaie.
-
-La page devient un explorateur : des filtres par profil (Toutes, Industriels,
-Chefs & traiteurs, Artisans & producteurs), une grille de cartes compactes sur
-deux colonnes, et le détail qui se déplie au clic. Chaque carte tient en
-170 px : logo, nom, secteur, phrase de conclusion.
-
-Deux détails techniques qui comptent :
-
-- Le dépliage est en CSS pur, pas en JavaScript. Le texte des quatorze cas
-  reste donc dans le HTML, lisible par Google, et si la transition ne joue
-  pas le contenu s'affiche quand même.
-- Les liens `/references/#mealk` posés depuis les pages profil continuent de
-  fonctionner : la carte visée s'ouvre et la page défile jusqu'à elle.

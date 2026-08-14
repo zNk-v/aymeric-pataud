@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import { SITE } from "@/lib/site";
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-fraunces",
-  axes: ["SOFT", "WONK", "opsz"],
-});
-
+/**
+ * Sur Mac et iOS, la pile de polices commence par -apple-system : le visiteur
+ * lit du SF Pro, sans téléchargement. Inter ne sert que de repli sur les
+ * autres plateformes. Voir globals.css.
+ */
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -125,7 +123,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang="fr" className={inter.variable}>
       <body className="grain">
         <script
           type="application/ld+json"

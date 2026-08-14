@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
 import {
-  Atelier,
-  ConsultingTeaser,
   FeaturedReferences,
   Hero,
   Hydrosolubles,
   LabelArgument,
-  Posture,
   ProfileFork,
   ProofBar,
 } from "@/components/home";
-import { CtaBand, LogoWall, TedxBlock, Testimonials } from "@/components/blocks";
+import { CtaBand, TedxBlock } from "@/components/blocks";
 
 export const metadata: Metadata = {
   title: "Aymeric Pataud — Expert du goût",
@@ -19,21 +16,26 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+/**
+ * Accueil resserré à sept sections après le premier retour client.
+ * Un acheteur de l'agroalimentaire reste peu de temps : il doit trouver son
+ * chemin dès le deuxième écran, et l'argument différenciant juste après.
+ * Le contenu retiré n'est pas perdu, il vit sur les pages dédiées :
+ *  - la posture       -> /expertise-du-gout/
+ *  - l'atelier        -> /creation-sur-mesure/
+ *  - le consulting    -> /consulting/
+ *  - les témoignages  -> /references/ et les pages profil
+ */
 export default function Home() {
   return (
     <>
       <Hero />
       <ProofBar />
-      <Posture />
       <ProfileFork />
       <LabelArgument />
       <Hydrosolubles />
-      <TedxBlock />
       <FeaturedReferences />
-      <LogoWall tone="deep" />
-      <Atelier />
-      <ConsultingTeaser />
-      <Testimonials limit={6} />
+      <TedxBlock compact />
       <CtaBand />
     </>
   );

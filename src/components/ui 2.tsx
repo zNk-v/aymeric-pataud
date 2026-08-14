@@ -40,12 +40,10 @@ export function Section({
     surface: "bg-surface",
     dark: "bg-vert-fonce text-creme",
   } as const;
-  // Resserré après le retour client : un acheteur de l'agro reste peu de
-  // temps, il ne doit pas scroller pour trouver l'information suivante.
   const sizes = {
-    sm: "py-14 lg:py-18",
-    md: "py-18 lg:py-24",
-    lg: "py-20 lg:py-28",
+    sm: "py-16 lg:py-24",
+    md: "py-24 lg:py-32",
+    lg: "py-28 lg:py-44",
   } as const;
   return (
     <section

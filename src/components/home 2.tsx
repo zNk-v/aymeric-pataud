@@ -13,9 +13,9 @@ import {
 } from "./motion-primitives";
 import { Arrow, Button, Container, Kicker, Section, SectionHeader } from "./ui";
 import { asset } from "@/lib/asset";
-import { SIGNATURE_VIDEO } from "@/lib/site";
+import { SIGNATURE_VIDEO, SITE } from "@/lib/site";
 import { PROFILES } from "@/content/profiles";
-import { FEATURED_REFERENCES, REFERENCE_LOGOS } from "@/content/references";
+import { FEATURED_REFERENCES } from "@/content/references";
 import { OIL_COUNT } from "@/content/oils";
 
 /* =============================================================== HERO ==== */
@@ -166,6 +166,57 @@ export function ProofBar() {
   );
 }
 
+/* ============================================================ POSTURE ==== */
+export function Posture() {
+  return (
+    <Section size="lg">
+      <Container>
+        <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
+          <div className="lg:col-span-7">
+            <Reveal>
+              <Kicker>Ma posture</Kicker>
+              <p className="font-display mt-6 text-balance text-3xl leading-[1.12] sm:text-4xl lg:text-[3.4rem]">
+                <WordReveal text="Un goût perçu comme faible est presque toujours un goût mal construit." />
+              </p>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <div className="mt-10 max-w-xl space-y-5 text-lg text-encre-soft">
+                <p>
+                  Trop de recettes sont aromatisées sans être comprises. On
+                  ajoute une note, on la plaque, on espère que ça tienne. En
+                  bouche, le message reste confus.
+                </p>
+                <p>
+                  Mon rôle n&apos;est pas d&apos;ajouter. C&apos;est
+                  d&apos;écouter, de démonter, de rééquilibrer, puis de traduire
+                  une intention en sensation.
+                </p>
+                <p className="font-display text-2xl text-vert">
+                  Le goût d&apos;abord. Toujours.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+
+          <div className="lg:col-span-5">
+            <Reveal delay={0.1}>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line">
+                <Image
+                  src={asset("/images/epices.webp")}
+                  alt="Ajustement d'un assaisonnement en cours de mise au point"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </Container>
+    </Section>
+  );
+}
+
 /* ====================================================== FOURCHE PROFILS == */
 export function ProfileFork() {
   return (
@@ -178,12 +229,12 @@ export function ProfileFork() {
           align="center"
         />
 
-        <Stagger className="mt-10 grid gap-4 lg:grid-cols-3">
+        <Stagger className="mt-16 grid gap-5 lg:grid-cols-3">
           {PROFILES.map((p) => (
             <StaggerItem key={p.slug} className="h-full">
               <Link href={p.href} className="block h-full">
                 <Spotlight className="card group flex h-full flex-col overflow-hidden rounded-3xl transition-all duration-500 hover:-translate-y-1.5">
-                  <div className="relative aspect-[16/9] overflow-hidden">
+                  <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
                       src={asset(p.image)}
                       alt={p.imageAlt}
@@ -193,11 +244,13 @@ export function ProfileFork() {
                     />
                   </div>
 
-                  <div className="flex flex-1 flex-col p-7">
-                    <h3 className="font-display text-2xl">{p.title}</h3>
-                    <p className="mt-3 text-encre-soft">{p.need}</p>
+                  <div className="flex flex-1 flex-col p-8">
+                    <h3 className="font-display text-2xl lg:text-3xl">
+                      {p.title}
+                    </h3>
+                    <p className="mt-4 text-encre-soft">{p.need}</p>
 
-                    <ul className="mt-5 flex-1 space-y-2 text-sm">
+                    <ul className="mt-6 flex-1 space-y-2.5 text-sm">
                       {p.proofs.map((proof) => (
                         <li key={proof} className="flex gap-3 text-encre-soft">
                           <span
@@ -209,7 +262,7 @@ export function ProfileFork() {
                       ))}
                     </ul>
 
-                    <span className="link-underline mt-6 inline-flex items-center gap-2 text-sm font-semibold text-vert">
+                    <span className="link-underline mt-8 inline-flex items-center gap-2 text-sm font-semibold text-vert">
                       Voir ce parcours
                       <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
                     </span>
@@ -280,11 +333,17 @@ export function LabelArgument() {
               </h2>
             </Reveal>
             <Reveal delay={0.15}>
-              <div className="mt-7 max-w-xl space-y-4 text-lg text-encre-soft">
+              <div className="mt-8 max-w-xl space-y-5 text-lg text-encre-soft">
                 <p>
-                  Mes huiles sont des extraits de plante entière, sans solvant
-                  ni additif. Selon la matrice et le dosage, elles se déclarent
-                  sous leur nom botanique, pas sous la mention générique.
+                  Le mot «&nbsp;arôme&nbsp;» est devenu un repoussoir en rayon.
+                  Le consommateur le lit comme un aveu, même quand il est
+                  parfaitement légal.
+                </p>
+                <p>
+                  Mes huiles sont des extraits de plante entière, sans solvant,
+                  sans additif, sans support de dilution. Selon la matrice et le
+                  dosage, elles se déclarent sous leur nom botanique, pas sous
+                  la mention générique.
                 </p>
                 <p className="font-display text-2xl text-vert">
                   Un fournisseur d&apos;arômes ne peut pas écrire cette ligne.
@@ -292,7 +351,7 @@ export function LabelArgument() {
               </div>
             </Reveal>
             <Reveal delay={0.25}>
-              <div className="mt-8">
+              <div className="mt-10">
                 <Button href="/industriels-agroalimentaires/">
                   Ce que ça change pour un service R&amp;D
                 </Button>
@@ -383,7 +442,7 @@ export function Hydrosolubles() {
               </h2>
             </Reveal>
             <Reveal delay={0.15}>
-              <div className="mt-7 max-w-xl space-y-4 text-lg text-creme/75">
+              <div className="mt-8 max-w-xl space-y-5 text-lg text-creme/75">
                 <p>
                   Il y a plus de dix ans, un fromager m&apos;a posé un problème
                   que personne n&apos;avait résolu : aromatiser le lait
@@ -391,14 +450,15 @@ export function Hydrosolubles() {
                   huiles essentielles culinaires hydrosolubles.
                 </p>
                 <p>
-                  Yaourts, tommes, raclettes, beurres, sauces fromagères,
-                  bières artisanales. Là où le marché ne propose que des arômes
-                  de synthèse ou des molécules isolées.
+                  Depuis, elles entrent dans des yaourts, des tommes, des
+                  raclettes, des beurres, des sauces fromagères et des bières
+                  artisanales. Là où le marché ne propose que des arômes de
+                  synthèse ou des molécules isolées.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={0.25}>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-10 flex flex-wrap gap-4">
                 <Link
                   href="/huiles-essentielles-hydrosolubles/"
                   className="inline-flex items-center gap-2 rounded-full bg-creme px-7 py-3.5 text-sm font-semibold text-vert-fonce transition-transform duration-300 hover:scale-[1.02]"
@@ -422,16 +482,9 @@ export function Hydrosolubles() {
 }
 
 /* ========================================================= RÉFÉRENCES ==== */
-/**
- * Trois preuves fortes, puis le bandeau de logos dans la même section.
- * Auparavant c'étaient deux sections empilées : trop de scroll pour ce que
- * ça raconte.
- */
 export function FeaturedReferences() {
-  const logos = [...REFERENCE_LOGOS, ...REFERENCE_LOGOS];
-
   return (
-    <Section tone="deep" className="overflow-hidden">
+    <Section>
       <Container>
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <SectionHeader
@@ -450,24 +503,27 @@ export function FeaturedReferences() {
           </Reveal>
         </div>
 
-        <Stagger className="mt-10 grid gap-4 lg:grid-cols-3">
+        <Stagger className="mt-14 grid gap-5 lg:grid-cols-3">
           {FEATURED_REFERENCES.map((r) => (
             <StaggerItem key={r.slug} className="h-full">
               <Link href={`/references/#${r.slug}`} className="block h-full">
-                <Spotlight className="card group flex h-full flex-col rounded-3xl p-7 transition-all duration-500 hover:-translate-y-1.5">
+                <Spotlight className="card group flex h-full flex-col rounded-3xl p-8 transition-all duration-500 hover:-translate-y-1.5">
                   {r.logo ? (
-                    <Image
-                      src={asset(r.logo)}
-                      alt={r.name}
-                      width={140}
-                      height={52}
-                      className="h-11 w-auto max-w-[8rem] object-contain"
-                    />
+                    <span className="flex h-16 w-full items-start">
+                      <Image
+                        src={asset(r.logo)}
+                        alt={r.name}
+                        width={150}
+                        height={64}
+                        className="h-14 w-auto max-w-[9rem] object-contain"
+                      />
+                    </span>
                   ) : null}
-                  <h3 className="font-display mt-5 text-xl">{r.name}</h3>
-                  <p className="mt-1.5 text-sm text-vert">{r.sector}</p>
+                  <h3 className="font-display mt-6 text-2xl">{r.name}</h3>
+                  <p className="mt-2 text-sm text-vert">{r.sector}</p>
+                  <p className="mt-5 flex-1 text-encre-soft">{r.result}</p>
                   {r.pullQuote ? (
-                    <p className="font-display mt-4 flex-1 text-lg leading-snug">
+                    <p className="font-display mt-6 border-t border-line pt-6 text-lg">
                       « {r.pullQuote} »
                     </p>
                   ) : null}
@@ -477,31 +533,120 @@ export function FeaturedReferences() {
           ))}
         </Stagger>
       </Container>
+    </Section>
+  );
+}
 
-      {/* Bandeau de logos, dans la même section */}
-      <div className="mt-14">
-        <p className="text-center text-xs uppercase tracking-[0.2em] text-encre-soft">
-          Plus de 200 clients en France et en Europe
-        </p>
-        <div className="marquee-mask relative mt-7">
-          <div className="marquee-track flex w-max items-center gap-3">
-            {logos.map((r, i) => (
-              <div
-                key={`${r.slug}-${i}`}
-                className="flex h-20 w-32 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-line bg-surface p-3"
-              >
+/* ============================================================ ATELIER ==== */
+export function Atelier() {
+  return (
+    <Section tone="deep" size="lg">
+      <Container>
+        <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-20">
+          <div className="lg:col-span-6">
+            <Reveal>
+              <div className="relative aspect-[5/4] overflow-hidden rounded-3xl border border-line">
                 <Image
-                  src={asset(r.logo!)}
-                  alt={r.name}
-                  width={120}
-                  height={60}
-                  className="h-full w-auto max-w-full object-contain"
+                  src={asset("/images/atelier-extracteur.webp")}
+                  alt="L'éco-extracteur par micro-ondes breveté de l'atelier"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 48vw"
+                  className="object-cover"
                 />
               </div>
-            ))}
+            </Reveal>
+          </div>
+
+          <div className="lg:col-span-6">
+            <Reveal>
+              <Kicker>L&apos;atelier</Kicker>
+              <h2 className="font-display mt-6 text-balance text-4xl leading-[1.08] lg:text-6xl">
+                Une machine brevetée, et des huiles qui n&apos;existent nulle
+                part ailleurs.
+              </h2>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <div className="mt-8 max-w-xl space-y-5 text-lg text-encre-soft">
+                <p>
+                  Un éco-extracteur par micro-ondes, sans eau, sans énergie
+                  fossile, capable de produire une huile essentielle fraîche en
+                  quelques minutes. En micro-séries, à partir d&apos;une plante
+                  cueillie le matin même.
+                </p>
+                <p>
+                  C&apos;est ce qui permet de créer un poivre de Sichuan de
+                  Picardie, un pin douglas d&apos;Alsace ou une première
+                  mondiale comme le poivre Patience de Côte d&apos;Ivoire.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.25}>
+              <div className="mt-10">
+                <Button href="/creation-sur-mesure/">
+                  Voir la création sur-mesure
+                </Button>
+              </div>
+            </Reveal>
           </div>
         </div>
-      </div>
+      </Container>
+    </Section>
+  );
+}
+
+/* =========================================================== CONSULTING == */
+export function ConsultingTeaser() {
+  return (
+    <Section>
+      <Container>
+        <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-20">
+          <div className="lg:col-span-7">
+            <Reveal>
+              <Kicker>Consulting</Kicker>
+              <h2 className="font-display mt-6 text-balance text-4xl leading-[1.08] lg:text-6xl">
+                Je ne vends pas des flacons. Je règle un problème.
+              </h2>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <div className="mt-8 max-w-xl space-y-5 text-lg text-encre-soft">
+                <p>
+                  Un panel qui trouve le produit fade. Une reformulation qui
+                  perd l&apos;impact d&apos;origine. Une gamme qui ne se
+                  distingue plus en rayon. Une carte qui a besoin d&apos;une
+                  signature.
+                </p>
+                <p>
+                  J&apos;interviens en accompagnement R&amp;D, en création de
+                  recette, en formation d&apos;équipe et en démonstration.
+                  Trente minutes suffisent souvent à identifier ce qui bloque.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.25}>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Button href="/consulting/">Découvrir le consulting</Button>
+                <Button href="/expertise-du-gout/" variant="outline">
+                  La méthode
+                </Button>
+              </div>
+            </Reveal>
+          </div>
+
+          <div className="lg:col-span-5">
+            <Reveal delay={0.1}>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line">
+                <Image
+                  src={asset("/images/atelier-cuisine.webp")}
+                  alt={`${SITE.name} en cuisine d'innovation`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </Container>
     </Section>
   );
 }

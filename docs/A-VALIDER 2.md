@@ -21,7 +21,6 @@ que le contenu arrive.
 | `/creation-sur-mesure/` | Photos de l'atelier | Vues de La Saline-les-Hauts et de la machine en fonctionnement. Plus le numéro et l'intitulé exact du brevet. |
 | `/huiles-essentielles-culinaires/` | Catalogue PDF | Le lien de téléchargement du WordPress ne répond plus. Et la position à tenir sur les prix publics. |
 | `/produits-reunion/` | Fiches produit | Photos, poids, DLUO, conditionnements, tarifs revendeur. |
-| `/references/` | Nouveaux clients | Aymeric a signé plusieurs clients depuis. Il faut leur accord écrit avant d'afficher leur logo, puis le logo et une ligne de contexte pour chacun. |
 
 ---
 
@@ -106,13 +105,6 @@ C'est un argument commercial fort, et un argument juridiquement sensible.
 **Aymeric doit relire et valider cette formulation avant la mise en ligne.** Une
 mention de prudence figure déjà sous le visuel d'étiquette et dans les mentions
 légales.
-
-### Les codes couleur de la marque
-Aymeric pense les avoir déjà envoyés, ils ne sont jamais arrivés. La palette
-actuelle est extraite de son logo : sauge `#A7C1B6` pour le décor, vert profond
-`#3F5C50` pour le texte et les boutons, crème `#F6F2EA` en fond. Si sa charte
-donne d'autres valeurs, tout se change dans le bloc `@theme` de
-[`src/app/globals.css`](../src/app/globals.css), rien d'autre à toucher.
 
 ### Le nom de la marque
 `Délices & Sens` a été retenu. Le WordPress alterne avec `Délice et Sens` sur
