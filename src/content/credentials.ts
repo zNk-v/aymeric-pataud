@@ -9,15 +9,13 @@
  *
  * Date de l'entrée au Collège Culinaire : mai 2026, confirmée par Aymeric
  * le 17 août 2026.
+ *
+ * MEALK ne figure pas ici. Aymeric en est cofondateur mais n'est plus associé
+ * aux sociétés qui exploitent la marque : en faire un marqueur d'autorité
+ * serait inexact. Le fait reste dans ses repères biographiques, daté.
  */
 
 export const MEMBERSHIPS = [
-  {
-    name: "MEALK",
-    role: "Cofondateur",
-    text: "Chef et cofondateur d'une marque de fromagerie. C'est de cette double casquette que sont nées les huiles essentielles hydrosolubles, puis les gammes de yaourts, tommes, raclettes et beurres.",
-    logo: "/images/logos/mealk.webp",
-  },
   {
     name: "Les Toques Françaises",
     role: "Membre",

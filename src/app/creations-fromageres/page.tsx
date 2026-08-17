@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CtaBand, NextSteps, PageHero, ReferenceCards } from "@/components/blocks";
+import { CtaBand, NextSteps, PageHero } from "@/components/blocks";
 import { QuoteBanner, SplitBlock } from "@/components/page-blocks";
 import {
   Button,
@@ -8,26 +8,39 @@ import {
   Placeholder,
   Section,
   SectionHeader,
+  TextLink,
 } from "@/components/ui";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
-import { DAIRY_LOCK, DAIRY_RANGES } from "@/content/creations";
+import {
+  DAIRY_COUNT,
+  DAIRY_LOCK,
+  DAIRY_RANGES,
+  DAIRY_ROLE,
+} from "@/content/creations";
 
 export const metadata: Metadata = {
   title: "Créations fromagères et laitières",
-  description:
-    "Yaourts, tommes, raclettes et beurres d'exception créés avec MEALK grâce aux huiles essentielles culinaires hydrosolubles. Aromatiser le lait directement, là où l'huile et l'eau ne se mélangent pas.",
+  description: `Yaourts, beurres, raclettes, fondues, cheesecakes et miels : ${DAIRY_COUNT} recettes créées grâce aux huiles essentielles culinaires hydrosolubles. Aromatiser le lait directement, là où l'huile et l'eau ne se mélangent pas.`,
   alternates: { canonical: "/creations-fromageres/" },
 };
 
+/**
+ * Cadrage donné par Aymeric le 18 août 2026 : il est cofondateur de MEALK mais
+ * n'est plus associé aux sociétés qui exploitent la marque. Il en reste le
+ * créateur des recettes et le fournisseur des ingrédients.
+ *
+ * La page met donc en avant SON travail, pas la marque. MEALK est nommé une
+ * seule fois, sobrement, comme le distributeur de ces gammes.
+ */
 export default function Page() {
   return (
     <>
       <PageHero
         kicker="Fromages & produits laitiers"
         title="Aromatiser le lait, là où personne ne savait le faire."
-        lede="Yaourts, tommes, raclettes, beurres. Une gamme née d'un verrou technique résolu il y a plus de dix ans, avec MEALK, dont je suis cofondateur."
+        lede={`Yaourts, beurres, raclettes, fondues, cheesecakes, miels : ${DAIRY_COUNT} recettes nées d'un verrou technique que j'ai levé il y a plus de dix ans.`}
         image="/images/yaourt-orange-tonka.webp"
-        imageAlt="Dosage d'une huile essentielle dans un yaourt MEALK orange et fève de tonka"
+        imageAlt="Dosage d'une huile essentielle dans un yaourt orange et fève de tonka"
       />
 
       {/* Le verrou technique */}
@@ -45,56 +58,66 @@ export default function Page() {
         </Container>
       </Section>
 
-      {/* Les quatre gammes */}
+      {/* Les gammes, parfum par parfum */}
       <Section>
         <Container>
           <SectionHeader
-            kicker="Les gammes"
-            title="Quatre familles, une même méthode"
-            lede="Chaque référence part d'une recette juste, puis reçoit l'aromatique qui la rend reconnaissable. Jamais l'inverse."
+            kicker={`${DAIRY_RANGES.length} gammes · ${DAIRY_COUNT} recettes`}
+            title="Ce que ça donne, parfum par parfum"
+            lede="Chaque recette part d'un équilibre juste, puis reçoit l'aromatique qui la rend reconnaissable. Jamais l'inverse."
           />
-          <Stagger className="mt-12 grid gap-4 md:grid-cols-2">
+
+          <Stagger className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {DAIRY_RANGES.map((r) => (
               <StaggerItem key={r.name} className="h-full">
-                <div className="card flex h-full flex-col rounded-3xl p-8">
-                  <div className="flex items-baseline justify-between gap-4">
-                    <h3 className="font-display text-2xl lg:text-3xl">
-                      {r.name}
-                    </h3>
-                    <span className="shrink-0 text-sm text-vert">{r.count}</span>
+                <div className="card flex h-full flex-col rounded-3xl p-7">
+                  <div className="flex items-baseline justify-between gap-4 border-b border-line pb-4">
+                    <h3 className="font-display text-xl">{r.name}</h3>
+                    <span className="shrink-0 text-sm text-vert">
+                      {r.flavours.length}
+                    </span>
                   </div>
-                  <ul className="mt-6 flex-1 space-y-3">
+                  <ul className="mt-5 space-y-2.5">
                     {r.flavours.map((f) => (
-                      <li key={f} className="flex gap-3 text-encre-soft">
+                      <li
+                        key={f}
+                        className="flex gap-3 text-sm leading-snug text-encre-soft"
+                      >
                         <span
                           aria-hidden="true"
-                          className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-sauge"
+                          className="mt-[0.45rem] h-1 w-1 shrink-0 rounded-full bg-sauge"
                         />
                         {f}
                       </li>
                     ))}
                   </ul>
-                  {r.note ? (
-                    <p className="mt-6 border-t border-line pt-4 text-sm text-encre-soft/80">
-                      {r.note}
-                    </p>
-                  ) : null}
                 </div>
               </StaggerItem>
             ))}
           </Stagger>
 
           <Reveal delay={0.15}>
-            <Placeholder title="Photos des créations MEALK" className="mt-8">
-              Les visuels des yaourts, tommes, raclettes et beurres, gamme par
-              gamme. Sans eux cette page reste une liste. Avec eux, elle devient
-              une démonstration. Demandés à Aymeric le 17 août 2026.
+            <p className="mt-10 max-w-3xl text-encre-soft">
+              Ces gammes sont distribuées sous la marque{" "}
+              <TextLink href={DAIRY_ROLE.brandUrl} external>
+                {DAIRY_ROLE.brand}
+              </TextLink>
+              . J&apos;en crée les recettes et je fournis les ingrédients
+              aromatiques.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.2}>
+            <Placeholder title="Photos des gammes" className="mt-8">
+              Les visuels des yaourts, beurres, raclettes, fondues, cheesecakes
+              et miels. Sans eux, cette page reste une liste de noms. Aymeric
+              transmet ce que la société de distribution lui a fourni.
             </Placeholder>
           </Reveal>
         </Container>
       </Section>
 
-      <QuoteBanner attribution="Mealk">
+      <QuoteBanner>
         Quand l&apos;huile et l&apos;eau refusent de se mélanger, on invente une
         troisième voie.
       </QuoteBanner>
@@ -108,7 +131,7 @@ export default function Page() {
         reverse
       >
         <p>
-          Sur une étiquette, la différence est visible du consommateur. Selon la
+          Sur une étiquette, la différence se voit du consommateur. Selon la
           matrice et le dosage, mes huiles se déclarent sous leur nom botanique
           plutôt que sous la mention générique « arôme naturel ».
         </p>
@@ -120,8 +143,7 @@ export default function Page() {
       </SplitBlock>
 
       {/* Périmètre : cette page traite le lait et les produits laitiers.
-          Les autres matrices aqueuses (bière, boisson, sauce) vivent sur la
-          page hydrosolubles, qui explique la technique. Un seul renvoi. */}
+          Les autres matrices aqueuses vivent sur la page hydrosolubles. */}
       <Section tone="deep">
         <Container size="narrow" className="text-center">
           <Reveal>
@@ -136,7 +158,10 @@ export default function Page() {
               dédiée.
             </p>
             <div className="mt-8 flex justify-center">
-              <Button href="/huiles-essentielles-hydrosolubles/" variant="outline">
+              <Button
+                href="/huiles-essentielles-hydrosolubles/"
+                variant="outline"
+              >
                 Comment fonctionnent les hydrosolubles
               </Button>
             </div>
@@ -144,14 +169,8 @@ export default function Page() {
         </Container>
       </Section>
 
-      <ReferenceCards
-        slugs={["mealk"]}
-        kicker="La collaboration"
-        title="Dix ans avec un fromager visionnaire"
-      />
-
       <CtaBand
-        title="Vous fabriquez des fromages, des yaourts ou des beurres ?"
+        title="Vous fabriquez des yaourts, des fromages ou des beurres ?"
         lede="Trente minutes suffisent pour savoir si l'aromatisation hydrosoluble a du sens sur votre gamme."
       />
 

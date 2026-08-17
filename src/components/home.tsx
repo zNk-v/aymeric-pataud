@@ -228,9 +228,9 @@ const CREATIONS = [
     href: "/creations-fromageres/",
     kicker: "Fromages & produits laitiers",
     title: "Aromatiser le lait, là où personne ne savait le faire",
-    text: "Yaourts, tommes, raclettes, beurres. Une gamme née d'un verrou technique résolu il y a plus de dix ans avec MEALK.",
+    text: "Yaourts, beurres, raclettes, fondues, cheesecakes, miels. Quarante-trois recettes nées d'un verrou technique levé il y a plus de dix ans.",
     image: "/images/yaourt-orange-tonka.webp",
-    alt: "Yaourt MEALK orange et fève de tonka, dosage à la pipette",
+    alt: "Yaourt orange et fève de tonka, dosage à la pipette",
   },
   {
     href: "/nutrition-sportive/",

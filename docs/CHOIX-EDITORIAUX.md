@@ -364,3 +364,51 @@ récolte. Pré Grandin et Randofruits tiennent ce rôle bien mieux.
 - **Contact** : la double implantation remonte sur la page elle-même, pas
   seulement dans le pied de page. C'est la première page que consulte
   quelqu'un qui cherche où on est basé.
+
+
+---
+
+## 19. MEALK : cofondateur, mais plus associé
+
+Aymeric a précisé le 18 août : il est cofondateur de la marque, il n'est plus
+associé aux sociétés qui l'exploitent. Il en reste le créateur des recettes et
+le fournisseur des ingrédients aromatiques. Sa consigne : « pas trop de MEALK
+partout ».
+
+Elle est fondée. Un site qui s'appuierait sur MEALK comme sur sa marque
+raconterait quelque chose de faux, et gênerait les propriétaires actuels.
+
+Ce qui a changé :
+
+- MEALK **sort des reconnaissances** sur la page biographie. Ce n'était pas une
+  appartenance qui fait autorité, c'était un client.
+- La page créations **met en avant son travail**, pas la marque. Une seule
+  mention, en bas des gammes : « ces gammes sont distribuées sous la marque
+  MEALK, j'en crée les recettes et je fournis les ingrédients aromatiques ».
+- Le renvoi depuis la page hydrosolubles ne revendique plus rien.
+- La carte de l'accueil parle des quarante-trois recettes, plus de la marque.
+
+Résultat : une mention visible par page, contre trois à cinq avant.
+
+**Une date inventée, retirée.** J'avais daté la cofondation de 2015 dans la
+frise biographique. Aymeric ne l'a jamais donnée. Le fait est repassé dans le
+texte, sans date, et la frise ne contient plus que des jalons réellement datés.
+
+---
+
+## 20. Les gammes, en vrai
+
+Sa liste du 18 août remplace mes fourchettes. **Neuf gammes, quarante-trois
+recettes** : yaourts (10), beurres (8), miels (7), raclettes (6), fondues (5),
+cheesecakes (4), tommes de brebis, burrata, crémeux au safran.
+
+C'est autrement plus démonstratif que « huit à neuf yaourts ». Un fabricant qui
+lit « Litchi et géranium », « Safran de la Baie de Somme » ou « Cèpes et
+morilles » comprend l'étendue du travail sans qu'on ait besoin de l'expliquer.
+
+Les miels et les cheesecakes ne sont pas des produits laitiers au sens strict.
+Ils restent sur cette page parce qu'ils appartiennent à la même gamme et à la
+même technique.
+
+Seule retouche : « Banane et citron ver » est devenu « citron vert », coquille
+manifeste.

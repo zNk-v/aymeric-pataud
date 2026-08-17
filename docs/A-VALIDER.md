@@ -136,6 +136,13 @@ base de contacts, et les tarifs se discutent au téléphone.
 Confirmé par écrit : cofondateur de la marque MEALK, libre de communiquer sur
 ces créations. La mention est passée dans ses repères biographiques.
 
+### Le statut MEALK
+Cofondateur, mais plus associé aux sociétés qui exploitent la marque. Il en
+reste le créateur des recettes et le fournisseur des ingrédients. Le site tient
+cette ligne : une mention visible par page, jamais présentée comme sa marque.
+Si son statut change, c'est `DAIRY_ROLE` dans
+[`src/content/creations.ts`](../src/content/creations.ts) qu'il faut reprendre.
+
 ### Les visuels MEALK générés par IA
 Aymeric envisage de faire produire les visuels manquants par IA, avec
 Vorombola. À trancher : une photo de produit générée ne montre pas le produit

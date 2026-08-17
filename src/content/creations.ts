@@ -1,58 +1,132 @@
 /**
  * Les créations d'Aymeric, par spécialité.
  *
- * Trois axes, tous fournis par le client lors du retour du 17 août 2026 :
- *  - les fromages et produits laitiers, son plus fort potentiel de
- *    développement, réalisés avec MEALK dont il est cofondateur ;
- *  - la nutrition sportive, une seconde expertise qui se passe d'huiles
- *    essentielles ;
+ * Trois axes :
+ *  - les fromages et produits laitiers, son plus fort potentiel ;
+ *  - la nutrition sportive, une seconde expertise sans huiles essentielles ;
  *  - le terroir réunionnais, où il développe pour ses clients sans vendre.
  *
- * Rien n'est inventé ici. Les gammes, les parfums et les partenaires viennent
- * de ses propres mots ou de son site. Les fourchettes (« huit à neuf yaourts »)
- * sont écrites telles qu'il les a données : il n'a pas donné de compte exact.
+ * Rien n'est inventé. Les gammes, les parfums et les partenaires viennent de
+ * ses propres mots ou de son site.
  */
+
+/* ================================================ FROMAGES & LAITIERS ==== */
+
+/**
+ * ATTENTION, cadrage donné par Aymeric le 18 août 2026 :
+ * il est cofondateur de MEALK mais n'est plus associé aux sociétés qui
+ * exploitent la marque. Il en reste le créateur des recettes et le
+ * fournisseur des ingrédients aromatiques.
+ *
+ * Conséquence pour le site : ces gammes sont SON travail, pas SA marque.
+ * MEALK est nommé comme le distributeur, sobrement, et « cofondateur »
+ * n'apparaît qu'une fois, dans les repères biographiques. Ne pas remettre
+ * MEALK partout.
+ *
+ * Les parfums viennent de sa liste, recopiés sans ajout. Seul « Banane et
+ * citron ver » a été complété en « citron vert », coquille évidente.
+ */
+
+export const DAIRY_ROLE = {
+  what: "Créateur des recettes et fournisseur des ingrédients aromatiques",
+  brand: "MEALK",
+  brandUrl: "https://www.mealk.fr/",
+};
 
 export type Range = {
   name: string;
-  count: string;
   flavours: string[];
-  note?: string;
 };
-
-/* ================================================ FROMAGES & LAITIERS ==== */
 
 export const DAIRY_RANGES: Range[] = [
   {
     name: "Yaourts",
-    count: "8 à 9 références",
     flavours: [
-      "Orange & fève de tonka",
-      "Fraise & verveine",
-      "Citron yuzu",
+      "Cassis et fleur de sureau",
+      "Fraise et verveine citronnée",
+      "Framboise et combava",
+      "Yuzu et citron",
+      "Abricot et pistache",
+      "Rhubarbe et gingembre",
+      "Orange et fève de tonka",
+      "Litchi et géranium",
+      "Noix de coco et vanille de Papouasie",
+      "Banane et citron vert",
     ],
-    note: "Les trois parfums documentés à ce jour. La gamme en compte davantage.",
+  },
+  {
+    name: "Beurres",
+    flavours: [
+      "Safran de la Baie de Somme",
+      "Cèpe",
+      "Tomate, ail et basilic",
+      "Citron jaune et verveine",
+      "Ail des ours",
+      "Truffe noire",
+      "Orange et fève de tonka",
+      "Citron et algues",
+    ],
+  },
+  {
+    name: "Miels",
+    flavours: [
+      "Yuzu et citron jaune",
+      "Fraise et verveine",
+      "Framboise et combava",
+      "Banane et citron vert",
+      "Orange et fève de tonka",
+      "Abricot et pistache",
+      "Cassis et fleur de sureau",
+    ],
   },
   {
     name: "Raclettes",
-    count: "5 à 6 références",
-    flavours: ["Oignon rôti, à l'huile essentielle d'oignon rendue hydrosoluble"],
-  },
-  {
-    name: "Tommes",
-    count: "Vache et brebis",
-    flavours: ["Tomme au poivre fumé, à l'huile essentielle de poivre de Madagascar"],
-  },
-  {
-    name: "Beurres d'exception",
-    count: "5 à 6 références",
     flavours: [
-      "Tomates & basilic",
-      "Algues & citron",
-      "Ail des ours, sublimé à l'huile essentielle d'ail",
+      "Ail des ours",
+      "Cèpes",
+      "Truffe noire du Périgord",
+      "Tomate et basilic",
+      "Poivre fumé",
+      "Oignon rôti",
     ],
   },
+  {
+    name: "Fondues",
+    flavours: [
+      "Poivre fumé",
+      "Cèpes et morilles",
+      "Oignon rôti",
+      "Ail des ours bio",
+      "Truffes",
+    ],
+  },
+  {
+    name: "Cheesecakes",
+    flavours: [
+      "Citron jaune et yuzu",
+      "Orange et fève de tonka",
+      "Coco et vanille d'Indonésie",
+      "Fraise et verveine",
+    ],
+  },
+  {
+    name: "Tommes de brebis",
+    flavours: ["Poivre fumé"],
+  },
+  {
+    name: "Burrata",
+    flavours: ["Poivre fumé"],
+  },
+  {
+    name: "Crémeux",
+    flavours: ["Safran"],
+  },
 ];
+
+export const DAIRY_COUNT = DAIRY_RANGES.reduce(
+  (n, r) => n + r.flavours.length,
+  0
+);
 
 /** Le verrou technique résolu il y a plus de dix ans. */
 export const DAIRY_LOCK = {

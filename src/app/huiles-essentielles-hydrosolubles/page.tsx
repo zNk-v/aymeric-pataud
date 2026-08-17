@@ -141,15 +141,15 @@ export default function Page() {
         kicker="Ce que ça donne"
         title="Le lait a sa propre page."
         image="/images/yaourt-orange-tonka.webp"
-        imageAlt="Yaourt MEALK orange et fève de tonka"
+        imageAlt="Yaourt orange et fève de tonka, dosage à la pipette"
         ratio="5/4"
         reverse
       >
         <p>
           Cette page explique comment la technique fonctionne. Les créations
-          qu&apos;elle a rendues possibles sont ailleurs : yaourts, tommes,
-          raclettes et beurres développés avec MEALK, dont je suis
-          cofondateur.
+          qu&apos;elle a rendues possibles sont ailleurs : quarante-trois
+          recettes de yaourts, beurres, raclettes, fondues, cheesecakes et
+          miels.
         </p>
         <p>
           <TextLink href="/creations-fromageres/">

@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Le chef",
   description:
-    "Chef de formation, membre des Toques Françaises, cofondateur de la marque de fromagerie MEALK, auteur du premier ouvrage au monde sur les huiles essentielles en cuisine (2003) et conférencier TEDx.",
+    "Chef de formation, membre des Toques Françaises, auteur du premier ouvrage au monde sur les huiles essentielles en cuisine (2003) et conférencier TEDx. Vingt-cinq ans à travailler le goût comme un langage.",
   alternates: { canonical: "/aymeric-pataud/" },
 };
 
@@ -25,7 +25,6 @@ const REPERES = [
   { year: "2003", text: "Premier ouvrage au monde sur les huiles essentielles en cuisine" },
   { year: "2009", text: `Création de la marque ${SITE.brand}` },
   { year: "2013", text: "Invention des huiles essentielles culinaires hydrosolubles" },
-  { year: "Depuis", text: "Cofondateur de MEALK, marque de fromagerie" },
   { year: "Aujourd'hui", text: "Deux ateliers du goût, Amiens et La Réunion" },
 ];
 
@@ -139,6 +138,12 @@ export default function Page() {
           {SITE.brand}, parfois sans. Toujours avec la même règle : le goût
           d&apos;abord.
         </p>
+        <p>
+          Je suis aussi cofondateur de MEALK, une marque de crémerie dont je
+          crée les recettes et fournis les ingrédients aromatiques. Quarante-trois
+          références y sont nées d&apos;une seule question technique : comment
+          aromatiser du lait avec une huile essentielle.
+        </p>
       </SplitBlock>
 
       {/* Vision */}
@@ -202,10 +207,10 @@ export default function Page() {
         <Container>
           <SectionHeader
             kicker="Reconnaissances"
-            title="Chef, cofondateur, et une catégorie qui entre dans l'institution"
+            title="Chef d'abord, et une catégorie qui entre dans l'institution"
             align="center"
           />
-          <Stagger className="mt-12 grid gap-4 md:grid-cols-3">
+          <Stagger className="mt-12 grid gap-4 md:grid-cols-2">
             {MEMBERSHIPS.map((m) => (
               <StaggerItem key={m.name} className="h-full">
                 <div className="card flex h-full flex-col rounded-3xl p-8">
