@@ -133,7 +133,7 @@ export default function Page() {
         items={[
           {
             title: "La gamme culinaire",
-            text: "Plus de 70 références, avec le détail par famille aromatique.",
+            text: "Plus de 60 références, avec le détail par famille aromatique.",
             href: "/huiles-essentielles-culinaires/",
           },
           {

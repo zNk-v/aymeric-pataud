@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
-import { SITE } from "@/lib/site";
+import { SITE, WORKSHOPS } from "@/lib/site";
 
 /**
  * Sur Mac et iOS, la pile de polices commence par -apple-system : le visiteur
@@ -107,6 +107,16 @@ const jsonLd = {
         addressCountry: SITE.address.country,
       },
       sameAs: [SITE.social.linkedin, SITE.social.instagram],
+      location: WORKSHOPS.map((w) => ({
+        "@type": "Place",
+        name: `Atelier du goût — ${w.city}`,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: w.city,
+          addressRegion: w.region,
+          addressCountry: "FR",
+        },
+      })),
     },
     {
       "@type": "WebSite",
@@ -124,6 +134,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr" className={inter.variable}>
+      <head>
+        {/* Les animations d'apparition partent d'une opacité nulle inscrite
+            dans le HTML statique. Sans JavaScript, la page serait blanche.
+            Cette règle rend tout visible immédiatement. */}
+        <noscript>
+          <style>{`.js-reveal{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+      </head>
       <body className="grain">
         <script
           type="application/ld+json"

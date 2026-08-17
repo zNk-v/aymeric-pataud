@@ -10,6 +10,15 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
+/**
+ * Toutes les animations d'apparition partent d'une opacité nulle, écrite en
+ * style inline dans le HTML statique. Sans JavaScript, la page resterait donc
+ * vide. Cette classe sert de prise pour la règle de repli déclarée dans
+ * <noscript> (voir app/layout.tsx), qui remet tout à l'état visible.
+ */
+const REVEAL = "js-reveal";
+const cx = (...c: (string | undefined)[]) => c.filter(Boolean).join(" ");
+
 /* ---------------------------------------------------------------- Reveal --- */
 export function Reveal({
   children,
@@ -30,7 +39,7 @@ export function Reveal({
   return (
     <MotionTag
       ref={ref}
-      className={className}
+      className={cx(REVEAL, className)}
       initial={{ opacity: 0, y }}
       animate={inView ? { opacity: 1, y: 0 } : undefined}
       transition={{ duration: 0.7, ease: EASE, delay }}
@@ -59,7 +68,7 @@ export function Stagger({
   return (
     <motion.div
       ref={ref}
-      className={className}
+      className={cx(REVEAL, className)}
       variants={container}
       initial="hidden"
       animate={inView ? "show" : "hidden"}
@@ -80,7 +89,11 @@ export function StaggerItem({
   ...rest
 }: { children: ReactNode } & HTMLMotionProps<"div">) {
   return (
-    <motion.div variants={staggerItem} className={className} {...rest}>
+    <motion.div
+      variants={staggerItem}
+      className={cx(REVEAL, className)}
+      {...rest}
+    >
       {children}
     </motion.div>
   );
@@ -113,6 +126,7 @@ export function WordReveal({
           style={{ display: "inline-block", overflow: "hidden" }}
         >
           <motion.span
+            className={REVEAL}
             style={{ display: "inline-block" }}
             initial={{ y: "110%", opacity: 0 }}
             animate={inView ? { y: "0%", opacity: 1 } : undefined}

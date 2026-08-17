@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CtaBand, NextSteps, PageHero, TedxBlock } from "@/components/blocks";
 import { QuoteBanner, SplitBlock } from "@/components/page-blocks";
 import { Container, Kicker, Placeholder, Section, SectionHeader } from "@/components/ui";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
 import { SITE } from "@/lib/site";
+import { asset } from "@/lib/asset";
+import {
+  BOOKS,
+  MEMBERSHIPS,
+  PRESS,
+  PRESS_FREQUENCY,
+} from "@/content/credentials";
 
 export const metadata: Metadata = {
   title: "Le chef",
@@ -188,33 +196,93 @@ export default function Page() {
         <p>Parce que le goût se transmet autant qu&apos;il se travaille.</p>
       </SplitBlock>
 
-      {/* Emplacements en attente */}
+      {/* Appartenances — deux faits distincts, à ne pas confondre */}
       <Section>
-        <Container size="narrow">
+        <Container>
           <SectionHeader
-            kicker="Autorité"
-            title="Livres, presse et distinctions"
-            lede="Cette section attend la matière du client. Rien n'a été inventé pour la remplir."
+            kicker="Reconnaissances"
+            title="Chef d'abord, et une catégorie qui entre dans l'institution"
+            align="center"
           />
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
-            <Placeholder title="Les quatre ouvrages">
-              Titres, éditeurs, années de parution, visuels de couverture et
-              liens d&apos;achat. Seul le premier, publié en 2003, est
-              documenté aujourd&apos;hui.
-            </Placeholder>
-            <Placeholder title="Les mentions presse">
-              Trois à quatre sollicitations par an comme référence sur les
-              huiles essentielles culinaires. Média, date, titre et lien ou
-              scan pour chacune.
-            </Placeholder>
-            <Placeholder title="Collège Culinaire de France">
-              Le site actuel mentionne les Toques Françaises. Confirmer les deux
-              appartenances et fournir les logos officiels.
-            </Placeholder>
-            <Placeholder title="La vidéo signature">
-              Le film réalisé par Poire et Cactus. Un emplacement de premier
-              plan est déjà en place sur la page d&apos;accueil.
-            </Placeholder>
+          <Stagger className="mt-12 grid gap-4 md:grid-cols-2">
+            {MEMBERSHIPS.map((m) => (
+              <StaggerItem key={m.name} className="h-full">
+                <div className="card flex h-full flex-col rounded-3xl p-8">
+                  <div className="relative h-16 w-40">
+                    <Image
+                      src={asset(m.logo)}
+                      alt={m.name}
+                      fill
+                      sizes="160px"
+                      className="object-contain object-left"
+                    />
+                  </div>
+                  <h3 className="font-display mt-7 text-2xl">{m.name}</h3>
+                  <p className="mt-2 text-sm text-vert">{m.role}</p>
+                  <p className="mt-4 flex-1 text-encre-soft">{m.text}</p>
+                  {m.pendingSource ? (
+                    <p className="mt-6 border-t border-line pt-4 text-sm text-encre-soft/80">
+                      Date et source à confirmer par Aymeric avant la mise en
+                      ligne.
+                    </p>
+                  ) : null}
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </Container>
+      </Section>
+
+      {/* Ouvrages et presse */}
+      <Section tone="deep">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
+            <div className="lg:col-span-5">
+              <Reveal>
+                <Kicker>Ouvrages</Kicker>
+                <p className="font-display mt-5 text-balance text-3xl leading-[1.12] lg:text-4xl">
+                  Le premier livre au monde sur les huiles essentielles en
+                  cuisine, en {BOOKS.firstYear}.
+                </p>
+                <p className="lede mt-6">{BOOKS.line}</p>
+              </Reveal>
+            </div>
+
+            <div className="lg:col-span-7">
+              <Reveal>
+                <Kicker>Presse</Kicker>
+                <p className="mt-5 text-encre-soft">
+                  Les journalistes me sollicitent {PRESS_FREQUENCY} comme
+                  référence sur les huiles essentielles culinaires.
+                </p>
+              </Reveal>
+              <Stagger className="mt-8 divide-y divide-line border-y border-line">
+                {PRESS.map((item) => (
+                  <StaggerItem key={item.outlet}>
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 py-4">
+                      <span className="font-display text-lg">
+                        {item.outlet}
+                      </span>
+                      <span className="text-sm text-encre-soft">
+                        {item.subject}
+                      </span>
+                      {item.date ? (
+                        <span className="text-sm text-vert">{item.date}</span>
+                      ) : null}
+                    </div>
+                  </StaggerItem>
+                ))}
+              </Stagger>
+              <Reveal delay={0.1}>
+                <Placeholder title="Dates et liens des articles" className="mt-6">
+                  Les articles restent la propriété des journaux : on cite le
+                  média et on renvoie vers la publication, on ne republie pas
+                  les pages. Il manque, pour chacun, la date de parution et le
+                  lien en ligne quand il existe. Les parutions récentes sont
+                  les plus utiles.
+                </Placeholder>
+              </Reveal>
+            </div>
           </div>
         </Container>
       </Section>

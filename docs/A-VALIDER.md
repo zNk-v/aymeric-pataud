@@ -13,14 +13,15 @@ que le contenu arrive.
 
 | Page | Emplacement | Ce qu'il faut |
 |---|---|---|
-| `/aymeric-pataud/` | Les quatre ouvrages | Titres, éditeurs, années, couvertures, liens d'achat. Seul celui de 2003 est documenté aujourd'hui. |
-| `/aymeric-pataud/` | Mentions presse | Média, date, titre, lien ou scan. Trois à quatre par an d'après le brief. |
-| `/aymeric-pataud/` | Collège Culinaire de France | Le WordPress ne mentionne que les Toques Françaises. Confirmer les deux appartenances et fournir les logos. |
-| `/aymeric-pataud/` | Vidéo signature | Le film Poire et Cactus. |
+| `/aymeric-pataud/` | Vidéo signature | Le film Poire et Cactus, annoncé pour fin août 2026. |
 | `/consulting/` | Deux cas industriels chiffrés | Cas anonymisés mais typés, avec contexte, volume et résultat mesuré. |
 | `/creation-sur-mesure/` | Photos de l'atelier | Vues de La Saline-les-Hauts et de la machine en fonctionnement. Plus le numéro et l'intitulé exact du brevet. |
 | `/huiles-essentielles-culinaires/` | Catalogue PDF | Le lien de téléchargement du WordPress ne répond plus. Et la position à tenir sur les prix publics. |
-| `/produits-reunion/` | Fiches produit | Photos, poids, DLUO, conditionnements, tarifs revendeur. |
+| `/creations-fromageres/` | Photos des créations MEALK | Yaourts, tommes, raclettes, beurres, gamme par gamme. Sans elles, la page reste une liste. |
+| `/nutrition-sportive/` | Visuels Trek & Adventure | Packaging des trente plats lyophilisés et date de lancement. Son nom et son visage seront associés à la marque : à dire explicitement une fois confirmé. |
+| `/consulting/` | Format des masterclass | Durée, nombre de participants, lieu, matériel, prix. La page décrit l'intention, pas une offre chiffrée. |
+| `/aymeric-pataud/` | Entrée au Collège Culinaire | Date et source de l'entrée des huiles essentielles culinaires. Première mondiale revendiquée : elle ne sera affirmée qu'avec sa source. |
+| `/aymeric-pataud/` | Dates et liens de presse | Six dossiers fournis en scan. Les articles restent la propriété des journaux : on cite et on renvoie, on ne republie pas. Manquent les dates et les liens. |
 | `/references/` | Nouveaux clients | Aymeric a signé plusieurs clients depuis. Il faut leur accord écrit avant d'afficher leur logo, puis le logo et une ligne de contexte pour chacun. |
 
 ---
@@ -107,16 +108,35 @@ C'est un argument commercial fort, et un argument juridiquement sensible.
 mention de prudence figure déjà sous le visuel d'étiquette et dans les mentions
 légales.
 
-### Les codes couleur de la marque
-Aymeric pense les avoir déjà envoyés, ils ne sont jamais arrivés. La palette
-actuelle est extraite de son logo : sauge `#A7C1B6` pour le décor, vert profond
-`#3F5C50` pour le texte et les boutons, crème `#F6F2EA` en fond. Si sa charte
-donne d'autres valeurs, tout se change dans le bloc `@theme` de
-[`src/app/globals.css`](../src/app/globals.css), rien d'autre à toucher.
+### ~~Les codes couleur de la marque~~ — réglé le 17/08/2026
+Code fourni : `#a9c3b8`, « verts gris pastel ». À deux points par canal de ce
+qui avait été extrait du logo. Adopté tel quel. C'est sa seule couleur : les
+neutres et le vert foncé lisible restent dérivés, dans le bloc `@theme` de
+[`src/app/globals.css`](../src/app/globals.css).
 
-### Le nom de la marque
-`Délices & Sens` a été retenu. Le WordPress alterne avec `Délice et Sens` sur
-plusieurs pages. Laquelle est la bonne ?
+### ~~Le nom de la marque~~ — réglé le 17/08/2026
+Son logo officiel tranche : `DÉLICE & SENS`, au singulier, avec l'esperluette,
+signature « l'aromatisation végétale ». Corrigé partout.
+
+### ~~L'adresse affichée~~ — réglé le 17/08/2026
+Double implantation : siège et atelier historique à Amiens, atelier du goût à
+La Saline-les-Hauts. Le modèle « Amiens–La Réunion » est posé sur l'accueil et
+dans le pied de page.
+
+### La liste à jour des huiles
+Le site écrit « plus de 60 » et affiche 64, recomptées depuis sa liste
+publiée. Il pense en avoir plus de 70 aujourd'hui. Le chiffre exact sera
+écrit dès que la liste arrivera, via Vorombola.
+
+### Le catalogue PDF
+À récupérer auprès de Vorombola. Décision prise : pas de prix affichés. Le
+catalogue sera téléchargeable contre une adresse e-mail, ce qui alimente sa
+base de contacts, et les tarifs se discutent au téléphone.
+
+### La confirmation MEALK
+Aymeric doit confirmer par écrit qu'il est cofondateur de MEALK et qu'il peut
+communiquer librement sur ces créations. La page `/creations-fromageres/`
+l'affirme aujourd'hui sur la foi de son mail.
 
 ### Le nombre de collaborations
 Le WordPress annonçait 12 cas, il y en a 14 après relecture (La Pétrie et

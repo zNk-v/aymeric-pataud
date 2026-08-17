@@ -87,7 +87,7 @@ export default function Header() {
 
         {/* Navigation desktop */}
         <nav
-          className="hidden items-center gap-1 lg:flex"
+          className="hidden items-center gap-0 lg:flex xl:gap-1"
           aria-label="Navigation principale"
         >
           {NAV.map((group) => {
@@ -105,7 +105,7 @@ export default function Header() {
                     cancelClose();
                     setOpenGroup(null);
                   }}
-                  className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                  className={`whitespace-nowrap rounded-full px-2.5 py-2 text-[0.8125rem] font-medium transition-colors xl:px-4 xl:text-sm ${
                     active ? "text-vert" : "text-encre hover:text-vert"
                   }`}
                 >
@@ -128,7 +128,7 @@ export default function Header() {
                   onClick={() =>
                     setOpenGroup(openGroup === group.label ? null : group.label)
                   }
-                  className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-2 text-[0.8125rem] font-medium transition-colors xl:gap-1.5 xl:px-4 xl:text-sm ${
                     active || openGroup === group.label
                       ? "text-vert"
                       : "text-encre hover:text-vert"
@@ -159,7 +159,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact/"
-            className="hidden rounded-full bg-vert px-6 py-3 text-sm font-semibold text-creme transition-all duration-300 hover:bg-vert-clair hover:scale-[1.02] lg:inline-flex"
+            className="hidden whitespace-nowrap rounded-full bg-vert px-5 py-3 text-[0.8125rem] font-semibold text-creme transition-all duration-300 hover:bg-vert-clair hover:scale-[1.02] lg:inline-flex xl:px-6 xl:text-sm"
           >
             Parler de votre projet
           </Link>

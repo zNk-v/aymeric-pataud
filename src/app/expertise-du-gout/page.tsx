@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { CtaBand, NextSteps, PageHero, Testimonials } from "@/components/blocks";
 import {
-  FeatureGrid,
   ListBlock,
   QuoteBanner,
   SplitBlock,
   Steps,
 } from "@/components/page-blocks";
-import { Container, Kicker, Section } from "@/components/ui";
+import { Container, Kicker, Section, TextLink } from "@/components/ui";
 import { Reveal } from "@/components/motion-primitives";
 import { asset } from "@/lib/asset";
 
@@ -173,22 +172,31 @@ export default function Page() {
         ]}
       />
 
-      <FeatureGrid
-        kicker="Goût & endurance"
-        title="Là où le goût a tendance à disparaître"
-        lede="Produits déshydratés ou lyophilisés, barres énergétiques, plats d'effort. Peu de poids, peu de volume, juste de l'eau chaude. Et une exigence intacte : la sensation d'un plat maison."
-        columns={2}
-        items={[
-          {
-            title: "Une contrainte technique forte",
-            text: "Tenue du goût dans le temps, lisibilité malgré la fatigue sensorielle, stabilité après transformation, reproductibilité réelle.",
-          },
-          {
-            title: "Un enjeu qui n'est pas gustatif",
-            text: "Quand le corps fatigue et que la répétition s'installe, le goût devient un levier mental. Le défi n'est pas d'en faire plus, c'est de rester juste.",
-          },
-        ]}
-      />
+      {/* Le détail vit désormais sur /nutrition-sportive/ : ici, la méthode
+          seulement, avec le renvoi vers la spécialité. */}
+      <SplitBlock
+        kicker="La méthode hors des huiles"
+        title="La preuve qu'elle ne dépend pas de l'outil."
+        image="/images/endurance.webp"
+        imageAlt="Repas d'effort et nutrition sportive"
+        ratio="5/4"
+      >
+        <p>
+          Sur les produits déshydratés et lyophilisés, je travaille sans aucune
+          huile essentielle. La matière sèche, les épices et les plantes
+          suffisent. La lecture du goût, elle, ne change pas.
+        </p>
+        <p>
+          C&apos;est devenu une seconde spécialité : rendre gourmand un plat
+          d&apos;effort, une barre énergétique ou un repas lyophilisé, là où le
+          goût a justement tendance à disparaître.
+        </p>
+        <p>
+          <TextLink href="/nutrition-sportive/">
+            Voir les créations de nutrition sportive
+          </TextLink>
+        </p>
+      </SplitBlock>
 
       <Testimonials
         variant="anonymous"
@@ -215,7 +223,7 @@ export default function Page() {
           },
           {
             title: "Les huiles culinaires",
-            text: "Plus de 70 références professionnelles, en lipo et en hydrosoluble.",
+            text: "Plus de 60 références professionnelles, en lipo et en hydrosoluble.",
             href: "/huiles-essentielles-culinaires/",
           },
         ]}

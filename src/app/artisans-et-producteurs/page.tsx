@@ -157,7 +157,7 @@ export default function Page() {
           },
           {
             title: "La gamme culinaire",
-            text: "Plus de 70 références déjà disponibles.",
+            text: "Plus de 60 références déjà disponibles.",
             href: "/huiles-essentielles-culinaires/",
           },
           {

@@ -159,7 +159,7 @@ export default function Page() {
         items={[
           {
             title: "La gamme culinaire",
-            text: "Plus de 70 références disponibles, sans passer par le sur-mesure.",
+            text: "Plus de 60 références disponibles, sans passer par le sur-mesure.",
             href: "/huiles-essentielles-culinaires/",
           },
           {

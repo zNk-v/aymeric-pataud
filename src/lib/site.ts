@@ -2,9 +2,9 @@
  * Constantes du site. Point d'entrée unique pour les coordonnées, la
  * navigation et les URLs canoniques.
  *
- * À VALIDER CLIENT : l'adresse et le téléphone sont repris du WordPress.
- * Aymeric est à La Réunion jusqu'en août 2027, l'adresse affichée est celle
- * d'Amiens. Voir docs/A-VALIDER.md.
+ * Double implantation, demandée par le client : le siège reste Amiens,
+ * l'atelier du goût existe des deux côtés. Le modèle est « Amiens–La Réunion ».
+ * Quand Aymeric rentrera en métropole en août 2027, seul WORKSHOPS change.
  */
 
 export const SITE = {
@@ -16,12 +16,15 @@ export const SITE = {
   email: "ap@aymericpataud.fr",
   phone: "06 71 80 31 93",
   phoneHref: "+33671803193",
+  /** Siège social et adresse des mentions légales. */
   address: {
     street: "213 rue Jules Barni",
     postalCode: "80000",
     city: "Amiens",
     country: "FR",
   },
+  /** Formule courte de la double implantation, utilisée un peu partout. */
+  footprint: "Amiens · La Réunion",
   legal: {
     company: "CRDAP",
     form: "SASU",
@@ -41,7 +44,9 @@ export const SITE = {
       "Émotions culinaires : la goutte qui fait la différence",
     event: "TEDxAmiens",
   },
-  brand: "Délices & Sens",
+  // Orthographe du logo officiel : DÉLICE & SENS, au singulier, esperluette.
+  brand: "Délice & Sens",
+  brandTagline: "l'aromatisation végétale",
 } as const;
 
 /** Chemin de la vidéo signature Poire et Cactus. Voir docs/A-VALIDER.md. */
@@ -49,6 +54,29 @@ export const SIGNATURE_VIDEO: { src: string | null; poster: string } = {
   src: null,
   poster: "/images/hero-poster.webp",
 };
+
+/**
+ * Les deux ateliers. Le siège ne bouge pas ; c'est la pondération entre les
+ * deux qui basculera au retour en métropole, en changeant `lead`.
+ */
+export const WORKSHOPS = [
+  {
+    city: "Amiens",
+    region: "Hauts-de-France",
+    role: "Siège et atelier historique",
+    text: "Le laboratoire de recherche et d'innovation culinaire, et l'éco-extracteur breveté. C'est d'ici que partent les développements pour la France et l'Europe.",
+    image: "/images/atelier-amiens-1.webp",
+    lead: true,
+  },
+  {
+    city: "La Saline-les-Hauts",
+    region: "La Réunion",
+    role: "Atelier du goût",
+    text: "Un second atelier au cœur de l'océan Indien, hébergé par Randofruits. Les plantes et les fruits y sont travaillés à pleine maturité, à quelques kilomètres de la récolte.",
+    image: "/images/atelier-extracteur.webp",
+    lead: false,
+  },
+] as const;
 
 export type NavLink = { label: string; href: string; description?: string };
 export type NavGroup = { label: string; href?: string; links: NavLink[] };
@@ -64,9 +92,9 @@ export const NAV: NavGroup[] = [
         description: "Lire une recette avant de la corriger",
       },
       {
-        label: "Consulting",
+        label: "Consulting & masterclass",
         href: "/consulting/",
-        description: "Chefs, R&D, industriels",
+        description: "Chefs, R&D, industriels, formation",
       },
       {
         label: "Création sur-mesure",
@@ -82,12 +110,32 @@ export const NAV: NavGroup[] = [
       {
         label: "La gamme culinaire",
         href: "/huiles-essentielles-culinaires/",
-        description: "Plus de 70 références professionnelles",
+        description: "Plus de 60 références professionnelles",
       },
       {
         label: "Les hydrosolubles",
         href: "/huiles-essentielles-hydrosolubles/",
         description: "Fromages, boissons, matrices aqueuses",
+      },
+    ],
+  },
+  {
+    label: "Créations",
+    links: [
+      {
+        label: "Fromages & produits laitiers",
+        href: "/creations-fromageres/",
+        description: "Yaourts, tommes, raclettes, beurres",
+      },
+      {
+        label: "Nutrition sportive",
+        href: "/nutrition-sportive/",
+        description: "Lyophilisé, barres, plats d'effort",
+      },
+      {
+        label: "Terroir de La Réunion",
+        href: "/creations-reunion/",
+        description: "Créer à partir d'ingrédients locaux",
       },
     ],
   },
@@ -126,11 +174,18 @@ export const FOOTER_LINKS: { title: string; links: NavLink[] }[] = [
     ],
   },
   {
-    title: "Produits",
+    title: "Huiles essentielles",
     links: [
-      { label: "Huiles essentielles culinaires", href: "/huiles-essentielles-culinaires/" },
-      { label: "Huiles hydrosolubles", href: "/huiles-essentielles-hydrosolubles/" },
-      { label: "Produits de La Réunion", href: "/produits-reunion/" },
+      { label: "La gamme culinaire", href: "/huiles-essentielles-culinaires/" },
+      { label: "Les hydrosolubles", href: "/huiles-essentielles-hydrosolubles/" },
+    ],
+  },
+  {
+    title: "Créations",
+    links: [
+      { label: "Fromages & produits laitiers", href: "/creations-fromageres/" },
+      { label: "Nutrition sportive", href: "/nutrition-sportive/" },
+      { label: "Terroir de La Réunion", href: "/creations-reunion/" },
     ],
   },
   {

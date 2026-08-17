@@ -13,7 +13,7 @@ import {
 } from "./motion-primitives";
 import { Arrow, Button, Container, Kicker, Section, SectionHeader } from "./ui";
 import { asset } from "@/lib/asset";
-import { SIGNATURE_VIDEO } from "@/lib/site";
+import { SIGNATURE_VIDEO, WORKSHOPS } from "@/lib/site";
 import { PROFILES } from "@/content/profiles";
 import { FEATURED_REFERENCES, REFERENCE_LOGOS } from "@/content/references";
 import { OIL_COUNT } from "@/content/oils";
@@ -182,22 +182,15 @@ export function ProfileFork() {
           {PROFILES.map((p) => (
             <StaggerItem key={p.slug} className="h-full">
               <Link href={p.href} className="block h-full">
+                {/* Pas d'image ici : la section Créations, juste en dessous,
+                    porte déjà trois visuels. Deux rangées de cartes
+                    illustrées se suivant alourdissaient la page pour rien. */}
                 <Spotlight className="card group flex h-full flex-col overflow-hidden rounded-3xl transition-all duration-500 hover:-translate-y-1.5">
-                  <div className="relative aspect-[16/9] overflow-hidden">
-                    <Image
-                      src={asset(p.image)}
-                      alt={p.imageAlt}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 33vw"
-                      className="object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
-                    />
-                  </div>
-
-                  <div className="flex flex-1 flex-col p-7">
+                  <div className="flex flex-1 flex-col p-8">
                     <h3 className="font-display text-2xl">{p.title}</h3>
                     <p className="mt-3 text-encre-soft">{p.need}</p>
 
-                    <ul className="mt-5 flex-1 space-y-2 text-sm">
+                    <ul className="mt-6 flex-1 space-y-2 text-sm">
                       {p.proofs.map((proof) => (
                         <li key={proof} className="flex gap-3 text-encre-soft">
                           <span
@@ -221,6 +214,125 @@ export function ProfileFork() {
         </Stagger>
       </Container>
     </Section>
+  );
+}
+
+/* ============================================== CRÉATIONS PAR SPÉCIALITÉ = */
+/**
+ * Retour client du 17/08/2026 : les fromagers sont son plus fort potentiel,
+ * et la nutrition sportive est devenue une seconde spécialité qu'il veut
+ * voir mise en avant. Trois portes, trois preuves de savoir-faire.
+ */
+const CREATIONS = [
+  {
+    href: "/creations-fromageres/",
+    kicker: "Fromages & produits laitiers",
+    title: "Aromatiser le lait, là où personne ne savait le faire",
+    text: "Yaourts, tommes, raclettes, beurres. Une gamme née d'un verrou technique résolu il y a plus de dix ans avec MEALK.",
+    image: "/images/yaourt-orange-tonka.webp",
+    alt: "Yaourt MEALK orange et fève de tonka, dosage à la pipette",
+  },
+  {
+    href: "/nutrition-sportive/",
+    kicker: "Nutrition sportive",
+    title: "Rendre gourmand un plat lyophilisé",
+    text: "Trente plats avec Marie de Livinhac, des barres 100 % réunionnaises avec Randofruits. Sans aucune huile essentielle.",
+    image: "/images/endurance.webp",
+    alt: "Repas d'effort et nutrition sportive",
+  },
+  {
+    href: "/creations-reunion/",
+    kicker: "Terroir de La Réunion",
+    title: "Créer avec le seul terroir de l'île",
+    text: "Combava, gros piment, massalé. Une contrainte d'origine transformée en signature, pour ceux qui fabriquent sur place.",
+    image: "/images/bocal.webp",
+    alt: "Produits de terroir réunionnais en bocal",
+  },
+];
+
+export function Creations() {
+  return (
+    <Section>
+      <Container>
+        <SectionHeader
+          kicker="Créations"
+          title="Trois terrains, une même lecture du goût"
+          lede="Ce que je développe pour mes clients, quand la gamme ne suffit pas."
+          align="center"
+        />
+        <Stagger className="mt-10 grid gap-4 lg:grid-cols-3">
+          {CREATIONS.map((c) => (
+            <StaggerItem key={c.href} className="h-full">
+              <Link href={c.href} className="block h-full">
+                <Spotlight className="card group flex h-full flex-col overflow-hidden rounded-3xl transition-all duration-500 hover:-translate-y-1.5">
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={asset(c.image)}
+                      alt={c.alt}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-7">
+                    <span className="kicker">{c.kicker}</span>
+                    <h3 className="font-display mt-3 text-xl leading-snug">
+                      {c.title}
+                    </h3>
+                    <p className="mt-3 flex-1 text-sm text-encre-soft">
+                      {c.text}
+                    </p>
+                    <span className="link-underline mt-5 inline-flex items-center gap-2 text-sm font-semibold text-vert">
+                      Voir les créations
+                      <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </Spotlight>
+              </Link>
+            </StaggerItem>
+          ))}
+        </Stagger>
+      </Container>
+    </Section>
+  );
+}
+
+/* ================================================== DEUX ATELIERS ======== */
+/**
+ * Double implantation demandée par le client : le siège reste Amiens, un
+ * second atelier existe à La Réunion. Bande volontairement courte, sur le
+ * modèle « Paris–New York ». Au retour en métropole, seul WORKSHOPS change.
+ */
+export function Workshops() {
+  return (
+    <section className="border-y border-line bg-surface">
+      <Container>
+        <div className="grid gap-8 py-12 lg:grid-cols-12 lg:items-center lg:gap-12 lg:py-14">
+          <div className="lg:col-span-4">
+            <Reveal>
+              <Kicker>Deux ateliers</Kicker>
+              <p className="font-display mt-4 text-3xl lg:text-4xl">
+                Amiens <span className="text-sauge">·</span> La Réunion
+              </p>
+            </Reveal>
+          </div>
+          <Stagger className="grid gap-8 sm:grid-cols-2 lg:col-span-8">
+            {WORKSHOPS.map((w) => (
+              <StaggerItem key={w.city}>
+                <p className="font-display text-lg">
+                  {w.city}
+                  <span className="ml-2 text-sm font-normal text-encre-soft">
+                    {w.region}
+                  </span>
+                </p>
+                <p className="mt-1 text-sm text-vert">{w.role}</p>
+                <p className="mt-3 text-sm text-encre-soft">{w.text}</p>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+      </Container>
+    </section>
   );
 }
 
@@ -436,7 +548,8 @@ export function FeaturedReferences() {
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <SectionHeader
             kicker="Références"
-            title="Quinze ans avec un MOF. Dix ans avec un fromager."
+            title="Ils ne cherchent plus ailleurs."
+            lede="Un Meilleur Ouvrier de France, deux champions du monde, un laboratoire d'innovation, des fromagers, des brasseurs. Certains depuis quinze ans."
             className="!max-w-2xl"
           />
           <Reveal delay={0.15}>

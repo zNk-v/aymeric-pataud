@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import {
+  Creations,
   FeaturedReferences,
   Hero,
   Hydrosolubles,
   LabelArgument,
   ProfileFork,
   ProofBar,
+  Workshops,
 } from "@/components/home";
 import { CtaBand, TedxBlock } from "@/components/blocks";
 
@@ -34,6 +36,8 @@ export default function Home() {
       <ProfileFork />
       <LabelArgument />
       <Hydrosolubles />
+      <Creations />
+      <Workshops />
       <FeaturedReferences />
       <TedxBlock compact />
       <CtaBand />

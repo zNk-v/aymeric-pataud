@@ -205,3 +205,106 @@ Deux détails techniques qui comptent :
   pas le contenu s'affiche quand même.
 - Les liens `/references/#mealk` posés depuis les pages profil continuent de
   fonctionner : la carte visée s'ouvre et la page défile jusqu'à elle.
+
+
+---
+
+## 15. Deuxième retour client : deux spécialités qui manquaient
+
+Le 17 août 2026, Aymeric envoie deux mails qui changent la structure.
+
+### La double implantation
+
+Le siège reste Amiens, l'atelier du goût existe des deux côtés. Le modèle
+qu'il donne est « Paris–New York », version « Amiens–La Réunion ». Une bande
+courte sur l'accueil, une mention dans le pied de page, et les deux lieux
+dans les données structurées.
+
+Tout tient dans `WORKSHOPS`, dans [`src/lib/site.ts`](../src/lib/site.ts). Au
+retour en métropole, en août 2027, seul ce tableau change.
+
+### Les fromagers, son plus fort potentiel
+
+Il est cofondateur de MEALK et peut communiquer librement sur ces créations :
+huit à neuf yaourts, cinq à six raclettes, des tommes de vache et de brebis,
+cinq à six beurres. Une page dédiée, `/creations-fromageres/`, avec le verrou
+technique qui a tout déclenché : aromatiser du lait avec une huile
+essentielle, alors que l'huile et l'eau ne se mélangent pas.
+
+Les fourchettes sont écrites telles qu'il les a données. Il n'a pas fourni de
+compte exact, on n'en invente pas un.
+
+### La nutrition sportive, une seconde spécialité
+
+Trente plats lyophilisés avec Marie de Livinhac, son visage associé à la
+marque Trek & Adventure, des barres 100 % réunionnaises avec Randofruits. Et
+surtout : **sans aucune huile essentielle**. C'est ce qui rend cette page
+utile au-delà d'elle-même, puisqu'elle prouve que sa méthode ne dépend pas de
+son outil. L'ultra-trail n'est pas une anecdote non plus : il mange ce
+qu'il conçoit.
+
+### Les produits de La Réunion, recadrés
+
+L'ancienne page les présentait comme un catalogue avec tarifs revendeur.
+C'était faux : il développe pour ses clients, ce sont eux qui vendent. La page
+devient `/creations-reunion/` et ne propose plus rien à l'achat. L'ancienne
+URL part en 301.
+
+### Toques Françaises et Collège Culinaire, séparés
+
+Deux faits distincts qu'il ne fallait pas fondre en un. Aymeric est membre des
+Toques Françaises. Les huiles essentielles culinaires viennent d'entrer au
+Collège Culinaire de France, ce qui est une première mondiale. La seconde
+information est la plus forte, elle attend sa date et sa source avant d'être
+affirmée.
+
+### Les livres
+
+Plus commercialisés. Sur sa demande, une ligne dans la biographie plutôt
+qu'une vitrine : le premier ouvrage au monde sur le sujet, en 2003. Pas de
+couverture, pas de lien d'achat.
+
+### Le nombre d'huiles
+
+Il proposait « plus de 70 ». Sa liste publiée en compte 64, recomptées une par
+une. Le site écrit « plus de 60 » et affiche le compte exact là où il est
+calculé. On n'annonce pas un chiffre qu'on ne peut pas montrer.
+
+### Les prix
+
+Pas de tarif public. Il adapte ses prix selon les clients, un prix affiché
+deviendrait un plafond. Et il est deux à quatre fois plus cher que le marché :
+une grille tarifaire invite à le comparer sur le seul critère où il perd.
+
+### Le titre des références
+
+« Quinze ans avec un MOF. Dix ans avec un fromager. » ne lui plaisait pas.
+Remplacé par **« Ils ne cherchent plus ailleurs. »**, qui vient de son propre
+site. Elle dit un résultat plutôt qu'une performance.
+
+### La carte « Chefs & traiteurs »
+
+Basculée du flacon vers le consulting et les masterclass, comme demandé.
+
+---
+
+## 16. Deux corrections techniques trouvées en chemin
+
+**Les couleurs.** Son code de charte, `#a9c3b8`, est à deux points par canal
+de ce que j'avais extrait de son logo. Adopté tel quel. C'est sa seule
+couleur : l'encre, le crème et le vert foncé lisible restent dérivés.
+
+**La marque.** Son logo écrit `DÉLICE & SENS`, au singulier, avec
+l'esperluette. Le site écrivait « Délices & Sens ». Corrigé partout.
+
+**Le site était blanc sans JavaScript.** Les animations d'apparition partent
+d'une opacité nulle inscrite dans le HTML statique, et rien ne les rattrapait.
+Une règle dans `<noscript>` remet désormais tout à l'état visible. Trente
+blocs concernés sur une page comme les créations fromagères.
+
+**Le menu passait à deux lignes.** Sept groupes de navigation ne tenaient plus
+en 1280 px. Approche resserrée entre 1024 et 1280 px, taille pleine au-delà.
+
+**La fourche par profil a perdu ses images.** La section Créations, juste en
+dessous, en porte déjà trois. Deux rangées de cartes illustrées qui se suivent
+alourdissaient la page sans rien ajouter.

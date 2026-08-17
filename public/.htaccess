@@ -24,6 +24,9 @@ ErrorDocument 404 /404.html
 
   # ---------------------------------------- Anciennes URLs WordPress -------
   RewriteRule ^accueil-ap/?$                        /                                      [R=301,L]
+
+  # URL d'aperçu renommée : la page ne vend plus, elle documente des créations
+  RewriteRule ^produits-reunion/?$                  /creations-reunion/                    [R=301,L]
   RewriteRule ^aymeric-pataud-2/?$                  /aymeric-pataud/                       [R=301,L]
   RewriteRule ^chef-consultant-expert-du-gout/?$    /expertise-du-gout/                    [R=301,L]
   RewriteRule ^expertise-accompagnement/?$          /expertise-du-gout/                    [R=301,L]

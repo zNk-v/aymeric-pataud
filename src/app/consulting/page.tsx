@@ -6,13 +6,19 @@ import {
   QuoteBanner,
   SplitBlock,
 } from "@/components/page-blocks";
-import { Container, Placeholder, Section, SectionHeader } from "@/components/ui";
+import {
+  Container,
+  Kicker,
+  Placeholder,
+  Section,
+  SectionHeader,
+} from "@/components/ui";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
 
 export const metadata: Metadata = {
-  title: "Consulting",
+  title: "Consulting & masterclass",
   description:
-    "Accompagnement R&D, création de recette, formation d'équipe et démonstration. Un chef consultant qui règle un problème de goût, pas un fournisseur d'ingrédients.",
+    "Accompagnement R&D, création de recette, masterclass autour du goût et des huiles essentielles culinaires. Un chef consultant qui règle un problème de goût, pas un fournisseur d'ingrédients.",
   alternates: { canonical: "/consulting/" },
 };
 
@@ -26,8 +32,8 @@ const FORMATS = [
     text: "Développement complet, du concept au produit fini. Ce que le produit doit dire, ce que le marché attend, ce que la bouche perçoit réellement.",
   },
   {
-    title: "Formation & démonstration",
-    text: "Sessions pour brigades, équipes R&D ou commerciales. Comprendre la structure d'un goût, apprendre à doser une huile essentielle, sortir des réflexes d'aromatisation.",
+    title: "Masterclass du goût",
+    text: "Une journée pour comprendre la structure d'un goût, apprendre à doser une huile essentielle au dixième de goutte et sortir des réflexes d'aromatisation. Pour brigades, équipes R&D ou commerciales.",
   },
   {
     title: "Événements d'entreprise",
@@ -65,7 +71,7 @@ export default function Page() {
   return (
     <>
       <PageHero
-        kicker="Consulting"
+        kicker="Consulting & masterclass"
         title="Je ne vends pas des flacons. Je règle un problème."
         lede="Le plus souvent en une phrase, après avoir goûté. C'est pour cela que mes clients acceptent un tarif deux à quatre fois supérieur au marché, et qu'ils ne repartent pas."
         image="/images/portrait-atelier.webp"
@@ -122,6 +128,66 @@ export default function Page() {
       </SplitBlock>
 
       {/* Exemples d'accompagnements */}
+      {/* Masterclass — demandée par le client le 17 août 2026. Le format
+          commercial n'est pas encore arrêté : la page décrit l'intention, pas
+          une offre chiffrée. */}
+      <Section tone="deep" id="masterclass">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
+            <div className="lg:col-span-5">
+              <Reveal>
+                <Kicker>Masterclass</Kicker>
+                <h2 className="font-display mt-5 text-balance text-4xl leading-[1.08] lg:text-5xl">
+                  Apprendre à lire un goût, pas à suivre une recette
+                </h2>
+                <p className="lede mt-6">
+                  Un format né des démonstrations que je fais depuis vingt ans
+                  en cuisine et en laboratoire. On goûte, on démonte, on
+                  reconstruit.
+                </p>
+              </Reveal>
+            </div>
+            <div className="lg:col-span-7">
+              <Stagger className="grid gap-4 sm:grid-cols-2">
+                {[
+                  {
+                    t: "Pour une brigade",
+                    d: "Sortir des assaisonnements réflexes et signer une carte avec des goûts qu'on ne trouve pas ailleurs.",
+                  },
+                  {
+                    t: "Pour une équipe R&D",
+                    d: "Comprendre ce que l'aromatique peut et ne peut pas corriger, avant de lancer un développement.",
+                  },
+                  {
+                    t: "Pour une équipe commerciale",
+                    d: "Savoir raconter un produit en parlant de ce qui se passe en bouche, pas de sa fiche technique.",
+                  },
+                  {
+                    t: "En teambuilding",
+                    d: "Un atelier qui fonctionne parce que personne n'a jamais goûté ce que je fais goûter.",
+                  },
+                ].map((m) => (
+                  <StaggerItem key={m.t} className="h-full">
+                    <div className="card h-full rounded-3xl p-7">
+                      <h3 className="font-display text-xl">{m.t}</h3>
+                      <p className="mt-3 text-sm text-encre-soft">{m.d}</p>
+                    </div>
+                  </StaggerItem>
+                ))}
+              </Stagger>
+              <Reveal delay={0.15}>
+                <Placeholder title="Format, durée et tarif" className="mt-6">
+                  Aymeric doit arrêter le format commercial : durée, nombre de
+                  participants, lieu, matériel fourni et prix. Tant que ce
+                  n&apos;est pas cadré, la page décrit l&apos;intention sans
+                  afficher d&apos;offre.
+                </Placeholder>
+              </Reveal>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       <Section>
         <Container>
           <SectionHeader

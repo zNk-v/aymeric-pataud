@@ -2,10 +2,12 @@
 
 /* ---------------------------------------------------------------------------
    TOKENS
-   Palette extraite du logo : encre quasi noire légèrement verte (#282c2b),
-   sauge (#a7c1b6). Un seul accent, le reste en neutres chauds.
-   Le sauge du logo est trop clair pour du texte : la version lisible est
-   --color-vert (6.6:1 sur le crème, au-dessus de AA).
+   Le sauge #a9c3b8 est le code fourni par Aymeric (« verts gris pastel »).
+   C'est la seule couleur de sa charte : l'encre, le crème et le vert foncé
+   sont dérivés. Le sauge est trop clair pour du texte, la version lisible
+   est --color-vert (6,6:1 sur le crème, au-dessus de AA).
+   Le vert menthe du logo Délice & Sens est une autre marque : il n'apparaît
+   que sur ce logo, jamais dans l'interface.
 --------------------------------------------------------------------------- */
 @theme {
   --color-creme: #f6f2ea; /* fond principal */
@@ -19,7 +21,7 @@
   --color-vert-clair: #547567; /* hover */
   --color-vert-fonce: #26382f; /* fonds inversés */
 
-  --color-sauge: #a7c1b6; /* décor : halos, filets, aplats */
+  --color-sauge: #a9c3b8; /* décor : halos, filets, aplats — code charte client */
   --color-sauge-pale: #d3e0d9;
 
   --color-line: rgba(22, 26, 24, 0.12);
@@ -147,15 +149,15 @@ body {
   filter: blur(90px);
   background: radial-gradient(
     circle,
-    rgba(167, 193, 182, 0.5),
-    rgba(167, 193, 182, 0) 70%
+    rgba(169, 195, 184, 0.5),
+    rgba(169, 195, 184, 0) 70%
   );
 }
 .halo-soft {
   background: radial-gradient(
     circle,
-    rgba(167, 193, 182, 0.3),
-    rgba(167, 193, 182, 0) 70%
+    rgba(169, 195, 184, 0.3),
+    rgba(169, 195, 184, 0) 70%
   );
 }
 
@@ -179,7 +181,7 @@ body {
   transition: opacity 0.45s var(--ease-soft);
   background: radial-gradient(
     360px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(167, 193, 182, 0.26),
+    rgba(169, 195, 184, 0.26),
     transparent 62%
   );
   z-index: -1;

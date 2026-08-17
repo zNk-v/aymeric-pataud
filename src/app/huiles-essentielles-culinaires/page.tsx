@@ -9,7 +9,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Huiles essentielles culinaires",
   description:
-    "Plus de 70 huiles essentielles culinaires professionnelles, 100 % issues de plantes, sans solvant ni additif. Versions liposolubles et hydrosolubles, dosage jusqu'à 0,05 g/kg.",
+    "Plus de 60 huiles essentielles culinaires professionnelles, 100 % issues de plantes, sans solvant ni additif. Versions liposolubles et hydrosolubles, dosage jusqu'à 0,05 g/kg.",
   alternates: { canonical: "/huiles-essentielles-culinaires/" },
 };
 

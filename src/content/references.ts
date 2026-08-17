@@ -66,7 +66,7 @@ export const REFERENCES: Reference[] = [
     challenge:
       "Il forme les meilleurs pâtissiers de France et du monde. À ce niveau, aucun compromis n'est possible sur les ingrédients.",
     work:
-      "Après avoir testé ce qui existe sur le marché, il a jugé les aromatisations végétales Délices & Sens au-dessus de tout ce qu'il avait trouvé ailleurs.",
+      "Après avoir testé ce qui existe sur le marché, il a jugé les aromatisations végétales Délice & Sens au-dessus de tout ce qu'il avait trouvé ailleurs.",
     result:
       "Il les utilise pour ses propres créations pâtissières et les recommande à ses clients.",
     pullQuote:
