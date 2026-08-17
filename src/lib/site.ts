@@ -34,7 +34,7 @@ export const SITE = {
     host: "OVH SAS, 2 rue Kellermann, 59100 Roubaix, France",
   },
   social: {
-    linkedin: "https://www.linkedin.com/in/aymeric-pataud",
+    linkedin: "https://www.linkedin.com/in/aymeric-pataud/",
     instagram: "https://www.instagram.com/aymericpataud.fr/",
     facebook: "https://www.facebook.com/AymericPataudTwisteur/",
   },

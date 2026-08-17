@@ -12,6 +12,7 @@ import {
   Placeholder,
   Section,
   SectionHeader,
+  TextLink,
 } from "@/components/ui";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
 
@@ -128,6 +129,35 @@ export default function Page() {
       </SplitBlock>
 
       {/* Exemples d'accompagnements */}
+      {/* La Réunion : sur place, il n'a quasiment pas de concurrence. C'est un
+          argument commercial daté, il vaut jusqu'à son retour en métropole. */}
+      <SplitBlock
+        kicker="À La Réunion"
+        title="Sur l'île, je suis à peu près seul à faire ce métier."
+        image="/images/atelier-extracteur.webp"
+        imageAlt="L'atelier du goût de La Saline-les-Hauts"
+        ratio="5/4"
+        reverse
+      >
+        <p>
+          En métropole, un industriel qui cherche un consultant en goût a
+          l&apos;embarras du choix. À La Réunion, la concurrence est quasi
+          inexistante : grands hôtels, agroalimentaire local, transformateurs
+          de produits du terroir trouvent rarement quelqu&apos;un qui sache
+          lire une recette et la corriger sur place.
+        </p>
+        <p>
+          Mon atelier du goût de La Saline-les-Hauts me permet d&apos;intervenir
+          dans la semaine, avec le matériel, plutôt que de faire voyager des
+          échantillons pendant un mois.
+        </p>
+        <p>
+          <TextLink href="/creations-reunion/">
+            Voir ce que je développe sur l&apos;île
+          </TextLink>
+        </p>
+      </SplitBlock>
+
       {/* Masterclass — demandée par le client le 17 août 2026. Le format
           commercial n'est pas encore arrêté : la page décrit l'intention, pas
           une offre chiffrée. */}

@@ -20,8 +20,7 @@ que le contenu arrive.
 | `/creations-fromageres/` | Photos des créations MEALK | Yaourts, tommes, raclettes, beurres, gamme par gamme. Sans elles, la page reste une liste. |
 | `/nutrition-sportive/` | Visuels Trek & Adventure | Packaging des trente plats lyophilisés et date de lancement. Son nom et son visage seront associés à la marque : à dire explicitement une fois confirmé. |
 | `/consulting/` | Format des masterclass | Durée, nombre de participants, lieu, matériel, prix. La page décrit l'intention, pas une offre chiffrée. |
-| `/aymeric-pataud/` | Entrée au Collège Culinaire | Date et source de l'entrée des huiles essentielles culinaires. Première mondiale revendiquée : elle ne sera affirmée qu'avec sa source. |
-| `/aymeric-pataud/` | Dates et liens de presse | Six dossiers fournis en scan. Les articles restent la propriété des journaux : on cite et on renvoie, on ne republie pas. Manquent les dates et les liens. |
+| `/aymeric-pataud/` | Dates et liens de presse | Aymeric juge la presse secondaire (grand public, hors cible). Le bloc reste court. Manquent les dates, et l'identification de l'article de 2026 : Vital Food n°48 est le candidat le plus probable, à confirmer. |
 | `/references/` | Nouveaux clients | Aymeric a signé plusieurs clients depuis. Il faut leur accord écrit avant d'afficher leur logo, puis le logo et une ligne de contexte pour chacun. |
 
 ---
@@ -133,10 +132,15 @@ publiée. Il pense en avoir plus de 70 aujourd'hui. Le chiffre exact sera
 catalogue sera téléchargeable contre une adresse e-mail, ce qui alimente sa
 base de contacts, et les tarifs se discutent au téléphone.
 
-### La confirmation MEALK
-Aymeric doit confirmer par écrit qu'il est cofondateur de MEALK et qu'il peut
-communiquer librement sur ces créations. La page `/creations-fromageres/`
-l'affirme aujourd'hui sur la foi de son mail.
+### ~~La confirmation MEALK~~ — obtenue le 17/08/2026
+Confirmé par écrit : cofondateur de la marque MEALK, libre de communiquer sur
+ces créations. La mention est passée dans ses repères biographiques.
+
+### Les visuels MEALK générés par IA
+Aymeric envisage de faire produire les visuels manquants par IA, avec
+Vorombola. À trancher : une photo de produit générée ne montre pas le produit
+réel. Sur une page qui sert de preuve à des fabricants, l'écart se voit et se
+retourne contre lui. Mieux vaut peu de vraies photos que beaucoup de fausses.
 
 ### Le nombre de collaborations
 Le WordPress annonçait 12 cas, il y en a 14 après relecture (La Pétrie et

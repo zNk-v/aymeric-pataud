@@ -417,33 +417,33 @@ export function LabelArgument() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <LabelCard
                   variant="before"
-                  title="Formulation classique"
+                  title="Gâteau au citron, formulation classique"
                   lines={[
+                    "Farine",
                     "Sucre",
-                    "Eau",
-                    "Jus concentré",
-                    "arôme naturel de citron",
-                    "arôme",
-                    "Acidifiant : E330",
-                    "Conservateur : E202",
+                    "Œufs",
+                    "Beurre",
+                    "Levure",
+                    "Arôme naturel",
                   ]}
                 />
                 <LabelCard
                   variant="after"
-                  title="Avec mes huiles"
+                  title="Le même gâteau, avec mes huiles"
                   lines={[
+                    "Farine",
                     "Sucre",
-                    "Eau",
-                    "Jus concentré",
+                    "Œufs",
+                    "Beurre",
+                    "Levure",
                     "Huile essentielle de citron",
-                    "Acidifiant : E330",
                   ]}
                 />
               </div>
               <p className="mt-5 text-sm text-encre-soft">
-                Exemple de lecture d&apos;étiquette. La déclaration exacte
-                dépend de la matrice, du dosage et de la réglementation
-                applicable à votre catégorie de produit.
+                Même recette, même liste, un seul mot qui change. La
+                déclaration exacte dépend de la matrice, du dosage et de la
+                réglementation applicable à votre catégorie de produit.
               </p>
             </Reveal>
           </div>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CtaBand, NextSteps, PageHero } from "@/components/blocks";
 import { FeatureGrid, QuoteBanner, SplitBlock } from "@/components/page-blocks";
-import { Container, Section, SectionHeader } from "@/components/ui";
+import { Container, Section, SectionHeader, TextLink } from "@/components/ui";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
 import { REFERENCES } from "@/content/references";
 import { asset } from "@/lib/asset";
@@ -36,7 +36,12 @@ const APPLICATIONS = [
   },
 ];
 
-const CAS_SLUGS = ["mealk", "la-comtoise", "brasserie-felicite"];
+/**
+ * Périmètre de cette page : la technique, et les matrices aqueuses autres que
+ * le lait. Les créations laitières ont leur propre page, /creations-fromageres/,
+ * et Mealk n'apparaît donc plus ici en preuve : il y serait redondant.
+ */
+const CAS_SLUGS = ["la-comtoise", "brasserie-felicite", "very-foody"];
 
 export default function Page() {
   const cas = REFERENCES.filter((r) => CAS_SLUGS.includes(r.slug));
@@ -131,12 +136,34 @@ export default function Page() {
         troisième voie.
       </QuoteBanner>
 
+      {/* Renvoi unique vers la page qui montre ce que la technique donne. */}
+      <SplitBlock
+        kicker="Ce que ça donne"
+        title="Le lait a sa propre page."
+        image="/images/yaourt-orange-tonka.webp"
+        imageAlt="Yaourt MEALK orange et fève de tonka"
+        ratio="5/4"
+        reverse
+      >
+        <p>
+          Cette page explique comment la technique fonctionne. Les créations
+          qu&apos;elle a rendues possibles sont ailleurs : yaourts, tommes,
+          raclettes et beurres développés avec MEALK, dont je suis
+          cofondateur.
+        </p>
+        <p>
+          <TextLink href="/creations-fromageres/">
+            Voir les créations fromagères et laitières
+          </TextLink>
+        </p>
+      </SplitBlock>
+
       {/* Preuves */}
       <Section tone="deep">
         <Container>
           <SectionHeader
             kicker="Trois preuves"
-            title="Un fromager, un industriel du fromage, une brasserie"
+            title="Une industrie fromagère, une brasserie, un laboratoire"
           />
           <Stagger className="mt-14 grid gap-5 lg:grid-cols-3">
             {cas.map((r) => (

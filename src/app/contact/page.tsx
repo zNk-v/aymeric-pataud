@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Container, Kicker, Section } from "@/components/ui";
 import ContactForm from "@/components/ContactForm";
 import { LogoWall } from "@/components/blocks";
-import { SITE } from "@/lib/site";
+import { SITE, WORKSHOPS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -74,13 +74,33 @@ export default function Page() {
                   </div>
                 </div>
 
+                {/* La double implantation remonte ici : c'est la première
+                    page que consulte quelqu'un qui veut savoir où on est. */}
                 <div>
-                  <Kicker>Adresse</Kicker>
-                  <address className="mt-5 not-italic text-encre-soft">
-                    {SITE.address.street}
-                    <br />
-                    {SITE.address.postalCode} {SITE.address.city}
-                  </address>
+                  <Kicker>Où je travaille</Kicker>
+                  <p className="font-display mt-5 text-2xl">
+                    {SITE.footprint}
+                  </p>
+                  <div className="mt-6 space-y-6">
+                    {WORKSHOPS.map((w) => (
+                      <div key={w.city}>
+                        <p className="font-medium">
+                          {w.city}
+                          <span className="ml-2 text-sm font-normal text-encre-soft">
+                            {w.region}
+                          </span>
+                        </p>
+                        <p className="mt-1 text-sm text-vert">{w.role}</p>
+                        {w.lead ? (
+                          <address className="mt-2 not-italic text-sm text-encre-soft">
+                            {SITE.address.street}
+                            <br />
+                            {SITE.address.postalCode} {SITE.address.city}
+                          </address>
+                        ) : null}
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 <div>

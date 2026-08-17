@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Le chef",
   description:
-    "Chef de formation, membre des Toques Françaises, auteur du premier ouvrage au monde sur les huiles essentielles en cuisine (2003) et conférencier TEDx. Vingt-cinq ans à travailler le goût comme un langage.",
+    "Chef de formation, membre des Toques Françaises, cofondateur de la marque de fromagerie MEALK, auteur du premier ouvrage au monde sur les huiles essentielles en cuisine (2003) et conférencier TEDx.",
   alternates: { canonical: "/aymeric-pataud/" },
 };
 
@@ -25,7 +25,8 @@ const REPERES = [
   { year: "2003", text: "Premier ouvrage au monde sur les huiles essentielles en cuisine" },
   { year: "2009", text: `Création de la marque ${SITE.brand}` },
   { year: "2013", text: "Invention des huiles essentielles culinaires hydrosolubles" },
-  { year: "Aujourd'hui", text: "Laboratoire d'innovation et éco-extracteur breveté" },
+  { year: "Depuis", text: "Cofondateur de MEALK, marque de fromagerie" },
+  { year: "Aujourd'hui", text: "Deux ateliers du goût, Amiens et La Réunion" },
 ];
 
 export default function Page() {
@@ -201,10 +202,10 @@ export default function Page() {
         <Container>
           <SectionHeader
             kicker="Reconnaissances"
-            title="Chef d'abord, et une catégorie qui entre dans l'institution"
+            title="Chef, cofondateur, et une catégorie qui entre dans l'institution"
             align="center"
           />
-          <Stagger className="mt-12 grid gap-4 md:grid-cols-2">
+          <Stagger className="mt-12 grid gap-4 md:grid-cols-3">
             {MEMBERSHIPS.map((m) => (
               <StaggerItem key={m.name} className="h-full">
                 <div className="card flex h-full flex-col rounded-3xl p-8">
@@ -220,12 +221,6 @@ export default function Page() {
                   <h3 className="font-display mt-7 text-2xl">{m.name}</h3>
                   <p className="mt-2 text-sm text-vert">{m.role}</p>
                   <p className="mt-4 flex-1 text-encre-soft">{m.text}</p>
-                  {m.pendingSource ? (
-                    <p className="mt-6 border-t border-line pt-4 text-sm text-encre-soft/80">
-                      Date et source à confirmer par Aymeric avant la mise en
-                      ligne.
-                    </p>
-                  ) : null}
                 </div>
               </StaggerItem>
             ))}

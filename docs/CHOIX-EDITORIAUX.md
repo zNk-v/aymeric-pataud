@@ -308,3 +308,59 @@ en 1280 px. Approche resserrée entre 1024 et 1280 px, taille pleine au-delà.
 **La fourche par profil a perdu ses images.** La section Créations, juste en
 dessous, en porte déjà trois. Deux rangées de cartes illustrées qui se suivent
 alourdissaient la page sans rien ajouter.
+
+
+---
+
+## 17. L'articulation entre les trois pages qui parlaient de fromage
+
+Aymeric a repéré le risque tout seul : « je ne veux pas qu'on se retrouve avec
+deux pages qui racontent la même chose à moitié chacune ». Il avait raison,
+les pages hydrosolubles et créations fromagères citaient exactement le même
+trio Mealk / La Comtoise / Brasserie Félicité.
+
+La règle retenue tient en une phrase : **une page répond à « comment ça
+marche », l'autre à « ce que ça donne ».**
+
+| Page | Périmètre | Preuves |
+|---|---|---|
+| `/huiles-essentielles-hydrosolubles/` | La technique, et toutes les matrices aqueuses **sauf le lait** | La Comtoise, Brasserie Félicité, Very Foody |
+| `/creations-fromageres/` | Le lait et les produits laitiers | MEALK seul |
+
+Chacune renvoie vers l'autre une fois, avec un bloc explicite. Mealk reste cité
+sur la page hydrosolubles dans la citation d'origine, puisque c'est de son
+problème qu'est née la technique, mais aucune gamme n'y est détaillée.
+
+**Mealk quitte `/artisans-et-producteurs/`.** Fromager, affineur et
+distributeur premium, il n'est pas un producteur qui transforme sa propre
+récolte. Pré Grandin et Randofruits tiennent ce rôle bien mieux.
+
+---
+
+## 18. Ce qu'Aymeric a tranché le 17 août
+
+- **Couleurs** : il n'a pas de charte plus complète que son code. Les
+  dérivations sont validées.
+- **Collège Culinaire de France** : entrée en **mai 2026**. La date est posée,
+  le placeholder retiré.
+- **MEALK** : il confirme par écrit être cofondateur. La mention passe dans
+  ses repères biographiques, où elle manquait. Chef et cofondateur d'une marque
+  de fromagerie, c'est un marqueur d'autorité que rien ne remplaçait.
+- **Presse** : il la juge secondaire, ces articles visent le grand public et
+  pas les industriels qu'il cherche. Le bloc reste court, il prouve la présence
+  médiatique sans occuper la page.
+- **Étiquetage** : son exemple est meilleur que le mien. J'avais construit une
+  boisson avec acidifiant et conservateur, ce qui brouillait la lecture. Il
+  propose un gâteau, où une seule ligne change :
+
+  > Farine, sucre, œufs, beurre, levure, **arôme naturel**.
+  > Farine, sucre, œufs, beurre, levure, **huile essentielle de citron**.
+
+  Même recette, même liste, un seul mot. C'est plus parlant et ça évite de
+  faire une promesse sur les additifs qu'on ne peut pas tenir.
+- **La Réunion sur le consulting** : la concurrence y est quasi inexistante.
+  L'argument manquait, il est maintenant sur la page, avec le délai
+  d'intervention comme preuve concrète.
+- **Contact** : la double implantation remonte sur la page elle-même, pas
+  seulement dans le pied de page. C'est la première page que consulte
+  quelqu'un qui cherche où on est basé.

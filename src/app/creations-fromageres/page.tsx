@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { CtaBand, NextSteps, PageHero, ReferenceCards } from "@/components/blocks";
 import { QuoteBanner, SplitBlock } from "@/components/page-blocks";
 import {
+  Button,
   Container,
   Kicker,
   Placeholder,
@@ -11,7 +11,6 @@ import {
 } from "@/components/ui";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
 import { DAIRY_LOCK, DAIRY_RANGES } from "@/content/creations";
-import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Créations fromagères et laitières",
@@ -120,62 +119,39 @@ export default function Page() {
         </p>
       </SplitBlock>
 
-      {/* Au-delà du yaourt */}
+      {/* Périmètre : cette page traite le lait et les produits laitiers.
+          Les autres matrices aqueuses (bière, boisson, sauce) vivent sur la
+          page hydrosolubles, qui explique la technique. Un seul renvoi. */}
       <Section tone="deep">
-        <Container>
-          <SectionHeader
-            kicker="Le même savoir-faire ailleurs"
-            title="Sauces fromagères, boissons, bières"
-            lede="Le verrou est le même partout où il faut aromatiser une base aqueuse. Les hydrosolubles le lèvent."
-          />
-          <Stagger className="mt-12 grid gap-4 md:grid-cols-3">
-            {[
-              {
-                t: "La Comtoise",
-                d: "Sauces et spécialités fromagères pour l'industrie et le foodservice. Une profondeur aromatique impossible à atteindre autrement.",
-                img: "/images/fromage.webp",
-              },
-              {
-                t: "Brasserie Félicité",
-                d: "Une bière à la rose, aromatisée avec une vraie huile essentielle. Fini les arômes de synthèse et les molécules isolées.",
-                img: "/images/boisson.webp",
-              },
-              {
-                t: "Very Foody",
-                d: "Un laboratoire d'innovation qui intègre mes huiles dans les boissons et les sauces qu'il développe pour ses clients.",
-                img: "/images/goutte.webp",
-              },
-            ].map((c) => (
-              <StaggerItem key={c.t} className="h-full">
-                <div className="card flex h-full flex-col overflow-hidden rounded-3xl">
-                  <div className="relative aspect-[16/10]">
-                    <Image
-                      src={asset(c.img)}
-                      alt=""
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col p-7">
-                    <h3 className="font-display text-xl">{c.t}</h3>
-                    <p className="mt-3 text-sm text-encre-soft">{c.d}</p>
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
+        <Container size="narrow" className="text-center">
+          <Reveal>
+            <Kicker>Au-delà du lait</Kicker>
+            <p className="font-display mt-6 text-balance text-3xl leading-[1.12] lg:text-4xl">
+              Le même verrou existe dans une bière, un sirop ou une sauce.
+            </p>
+            <p className="lede mx-auto mt-7 max-w-2xl">
+              Partout où il faut aromatiser une base aqueuse, l&apos;huile et
+              l&apos;eau posent le même problème. La technique qui le résout,
+              et les matrices qu&apos;elle couvre, sont détaillées sur la page
+              dédiée.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <Button href="/huiles-essentielles-hydrosolubles/" variant="outline">
+                Comment fonctionnent les hydrosolubles
+              </Button>
+            </div>
+          </Reveal>
         </Container>
       </Section>
 
       <ReferenceCards
-        slugs={["mealk", "la-comtoise", "brasserie-felicite"]}
-        kicker="Les collaborations"
-        title="Ce que ça donne chez eux"
+        slugs={["mealk"]}
+        kicker="La collaboration"
+        title="Dix ans avec un fromager visionnaire"
       />
 
       <CtaBand
-        title="Vous fabriquez des fromages, des yaourts ou des boissons ?"
+        title="Vous fabriquez des fromages, des yaourts ou des beurres ?"
         lede="Trente minutes suffisent pour savoir si l'aromatisation hydrosoluble a du sens sur votre gamme."
       />
 

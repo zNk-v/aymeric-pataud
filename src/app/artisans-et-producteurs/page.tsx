@@ -130,17 +130,19 @@ export default function Page() {
       </SplitBlock>
 
       <ReferenceCards
+        // Mealk sort d'ici : fromager-affineur-distributeur premium, il n'est
+        // pas un producteur qui transforme sa propre récolte. Sa place est sur
+        // /creations-fromageres/.
         slugs={[
           "pre-grandin",
           "randofruits",
           "brasserie-felicite",
           "bille-en-tete",
-          "mealk",
           "maison-perrotte",
         ]}
         kicker="Preuves"
         title="Des producteurs devenus des marques"
-        lede="Un agriculteur transformateur, un fabricant de barres 100 % terroir, une brasserie, un chocolatier, un fromager."
+        lede="Un agriculteur transformateur, un fabricant de barres 100 % terroir, une brasserie, un chocolatier, un confiturier champion du monde."
       />
 
       <CtaBand

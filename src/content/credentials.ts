@@ -7,11 +7,17 @@
  *    de France, ce qui est une première mondiale. Ce n'est pas une
  *    appartenance personnelle, c'est une reconnaissance de la catégorie.
  *
- * La date et la source de cette entrée manquent encore : tant qu'elles ne
- * sont pas fournies, la mention reste au conditionnel factuel, sans date.
+ * Date de l'entrée au Collège Culinaire : mai 2026, confirmée par Aymeric
+ * le 17 août 2026.
  */
 
 export const MEMBERSHIPS = [
+  {
+    name: "MEALK",
+    role: "Cofondateur",
+    text: "Chef et cofondateur d'une marque de fromagerie. C'est de cette double casquette que sont nées les huiles essentielles hydrosolubles, puis les gammes de yaourts, tommes, raclettes et beurres.",
+    logo: "/images/logos/mealk.webp",
+  },
   {
     name: "Les Toques Françaises",
     role: "Membre",
@@ -20,10 +26,9 @@ export const MEMBERSHIPS = [
   },
   {
     name: "Collège Culinaire de France",
-    role: "Les huiles essentielles culinaires y sont entrées",
+    role: "Les huiles essentielles culinaires y sont entrées en mai 2026",
     text: "Une première mondiale : la catégorie est désormais reconnue par l'institution qui rassemble les artisans et les producteurs de qualité en France.",
     logo: "/images/institutions/college-culinaire-france.png",
-    pendingSource: true,
   },
 ];
 
@@ -42,12 +47,13 @@ export const BOOKS = {
 /**
  * Mentions presse.
  *
- * Le client a fourni les scans et les captures, pas les métadonnées. Les
- * articles restent la propriété des journaux : on cite le média et on renvoie
- * vers la publication, on ne republie pas les pages.
+ * Aymeric les juge secondaires : ces articles visent le grand public, pas les
+ * industriels qu'il cherche. Le bloc reste donc court, il prouve la présence
+ * médiatique sans occuper la page.
  *
- * `date` et `url` restent nuls tant qu'Aymeric ne les a pas confirmés. Le
- * composant n'affiche que ce qui est renseigné.
+ * Les articles restent la propriété des journaux : on cite le média, on ne
+ * republie pas les pages. `date` et `url` restent nuls tant qu'Aymeric ne les
+ * a pas confirmés, le composant n'affiche que ce qui est renseigné.
  */
 export type PressItem = {
   outlet: string;
@@ -57,36 +63,11 @@ export type PressItem = {
 };
 
 export const PRESS: PressItem[] = [
-  {
-    outlet: "Le Journal d'Amiens Métropole",
-    subject: "L'atelier et l'éco-extracteur",
-    date: null,
-    url: null,
-  },
-  {
-    outlet: "Vital Food",
-    subject: "Les huiles essentielles en cuisine",
-    date: null,
-    url: null,
-  },
-  {
-    outlet: "CB13",
-    subject: "Dossier huiles essentielles culinaires",
-    date: null,
-    url: null,
-  },
-  {
-    outlet: "Dicila",
-    subject: "Portrait et savoir-faire aromatique",
-    date: null,
-    url: null,
-  },
-  {
-    outlet: "La Gazette de Picardie",
-    subject: "Le chef qui twiste les recettes",
-    date: null,
-    url: null,
-  },
+  { outlet: "Vital Food", subject: "Les huiles essentielles passent à table", date: null, url: null },
+  { outlet: "Le Journal d'Amiens Métropole", subject: "L'atelier et l'éco-extracteur", date: null, url: null },
+  { outlet: "CB13", subject: "Dossier huiles essentielles culinaires", date: null, url: null },
+  { outlet: "La Gazette de Picardie", subject: "Le chef qui twiste les recettes", date: null, url: null },
+  { outlet: "Dicila", subject: "Portrait et savoir-faire aromatique", date: null, url: null },
 ];
 
 /** Les journalistes le sollicitent comme référence sur le sujet. */
