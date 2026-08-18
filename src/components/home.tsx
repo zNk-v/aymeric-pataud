@@ -241,6 +241,14 @@ const CREATIONS = [
     alt: "Repas d'effort et nutrition sportive",
   },
   {
+    href: "/creations-tartinables/",
+    kicker: "Tartinables & condiments",
+    title: "Diviser le sucre par deux sans perdre la gourmandise",
+    text: "Ketchup, sauce burger sans œufs, caviar d'aubergines. Huit recettes développées sous cahier des charges, du concept au produit stable en rayon.",
+    image: "/images/tartinables.webp",
+    alt: "Gamme de tartinables et condiments premium",
+  },
+  {
     href: "/creations-reunion/",
     kicker: "Terroir de La Réunion",
     title: "Créer avec le seul terroir de l'île",
@@ -256,11 +264,11 @@ export function Creations() {
       <Container>
         <SectionHeader
           kicker="Créations"
-          title="Trois terrains, une même lecture du goût"
-          lede="Ce que je développe pour mes clients, quand la gamme ne suffit pas."
+          title="Le domaine change. La méthode, non."
+          lede="Crémerie, nutrition sportive, épicerie fine, terroir. Derrière chaque recette, un cahier des charges précis et un obstacle à franchir."
           align="center"
         />
-        <Stagger className="mt-10 grid gap-4 lg:grid-cols-3">
+        <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {CREATIONS.map((c) => (
             <StaggerItem key={c.href} className="h-full">
               <Link href={c.href} className="block h-full">

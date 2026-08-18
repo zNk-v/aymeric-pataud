@@ -24,10 +24,11 @@ export const metadata: Metadata = {
 };
 
 /**
- * MEALK est nommé librement ici : Aymeric en est cofondateur et il a créé la
- * plupart des recettes. Le bloc « Qui fait quoi » lève l'ambiguïté qu'il
- * craignait, à savoir qu'un lecteur pense que la marque lui appartient. Ne pas
- * supprimer ce bloc.
+ * MEALK est nommé librement : Aymeric en est cofondateur et il a créé la
+ * plupart des recettes. Le bloc « Qui fait quoi » qui détaillait son statut a
+ * été retiré à sa demande le 19 août : « ça n'intéresse personne, et à aucun
+ * moment je ne dis que j'exploite la marque ». Le détail reste dans sa
+ * biographie, en une phrase.
  */
 export default function Page() {
   return (
@@ -92,35 +93,6 @@ export default function Page() {
               </StaggerItem>
             ))}
           </Stagger>
-
-          {/* Attribution explicite : sans elle, un lecteur conclut que la
-              marque appartient à Aymeric. */}
-          <Reveal delay={0.15}>
-            <div className="card mt-10 rounded-3xl p-8 lg:p-10">
-              <Kicker>Qui fait quoi</Kicker>
-              <div className="mt-6 grid gap-8 md:grid-cols-2">
-                <div>
-                  <p className="font-display text-xl">Ce que je fais</p>
-                  <p className="mt-3 text-encre-soft">
-                    {DAIRY_ROLE.role} de{" "}
-                    <a
-                      href={DAIRY_ROLE.brandUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="link-underline font-medium text-vert"
-                    >
-                      {DAIRY_ROLE.brand}
-                    </a>
-                    {`. ${DAIRY_ROLE.does}`}
-                  </p>
-                </div>
-                <div>
-                  <p className="font-display text-xl">Ce que je ne fais pas</p>
-                  <p className="mt-3 text-encre-soft">{DAIRY_ROLE.doesNot}</p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
 
           <Reveal delay={0.2}>
             <Placeholder title="Photos des gammes" className="mt-8">

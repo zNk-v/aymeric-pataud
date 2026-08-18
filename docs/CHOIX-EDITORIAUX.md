@@ -446,3 +446,48 @@ change, un seul endroit à reprendre.
 
 Deux nuances de vocabulaire qui comptent : **« la plupart des recettes »**, pas
 toutes, et **« marque de crémerie »** plutôt que « sa marque ».
+
+---
+
+## 22. Le bloc « Qui fait quoi » retiré, et l'axe Créations élargi
+
+Aymeric, le 19 août : « Qui fait quoi, on s'en fout ! Ça n'intéresse personne.
+À aucun moment je dis que j'exploite la marque MEALK, donc pas de problème. »
+
+Il a raison sur le fond. J'avais construit ce bloc pour lever une ambiguïté
+qu'il avait signalée, mais expliquer un montage capitalistique à un directeur
+R&D venu chercher une solution de goût, c'est répondre à une question que
+personne ne pose. La mention reste en une phrase dans sa biographie, ça suffit.
+
+### Le vrai sujet : ne pas l'enfermer
+
+« Avec uniquement les gammes fromagères et les créations sport, on donne
+l'impression que je ne fais que du fromage et du sport, alors que je peux
+accompagner n'importe quelle société dans n'importe quel domaine. »
+
+L'axe Créations passe donc à quatre entrées, avec l'ajout de
+`/creations-tartinables/` : ketchup, sauce barbecue, caviar de cornichons,
+houmous rose, caviar d'aubergines, tartinable artichaut-parmesan, crème de
+butternut à la truffe, sauce burger sans œufs.
+
+Le chapeau de la section change aussi : « Le domaine change. La méthode, non. »
+
+### La page est construite sur les contraintes, pas sur les produits
+
+C'est ce qui la rend utile. Un produit fini ne prouve rien à un industriel, il
+a déjà vu des tartinables. Une contrainte levée, si :
+
+- diviser le sucre par deux **et** gagner en gourmandise ;
+- retirer tous les additifs d'une sauce barbecue ;
+- construire un goût qui survit à la pasteurisation ;
+- une sauce burger sans œufs, sans additifs, stable à température ambiante.
+
+Une contrainte se transpose d'un secteur à l'autre. Un produit non. C'est
+exactement l'argument qui casse l'enfermement qu'il craint.
+
+Ses deux formules sont reprises telles quelles : « Ce sont eux les vrais
+clients » pour la validation par ses enfants, et « le challenge le plus dur que
+j'aie eu à relever » pour la sauce burger.
+
+S'y ajoute la mention des dizaines d'entreprises couvertes par des accords de
+confidentialité, qui suggère un volume que le site ne peut pas détailler.

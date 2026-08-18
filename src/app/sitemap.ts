@@ -17,6 +17,7 @@ const PAGES: { path: string; priority: number; changeFrequency: "monthly" | "yea
   { path: "/aymeric-pataud/", priority: 0.8, changeFrequency: "monthly" },
   { path: "/creations-fromageres/", priority: 0.9, changeFrequency: "monthly" },
   { path: "/nutrition-sportive/", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/creations-tartinables/", priority: 0.8, changeFrequency: "monthly" },
   { path: "/creations-reunion/", priority: 0.5, changeFrequency: "monthly" },
   { path: "/blog/", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contact/", priority: 0.8, changeFrequency: "yearly" },

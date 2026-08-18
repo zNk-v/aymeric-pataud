@@ -197,3 +197,66 @@ export const REUNION_CREATIONS = [
     text: "Combava, gros piment, massalé. Une base de condiment qui raconte l'île en une cuillère, à partir de matières premières locales uniquement.",
   },
 ];
+
+/* ============================================== TARTINABLES & CONDIMENTS == */
+
+/**
+ * Retour d'Aymeric du 19 août 2026 : avec seulement le fromage et le sport, le
+ * site donne l'impression qu'il ne fait que ça. Il accompagne n'importe quelle
+ * société dans n'importe quel domaine, et c'est ce qu'il faut montrer.
+ *
+ * Ces huit recettes viennent de sa liste. Chacune porte sa contrainte, parce
+ * que c'est la contrainte qui prouve le métier, pas le produit fini.
+ *
+ * ATTENTION : il demande de ne pas nommer le client sur cette page. Le même
+ * client est pourtant nommé sur /references/, où ses produits sont déjà
+ * détaillés, et il l'était déjà sur l'ancien WordPress. Incohérence signalée,
+ * en attente de son arbitrage.
+ */
+export const SPREAD_CREATIONS = [
+  {
+    name: "Ketchup à la tomate cœur de bœuf",
+    brief:
+      "Diviser le taux de sucre par deux, tout en le rendant plus gourmand que l'original.",
+    twist: "Validé par mes enfants. Ce sont eux les vrais clients.",
+  },
+  {
+    name: "Sauce barbecue",
+    brief:
+      "Même cahier des charges que le ketchup, avec une contrainte de plus : enlever tous les additifs.",
+  },
+  {
+    name: "Caviar de cornichons aux épices",
+    brief: "Rendre le cornichon tartinable, ce pour quoi il n'est pas fait.",
+  },
+  {
+    name: "Houmous rose",
+    brief:
+      "À base des betteraves cultivées par le client, avec une texture soyeuse.",
+  },
+  {
+    name: "Caviar d'aubergines aux épices",
+    brief:
+      "Construire un goût qui survit à la pasteurisation, là où les épices s'affaissent.",
+  },
+  {
+    name: "Tartinable artichaut et parmesan",
+    brief:
+      "Le plus gourmand possible, et pasteurisable. Les deux exigences se contredisent.",
+  },
+  {
+    name: "Crème de butternut à la truffe",
+    brief:
+      "Garder le goût de truffe sans écraser celui du butternut. La truffe couvre tout ce qu'elle touche.",
+  },
+  {
+    name: "Sauce burger sans œufs",
+    brief:
+      "Hyper gourmande, sans œufs, sans additifs, et stable à température ambiante.",
+    twist: "Le challenge le plus dur que j'aie eu à relever.",
+  },
+];
+
+/** Ce qu'il ne peut pas montrer. */
+export const CONFIDENTIALITY =
+  "J'ai accompagné des dizaines d'autres entreprises dans la création de recettes. Les accords de confidentialité, courants en agroalimentaire, m'interdisent d'en dire plus.";

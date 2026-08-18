@@ -80,6 +80,17 @@ Vu le trafic actuel, n'importe laquelle suffit largement.
 
 ## 4. Points à trancher
 
+### Le client des tartinables : nommé ou pas ?
+Aymeric demande de ne pas le nommer sur `/creations-tartinables/`. Mais le même
+client, SNC Pré Grandin, est nommé sur `/references/` et sur
+`/artisans-et-producteurs/`, avec ces mêmes produits détaillés (ketchup, sauce
+barbecue, houmous à la betterave, tartinable artichaut et parmesan, sauce
+burger sans œufs). Il l'était déjà sur son ancien WordPress, avec son accord.
+
+Un lecteur qui parcourt les deux pages fait le lien en dix secondes. Trois
+options : nommer partout, anonymiser partout, ou assumer l'écart. À trancher
+avec lui.
+
 ### L'adresse affichée
 Le site affiche `213 rue Jules Barni, 80000 Amiens`, repris des mentions
 légales WordPress. Aymeric est à La Réunion jusqu'en août 2027. Faut-il afficher

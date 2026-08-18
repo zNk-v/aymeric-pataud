@@ -133,6 +133,11 @@ export const NAV: NavGroup[] = [
         description: "Lyophilisé, barres, plats d'effort",
       },
       {
+        label: "Tartinables & condiments",
+        href: "/creations-tartinables/",
+        description: "Sauces, caviars de légumes, houmous",
+      },
+      {
         label: "Terroir de La Réunion",
         href: "/creations-reunion/",
         description: "Créer à partir d'ingrédients locaux",
@@ -185,6 +190,7 @@ export const FOOTER_LINKS: { title: string; links: NavLink[] }[] = [
     links: [
       { label: "Fromages & produits laitiers", href: "/creations-fromageres/" },
       { label: "Nutrition sportive", href: "/nutrition-sportive/" },
+      { label: "Tartinables & condiments", href: "/creations-tartinables/" },
       { label: "Terroir de La Réunion", href: "/creations-reunion/" },
     ],
   },
