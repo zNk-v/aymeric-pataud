@@ -412,3 +412,37 @@ même technique.
 
 Seule retouche : « Banane et citron ver » est devenu « citron vert », coquille
 manifeste.
+
+---
+
+## 21. MEALK, la bonne lecture
+
+Ma correction du 18 août était la mauvaise. Aymeric a repris le sujet le 19 :
+
+> « Bien évidemment qu'il faut que l'on parle de la marque MEALK sur le site
+> car je suis le cofondateur et le créateur de la plupart des recettes […]
+> mais je ne veux pas que les lecteurs pensent que MEALK, c'est MOI ! »
+
+Le problème n'était donc pas le nombre de mentions, c'était l'attribution.
+J'avais réduit la visibilité de la marque là où il fallait préciser qui fait
+quoi. Retirer le nom ne dit pas au lecteur qui exploite la marque, ça le laisse
+deviner.
+
+La marque est donc de nouveau nommée librement : dans le hero de la page
+créations, dans la carte de l'accueil, dans le renvoi depuis la page
+hydrosolubles, et dans sa biographie.
+
+Ce qui lève l'ambiguïté, c'est un bloc **« Qui fait quoi »** en deux colonnes,
+sous les gammes :
+
+| Ce que je fais | Ce que je ne fais pas |
+|---|---|
+| Cofondateur de MEALK. J'en ai créé la plupart des recettes et je fournis les ingrédients aromatiques. | Je n'exploite pas la marque et je ne la commercialise pas : mon ancien associé, cofondateur lui aussi, s'en charge. |
+
+Le même contenu est repris en prose dans sa biographie. Les trois formulations
+vivent dans `DAIRY_ROLE`, dans
+[`src/content/creations.ts`](../src/content/creations.ts) : si son statut
+change, un seul endroit à reprendre.
+
+Deux nuances de vocabulaire qui comptent : **« la plupart des recettes »**, pas
+toutes, et **« marque de crémerie »** plutôt que « sa marque ».

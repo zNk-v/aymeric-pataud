@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Le chef",
   description:
-    "Chef de formation, membre des Toques Françaises, auteur du premier ouvrage au monde sur les huiles essentielles en cuisine (2003) et conférencier TEDx. Vingt-cinq ans à travailler le goût comme un langage.",
+    "Chef de formation, membre des Toques Françaises, cofondateur de la marque de crémerie MEALK, auteur du premier ouvrage au monde sur les huiles essentielles en cuisine (2003) et conférencier TEDx.",
   alternates: { canonical: "/aymeric-pataud/" },
 };
 
@@ -139,10 +139,13 @@ export default function Page() {
           d&apos;abord.
         </p>
         <p>
-          Je suis aussi cofondateur de MEALK, une marque de crémerie dont je
-          crée les recettes et fournis les ingrédients aromatiques. Quarante-trois
-          références y sont nées d&apos;une seule question technique : comment
-          aromatiser du lait avec une huile essentielle.
+          Je suis cofondateur de MEALK, une marque de crémerie pour laquelle
+          j&apos;ai créé la plupart des recettes : quarante-trois références
+          nées d&apos;une seule question technique, comment aromatiser du lait
+          avec une huile essentielle. Je ne l&apos;exploite pas et je ne la
+          commercialise pas, mon ancien associé et cofondateur s&apos;en
+          charge. J&apos;en reste le créateur des recettes et le fournisseur
+          des ingrédients aromatiques.
         </p>
       </SplitBlock>
 

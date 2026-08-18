@@ -13,24 +13,31 @@
 /* ================================================ FROMAGES & LAITIERS ==== */
 
 /**
- * ATTENTION, cadrage donné par Aymeric le 18 août 2026 :
- * il est cofondateur de MEALK mais n'est plus associé aux sociétés qui
- * exploitent la marque. Il en reste le créateur des recettes et le
- * fournisseur des ingrédients aromatiques.
+ * Cadrage MEALK, précisé par Aymeric le 19 août 2026.
  *
- * Conséquence pour le site : ces gammes sont SON travail, pas SA marque.
- * MEALK est nommé comme le distributeur, sobrement, et « cofondateur »
- * n'apparaît qu'une fois, dans les repères biographiques. Ne pas remettre
- * MEALK partout.
+ * Il FAUT parler de MEALK : il en est cofondateur et il a créé la plupart des
+ * recettes. Ce qu'il refuse, c'est qu'un lecteur en conclue que MEALK, c'est
+ * lui. Il n'exploite pas la marque et ne la commercialise pas : son ancien
+ * associé, cofondateur lui aussi, s'en charge.
+ *
+ * Ce n'est donc pas un problème de dosage mais d'attribution. Une phrase
+ * explicite vaut mieux que des mentions retirées : voir DAIRY_ROLE, qui doit
+ * apparaître partout où la marque est nommée longuement.
  *
  * Les parfums viennent de sa liste, recopiés sans ajout. Seul « Banane et
  * citron ver » a été complété en « citron vert », coquille évidente.
  */
 
 export const DAIRY_ROLE = {
-  what: "Créateur des recettes et fournisseur des ingrédients aromatiques",
   brand: "MEALK",
   brandUrl: "https://www.mealk.fr/",
+  /** Ce qu'il est. */
+  role: "Cofondateur",
+  /** Ce qu'il fait aujourd'hui. */
+  does: "J'en ai créé la plupart des recettes et je fournis les ingrédients aromatiques.",
+  /** Ce qu'il ne fait pas. Cette phrase ne doit pas disparaître. */
+  doesNot:
+    "Je n'exploite pas la marque et je ne la commercialise pas : mon ancien associé, cofondateur lui aussi, s'en charge.",
 };
 
 export type Range = {

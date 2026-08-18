@@ -136,11 +136,12 @@ base de contacts, et les tarifs se discutent au téléphone.
 Confirmé par écrit : cofondateur de la marque MEALK, libre de communiquer sur
 ces créations. La mention est passée dans ses repères biographiques.
 
-### Le statut MEALK
-Cofondateur, mais plus associé aux sociétés qui exploitent la marque. Il en
-reste le créateur des recettes et le fournisseur des ingrédients. Le site tient
-cette ligne : une mention visible par page, jamais présentée comme sa marque.
-Si son statut change, c'est `DAIRY_ROLE` dans
+### ~~Le statut MEALK~~ — clarifié le 19/08/2026
+Cofondateur, créateur de la plupart des recettes, fournisseur des ingrédients.
+Il n'exploite ni ne commercialise la marque : son ancien associé, cofondateur
+lui aussi, s'en charge. La marque est nommée librement sur le site, et le bloc
+« Qui fait quoi » de la page créations lève l'ambiguïté. Si son statut change,
+c'est `DAIRY_ROLE` dans
 [`src/content/creations.ts`](../src/content/creations.ts) qu'il faut reprendre.
 
 ### Les visuels MEALK générés par IA

@@ -149,7 +149,7 @@ export default function Page() {
           Cette page explique comment la technique fonctionne. Les créations
           qu&apos;elle a rendues possibles sont ailleurs : quarante-trois
           recettes de yaourts, beurres, raclettes, fondues, cheesecakes et
-          miels.
+          miels, développées pour MEALK, dont je suis cofondateur.
         </p>
         <p>
           <TextLink href="/creations-fromageres/">

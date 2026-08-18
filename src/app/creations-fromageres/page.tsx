@@ -8,7 +8,6 @@ import {
   Placeholder,
   Section,
   SectionHeader,
-  TextLink,
 } from "@/components/ui";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
 import {
@@ -25,12 +24,10 @@ export const metadata: Metadata = {
 };
 
 /**
- * Cadrage donné par Aymeric le 18 août 2026 : il est cofondateur de MEALK mais
- * n'est plus associé aux sociétés qui exploitent la marque. Il en reste le
- * créateur des recettes et le fournisseur des ingrédients.
- *
- * La page met donc en avant SON travail, pas la marque. MEALK est nommé une
- * seule fois, sobrement, comme le distributeur de ces gammes.
+ * MEALK est nommé librement ici : Aymeric en est cofondateur et il a créé la
+ * plupart des recettes. Le bloc « Qui fait quoi » lève l'ambiguïté qu'il
+ * craignait, à savoir qu'un lecteur pense que la marque lui appartient. Ne pas
+ * supprimer ce bloc.
  */
 export default function Page() {
   return (
@@ -38,7 +35,7 @@ export default function Page() {
       <PageHero
         kicker="Fromages & produits laitiers"
         title="Aromatiser le lait, là où personne ne savait le faire."
-        lede={`Yaourts, beurres, raclettes, fondues, cheesecakes, miels : ${DAIRY_COUNT} recettes nées d'un verrou technique que j'ai levé il y a plus de dix ans.`}
+        lede={`Yaourts, beurres, raclettes, fondues, cheesecakes, miels : ${DAIRY_COUNT} recettes créées pour ${DAIRY_ROLE.brand}, dont je suis cofondateur. Toutes nées d'un verrou technique levé il y a plus de dix ans.`}
         image="/images/yaourt-orange-tonka.webp"
         imageAlt="Dosage d'une huile essentielle dans un yaourt orange et fève de tonka"
       />
@@ -96,15 +93,33 @@ export default function Page() {
             ))}
           </Stagger>
 
+          {/* Attribution explicite : sans elle, un lecteur conclut que la
+              marque appartient à Aymeric. */}
           <Reveal delay={0.15}>
-            <p className="mt-10 max-w-3xl text-encre-soft">
-              Ces gammes sont distribuées sous la marque{" "}
-              <TextLink href={DAIRY_ROLE.brandUrl} external>
-                {DAIRY_ROLE.brand}
-              </TextLink>
-              . J&apos;en crée les recettes et je fournis les ingrédients
-              aromatiques.
-            </p>
+            <div className="card mt-10 rounded-3xl p-8 lg:p-10">
+              <Kicker>Qui fait quoi</Kicker>
+              <div className="mt-6 grid gap-8 md:grid-cols-2">
+                <div>
+                  <p className="font-display text-xl">Ce que je fais</p>
+                  <p className="mt-3 text-encre-soft">
+                    {DAIRY_ROLE.role} de{" "}
+                    <a
+                      href={DAIRY_ROLE.brandUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link-underline font-medium text-vert"
+                    >
+                      {DAIRY_ROLE.brand}
+                    </a>
+                    {`. ${DAIRY_ROLE.does}`}
+                  </p>
+                </div>
+                <div>
+                  <p className="font-display text-xl">Ce que je ne fais pas</p>
+                  <p className="mt-3 text-encre-soft">{DAIRY_ROLE.doesNot}</p>
+                </div>
+              </div>
+            </div>
           </Reveal>
 
           <Reveal delay={0.2}>

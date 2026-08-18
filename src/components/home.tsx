@@ -228,7 +228,7 @@ const CREATIONS = [
     href: "/creations-fromageres/",
     kicker: "Fromages & produits laitiers",
     title: "Aromatiser le lait, là où personne ne savait le faire",
-    text: "Yaourts, beurres, raclettes, fondues, cheesecakes, miels. Quarante-trois recettes nées d'un verrou technique levé il y a plus de dix ans.",
+    text: "Quarante-trois recettes créées pour MEALK, dont je suis cofondateur. Yaourts, beurres, raclettes, fondues, cheesecakes, miels.",
     image: "/images/yaourt-orange-tonka.webp",
     alt: "Yaourt orange et fève de tonka, dosage à la pipette",
   },
