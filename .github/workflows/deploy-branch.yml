@@ -1,0 +1,80 @@
+name: Branche de déploiement
+
+# Construit le site et publie le résultat sur la branche « deploy », dont la
+# racine EST le site : index.html, .htaccess, _next/, images/…
+#
+# C'est cette branche que l'hébergeur clone. Aucun identifiant FTP n'est
+# nécessaire : la connexion se fait en OAuth GitHub depuis son panneau.
+#
+# La branche est réécrite à chaque fois, sans historique, pour ne pas gonfler
+# le dépôt avec des milliers de versions d'assets.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-branch
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # Sans PAGES=true : pas de préfixe d'URL, site indexable, et les
+      # emplacements réservés ne sont pas rendus.
+      - name: Build statique
+        run: npm run build
+
+      # Garde-fous : rien n'est publié si le build ressemble à un aperçu.
+      # Écrits en if/then et non en « grep && exit » : un grep qui ne trouve
+      # rien renvoie 1 et ferait échouer l'étape dans le cas où tout va bien.
+      - name: Contrôles
+        run: |
+          fail() { echo "::error::$1"; exit 1; }
+
+          test -f out/.htaccess   || fail ".htaccess absent du build"
+          test -f out/index.html  || fail "index.html absent du build"
+          test -f out/sitemap.xml || fail "sitemap.xml absent du build"
+
+          if grep -q 'noindex' out/index.html; then
+            fail "le build porte un noindex, c'est un build d'aperçu"
+          fi
+          if grep -rq 'Emplacement réservé' out/index.html out/*/index.html; then
+            fail "un emplacement réservé est visible en production"
+          fi
+          if grep -q '/aymeric-pataud/_next' out/index.html; then
+            fail "préfixe GitHub Pages présent dans un build de production"
+          fi
+
+          echo "$(find out -name index.html | wc -l) pages construites"
+
+      - name: Publier sur la branche deploy
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          cd out
+          git init -q
+          git checkout -q -b deploy
+          # Le dépôt principal ignore out/ ; ici on part d'un dépôt neuf,
+          # aucune règle n'exclut donc .htaccess ni les autres fichiers.
+          git add -A
+          git commit -q -m "Site construit depuis ${GITHUB_SHA::7}"
+          git push -q --force \
+            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" \
+            deploy
+          echo "::notice::Branche deploy mise à jour ($(git ls-files | wc -l) fichiers)"
