@@ -64,8 +64,10 @@ jobs:
 
       - name: Publier sur la branche deploy
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # En --global : le dépôt créé plus bas dans out/ est neuf et
+          # n'hérite pas de la configuration locale du dépôt extérieur.
+          git config --global user.name  "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
           cd out
           git init -q
