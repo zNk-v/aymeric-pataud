@@ -1,81 +1,106 @@
 # Mise en ligne
 
-Le site se déploie déjà tout seul à chaque `git push` sur `main`. Deux
-workflows, deux destinations :
+## Le principe
 
-| Workflow | Destination | État |
-|---|---|---|
-| `deploy.yml` | GitHub Pages, aperçu client | actif, en `noindex` |
-| `production.yml` | FTPS vers l'hébergement, `www.aymericpataud.fr` | **en attente d'activation** |
+Le domaine `aymericpataud.fr` **reste enregistré chez OVH**, et sa zone DNS
+aussi. On change uniquement les deux enregistrements `A` pour qu'ils pointent
+vers l'hébergement Hostinger.
 
-Le build de production diffère de l'aperçu sur deux points, pilotés par la
-seule variable `PAGES` :
+**Les mails ne peuvent pas casser** : dans une zone DNS, l'enregistrement `A`
+dit où est le site, les `MX` disent où vont les mails. Ce sont deux lignes
+distinctes. On touche la première, on ne touche pas les secondes.
 
-- **l'indexation** : l'aperçu est en `noindex`, la production ne l'est pas ;
-- **les emplacements réservés** : les encadrés en pointillés qui listent ce
-  qu'Aymeric doit encore fournir sont visibles sur l'aperçu et **invisibles en
-  production**. Le site peut donc partir en ligne sans attendre les photos.
+État actuel de la zone, à préserver tel quel :
+
+```
+MX   1 mx1.mail.ovh.net · 5 mx2.mail.ovh.net · 100 mx3.mail.ovh.net
+TXT  v=spf1 include:mx.ovh.com ~all
+NS   dns101.ovh.net · ns101.ovh.net
+```
+
+**Le retour arrière est immédiat** : le WordPress reste en place chez OVH, il
+n'est jamais écrasé. Si quelque chose cloche, on remet l'ancienne IP
+`145.239.37.162` dans les deux `A` et l'ancien site revient.
 
 ---
 
-## Ce qu'il reste à faire
+## Dans l'ordre
 
-### 1. Le formulaire de contact — le seul vrai point bloquant
+### 1. Vérifier le renouvellement du domaine — urgent
 
-Aujourd'hui, valider le formulaire ouvre le logiciel de messagerie du visiteur
-avec un message prérempli. Sur mobile, un visiteur sans client mail configuré
-ne peut rien envoyer : la demande est perdue.
+`aymericpataud.fr` expire le **11 septembre 2026**. S'il n'est pas renouvelé,
+le site et les mails s'arrêtent le même jour, quelle que soit la suite. À
+vérifier dans l'espace OVH d'Aymeric avant tout le reste.
 
-Une ligne à changer dans
-[`src/components/ContactForm.tsx`](../src/components/ContactForm.tsx) :
+### 2. Sauvegarder le WordPress
+
+Sauvegarde complète, fichiers et base, depuis le panneau OVH. Le contenu
+éditorial est déjà archivé dans [`archive-wordpress/`](../archive-wordpress),
+mais ça ne remplace pas une sauvegarde de l'hébergeur.
+
+### 3. Brancher le formulaire de contact
+
+Aujourd'hui, valider le formulaire ouvre le logiciel de messagerie du visiteur.
+Sur mobile, un visiteur sans client mail configuré ne peut rien envoyer.
+
+Une ligne dans [`src/components/ContactForm.tsx`](../src/components/ContactForm.tsx) :
 
 ```ts
 const ENDPOINT: string | null = "https://api.web3forms.com/submit";
 ```
 
-Web3Forms : 250 envois par mois, gratuit, aucun compte à créer, une clé
-reçue par e-mail. Largement suffisant.
+Web3Forms : 250 envois par mois, gratuit, pas de compte à créer.
 
-### 2. Les identifiants FTP
+### 4. Préparer Hostinger
 
-Dans les réglages du dépôt GitHub, `Settings > Secrets and variables > Actions` :
+Ajouter `aymericpataud.fr` comme site dans hPanel, puis créer un compte FTP
+et relever l'adresse IP de l'hébergement.
 
-**Secrets** : `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`
-**Variables** : `DEPLOY_FTP` à `true`, `FTP_DIR` (racine web, avec `/` final)
+Dans le dépôt GitHub, `Settings > Secrets and variables > Actions` :
 
-Tant que `DEPLOY_FTP` n'est pas à `true`, le workflow ne fait rien et
-n'échoue pas.
+| | Nom | Valeur |
+|---|---|---|
+| Secret | `FTP_SERVER` | l'hôte FTP donné par hPanel |
+| Secret | `FTP_USERNAME` | |
+| Secret | `FTP_PASSWORD` | |
+| Variable | `DEPLOY_FTP` | `true` |
+| Variable | `FTP_DIR` | `./public_html/` |
 
-### 3. Sauvegarder le WordPress avant d'écraser quoi que ce soit
+Tant que `DEPLOY_FTP` n'est pas à `true`, le workflow ne fait rien.
 
-Le contenu est déjà archivé dans [`archive-wordpress/`](../archive-wordpress),
-mais il faut aussi une sauvegarde complète des fichiers et de la base côté
-hébergeur, faite depuis le panneau OVH. Le workflow FTP ne supprime pas les
-dossiers `wp-content`, `wp-includes` et `wp-admin` : ils restent en place tant
-que personne ne les enlève à la main.
+### 5. Basculer les deux enregistrements A
 
-### 4. Après la bascule
+Dans la zone DNS OVH, remplacer `145.239.37.162` par l'IP Hostinger, sur le
+domaine nu et sur `www`. **Ne rien toucher d'autre.**
 
-- Vérifier les 22 redirections 301 une par une sur le vrai serveur.
-- Déclarer le nouveau `sitemap.xml` dans la Search Console.
-- Surveiller les 404 pendant un mois.
+Le certificat SSL se génère seul chez Hostinger une fois le domaine résolu,
+en général dans l'heure.
+
+### 6. Après la bascule
+
+- Vérifier les 22 redirections 301 une par une.
+- Déclarer `sitemap.xml` dans la Search Console et surveiller les 404.
 - Mettre à jour le lien du profil LinkedIn.
 
 ---
 
-## Les e-mails ne bougent pas
+## Les deux builds
 
-Question posée par Aymeric le 22 août. Réponse : **rien ne change**.
+Une seule variable, `PAGES`, sépare l'aperçu de la production :
 
-Le site et la messagerie sont deux services distincts, qui ne se croisent nulle
-part :
+| | Aperçu (`PAGES=true`) | Production |
+|---|---|---|
+| Destination | GitHub Pages | Hostinger |
+| Préfixe d'URL | `/aymeric-pataud` | aucun |
+| Indexation | `noindex` | indexable |
+| Emplacements réservés | visibles | **invisibles** |
 
-- la messagerie dépend des **enregistrements MX** du domaine, qui pointent vers
-  `mx1`, `mx2` et `mx3.mail.ovh.net` ;
-- le site dépend des fichiers déposés à la racine web.
+Les encadrés en pointillés qui listent ce qu'Aymeric doit encore fournir ne
+sortent donc jamais en production. Le site peut partir en ligne sans attendre
+les photos.
 
-Le déploiement se contente d'envoyer des fichiers par FTP à l'hébergement qui
-sert déjà `aymericpataud.fr`. **Aucun enregistrement DNS n'est modifié, aucun
-MX n'est touché.** L'hébergement reste au nom d'Aymeric, chez son prestataire
-actuel : le site n'est pas « hébergé chez Teddy », il est simplement déployé
-par lui.
+Le workflow refuse d'envoyer quoi que ce soit si le build ressemble à un
+aperçu : présence d'un `noindex`, d'un emplacement réservé ou du préfixe
+d'URL. Ces trois contrôles sont écrits en `if/then` et non en
+`grep && exit`, parce qu'un `grep` qui ne trouve rien renvoie 1 et ferait
+échouer l'étape dans le cas où tout va bien.

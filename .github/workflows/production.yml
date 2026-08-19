@@ -1,22 +1,26 @@
-name: Production (FTP vers l'hébergement)
+name: Production (Hostinger)
 
-# Déploiement du site de production sur www.aymericpataud.fr.
+# Déploiement de www.aymericpataud.fr sur l'hébergement Hostinger.
 #
-# L'hébergement et les DNS restent où ils sont : rien n'est touché côté
-# domaine ni côté messagerie. Ce workflow se contente d'envoyer le dossier
-# out/ par FTP à la racine web.
+# Le domaine reste enregistré chez OVH et sa zone DNS aussi. Seuls les
+# enregistrements A du domaine nu et de www pointent vers Hostinger. Les MX,
+# le SPF et tout ce qui concerne la messagerie restent chez OVH, intacts :
+# le site et les mails sont deux enregistrements séparés de la même zone.
+#
+# Retour arrière : remettre l'ancienne IP dans les deux enregistrements A.
+# Le WordPress reste en place chez OVH, il n'est jamais écrasé.
 #
 # ---------------------------------------------------------------------------
-# ACTIVATION (à faire une seule fois, dans les réglages du dépôt GitHub)
+# ACTIVATION (une seule fois, dans Settings > Secrets and variables > Actions)
 #
-# 1. Settings > Secrets and variables > Actions > Secrets :
-#      FTP_SERVER    ex. ftp.cluster0XX.hosting.ovh.net
-#      FTP_USERNAME  identifiant FTP
-#      FTP_PASSWORD  mot de passe FTP
+# Secrets (Hostinger > hPanel > Fichiers > Comptes FTP) :
+#   FTP_SERVER     ex. ftp.aymericpataud.fr ou l'hôte donné par hPanel
+#   FTP_USERNAME
+#   FTP_PASSWORD
 #
-# 2. Settings > Secrets and variables > Actions > Variables :
-#      DEPLOY_FTP    true
-#      FTP_DIR       chemin de la racine web, avec / final (ex. ./www/)
+# Variables :
+#   DEPLOY_FTP     true
+#   FTP_DIR        racine web, avec / final. Chez Hostinger : ./public_html/
 #
 # Tant que DEPLOY_FTP n'est pas à "true", le workflow ne fait rien et
 # n'échoue pas.
@@ -45,11 +49,34 @@ jobs:
 
       - run: npm ci
 
-      - name: Build statique (sans basePath, pour un domaine racine)
+      # Sans PAGES=true : pas de préfixe d'URL (domaine racine), site
+      # indexable, et les emplacements réservés ne sont pas rendus.
+      - name: Build statique
         run: npm run build
 
-      - name: Vérifier que le .htaccess est bien dans le build
-        run: test -f out/.htaccess || (echo "::error::.htaccess absent de out/" && exit 1)
+      # Garde-fous : rien ne part si le build ressemble à un aperçu.
+      # Les tests d'absence sont écrits en if/then et non en « grep && exit » :
+      # un grep qui ne trouve rien renvoie 1, ce qui ferait échouer l'étape
+      # dans le cas où tout va bien.
+      - name: Contrôles avant envoi
+        run: |
+          fail() { echo "::error::$1"; exit 1; }
+
+          test -f out/.htaccess   || fail ".htaccess absent du build"
+          test -f out/index.html  || fail "index.html absent du build"
+          test -f out/sitemap.xml || fail "sitemap.xml absent du build"
+
+          if grep -q 'noindex' out/index.html; then
+            fail "le build porte un noindex, c'est un build d'aperçu"
+          fi
+          if grep -rq 'Emplacement réservé' out/index.html out/*/index.html; then
+            fail "un emplacement réservé est visible en production"
+          fi
+          if grep -q '/aymeric-pataud/_next' out/index.html; then
+            fail "préfixe GitHub Pages présent dans un build de production"
+          fi
+
+          echo "$(find out -name index.html | wc -l) pages prêtes à partir"
 
       - name: Envoi FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -60,12 +87,7 @@ jobs:
           local-dir: ./out/
           server-dir: ${{ vars.FTP_DIR }}
           protocol: ftps
-          # Ne supprime pas les dossiers hérités de WordPress tant que le
-          # client n'a pas confirmé qu'ils peuvent partir.
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
-            wp-content/**
-            wp-includes/**
-            wp-admin/**

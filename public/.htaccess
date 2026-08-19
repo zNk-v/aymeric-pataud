@@ -1,5 +1,5 @@
 # =============================================================================
-# aymericpataud.fr — site statique (Apache / OVH)
+# aymericpataud.fr — site statique (Apache / LiteSpeed)
 #
 # 1. Redirections 301 depuis les anciennes URLs WordPress
 # 2. Forçage HTTPS + www
@@ -16,10 +16,21 @@ ErrorDocument 404 /404.html
   RewriteEngine On
 
   # ------------------------------------------------------- HTTPS + www -----
-  RewriteCond %{HTTPS} !=on
+  # Deux règles, mais un seul saut dans tous les cas de figure.
+  #
+  # La première attrape le domaine nu, en http comme en https, et envoie
+  # directement vers https://www. La seconde ne voit donc plus que du
+  # http://www, qu'elle passe en https.
+  #
+  # La condition sur X-Forwarded-Proto couvre les hébergements où le TLS est
+  # terminé par un proxy en amont : %{HTTPS} y reste vide même en https, et
+  # sans cette deuxième condition la règle boucle indéfiniment.
+
+  RewriteCond %{HTTP_HOST} !^www\.aymericpataud\.fr$ [NC]
   RewriteRule ^(.*)$ https://www.aymericpataud.fr/$1 [R=301,L]
 
-  RewriteCond %{HTTP_HOST} ^aymericpataud\.fr$ [NC]
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
   RewriteRule ^(.*)$ https://www.aymericpataud.fr/$1 [R=301,L]
 
   # ---------------------------------------- Anciennes URLs WordPress -------
