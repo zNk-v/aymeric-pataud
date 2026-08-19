@@ -5,3 +5,11 @@ out
 *.log
 .env*
 next-env.d.ts
+
+# Doublons créés par la synchronisation du Bureau (« fichier 2.ext »).
+# Ils reviennent tout seuls et se retrouvaient copiés sur le serveur :
+# un « .htaccess 2 » traînait déjà dans le site publié.
+* 2
+* 2.*
+* 3
+* 3.*
