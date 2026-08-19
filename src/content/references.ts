@@ -60,9 +60,7 @@ export const REFERENCES: Reference[] = [
     name: "Biscuiterie Jeannette",
     sector: "Madeleines, financiers et cakes, depuis 2013",
     audience: ["industriel", "artisan"],
-    // Logo à déposer dans public/images/logos/biscuiterie-jeannette.webp,
-    // puis renseigner le chemin ici : la marque entrera alors dans le bandeau.
-    logo: null,
+    logo: "/images/logos/biscuiterie-jeannette.webp",
     challenge:
       "Tenir une identité gustative forte et cohérente sur une gamme emblématique, tout en innovant régulièrement, sans trahir l'ADN de la marque.",
     work:

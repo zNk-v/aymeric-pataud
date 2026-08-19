@@ -548,3 +548,9 @@ rejoignent maintenant.
 
 Le compteur de collaborations de l'accueil était écrit en dur. Il se calcule
 désormais, pour qu'un seizième ajout ne laisse pas un chiffre faux derrière lui.
+
+**Logo Jeannette.** Fourni en PNG sur fond blanc. Détouré par remplissage
+depuis les bords uniquement, pour que les blancs intérieurs (le tablier, le
+bonnet, la chemise) restent opaques. Un détourage par seuil global aurait
+troué l'illustration. Les logos du bandeau sont posés sur un crème très clair :
+sans transparence, le carré blanc se serait vu.

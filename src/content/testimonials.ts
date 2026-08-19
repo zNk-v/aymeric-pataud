@@ -36,6 +36,7 @@ export const NAMED_TESTIMONIALS: Testimonial[] = [
       "Depuis 10 ans, ils sont un partenaire essentiel dans notre quête d'excellence. Leurs huiles essentielles sur mesure subliment nos madeleines et financiers, perpétuant notre savoir-faire avec une touche d'innovation et de raffinement.",
     author: "Benoît Martinet",
     role: "Biscuiterie Jeannette",
+    logo: "/images/logos/biscuiterie-jeannette.webp",
   },
   {
     quote:
