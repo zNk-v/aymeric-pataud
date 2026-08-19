@@ -51,32 +51,50 @@ const ENDPOINT: string | null = "https://api.web3forms.com/submit";
 
 Web3Forms : 250 envois par mois, gratuit, pas de compte à créer.
 
-### 4. Préparer Hostinger
+### 4. Renseigner les accès de déploiement
 
-Ajouter `aymericpataud.fr` comme site dans hPanel, puis créer un compte FTP
-et relever l'adresse IP de l'hébergement.
+Le site est déjà créé côté hébergeur. Les valeurs à reporter se lisent dans
+son panneau, `Fichiers > Comptes FTP`. **Ce dépôt est public : aucune de ces
+valeurs ne doit y être écrite.**
 
 Dans le dépôt GitHub, `Settings > Secrets and variables > Actions` :
 
-| | Nom | Valeur |
+| | Nom | Où le trouver |
 |---|---|---|
-| Secret | `FTP_SERVER` | l'hôte FTP donné par hPanel |
-| Secret | `FTP_USERNAME` | |
-| Secret | `FTP_PASSWORD` | |
+| Secret | `FTP_SERVER` | « IP FTP (nom d'hôte) », sans le préfixe `ftp://` |
+| Secret | `FTP_USERNAME` | « Nom d'utilisateur FTP » |
+| Secret | `FTP_PASSWORD` | à définir via « Changer le mot de passe du FTP » |
 | Variable | `DEPLOY_FTP` | `true` |
 | Variable | `FTP_DIR` | `./public_html/` |
 
 Tant que `DEPLOY_FTP` n'est pas à `true`, le workflow ne fait rien.
 
-### 5. Basculer les deux enregistrements A
+### 5. Déployer et vérifier sur la préversion
 
-Dans la zone DNS OVH, remplacer `145.239.37.162` par l'IP Hostinger, sur le
-domaine nu et sur `www`. **Ne rien toucher d'autre.**
+Lancer le workflow Production, puis ouvrir l'URL de préversion fournie par
+l'hébergeur. Le site doit s'afficher entièrement avant qu'on touche au DNS.
 
-Le certificat SSL se génère seul chez Hostinger une fois le domaine résolu,
-en général dans l'heure.
+Cette préversion est traitée à part dans le `.htaccess` : elle est exemptée de
+la redirection vers le domaine définitif, sans quoi elle renverrait vers
+l'ancien site et ne servirait à rien. Elle est aussi envoyée en `noindex`,
+pour ne pas créer de contenu dupliqué aux yeux de Google.
 
-### 6. Après la bascule
+### 6. Seulement ensuite, basculer les deux enregistrements
+
+Dans la zone DNS OVH :
+
+| Type | Nom | Nouvelle valeur |
+|---|---|---|
+| A | `@` | l'IP de l'hébergement |
+| CNAME | `www` | `aymericpataud.fr` |
+
+**Ne rien toucher d'autre.** Ni les `MX`, ni le `TXT` du SPF, ni les
+serveurs de noms. L'ancienne valeur du `A` est `145.239.37.162` : c'est elle
+qu'il faut remettre pour revenir en arrière.
+
+Le certificat SSL se génère seul une fois le domaine résolu.
+
+### 7. Après la bascule
 
 - Vérifier les 22 redirections 301 une par une.
 - Déclarer `sitemap.xml` dans la Search Console et surveiller les 404.

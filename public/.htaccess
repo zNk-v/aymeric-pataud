@@ -26,9 +26,14 @@ ErrorDocument 404 /404.html
   # terminé par un proxy en amont : %{HTTPS} y reste vide même en https, et
   # sans cette deuxième condition la règle boucle indéfiniment.
 
+  # L'URL de préversion de l'hébergeur est exemptée : sans ça, elle
+  # redirigerait vers le domaine définitif et on ne pourrait pas vérifier le
+  # site avant de basculer le DNS.
+  RewriteCond %{HTTP_HOST} !\.hostingersite\.com$ [NC]
   RewriteCond %{HTTP_HOST} !^www\.aymericpataud\.fr$ [NC]
   RewriteRule ^(.*)$ https://www.aymericpataud.fr/$1 [R=301,L]
 
+  RewriteCond %{HTTP_HOST} !\.hostingersite\.com$ [NC]
   RewriteCond %{HTTPS} !=on
   RewriteCond %{HTTP:X-Forwarded-Proto} !=https
   RewriteRule ^(.*)$ https://www.aymericpataud.fr/$1 [R=301,L]
@@ -95,6 +100,16 @@ ErrorDocument 404 /404.html
     ExpiresDefault "access plus 0 seconds"
     Header set Cache-Control "public, max-age=0, must-revalidate"
   </FilesMatch>
+</IfModule>
+
+# ---------------------------------------------- Préversion : pas d'index ---
+# La préversion sert exactement le même site sur un domaine technique.
+# Sans cet en-tête, Google peut l'indexer et créer du contenu dupliqué.
+<IfModule mod_setenvif.c>
+  SetEnvIf Host "hostingersite\.com$" PREVIEW_HOST=1
+</IfModule>
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow" env=PREVIEW_HOST
 </IfModule>
 
 # ------------------------------------------------------------- Sécurité ----
