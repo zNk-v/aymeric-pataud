@@ -21,6 +21,9 @@ const nextConfig: NextConfig = {
   // en export statique, on préfixe donc nous-mêmes via lib/asset.ts.
   env: {
     NEXT_PUBLIC_BASE_PATH: isPages ? repo : "",
+    // Aperçu client : les emplacements réservés restent visibles, la
+    // production ne les montre pas. Voir components/ui.tsx.
+    NEXT_PUBLIC_PREVIEW: isPages ? "true" : "false",
   },
 };
 

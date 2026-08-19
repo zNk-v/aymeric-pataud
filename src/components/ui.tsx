@@ -206,9 +206,14 @@ export function BulletList({
 
 /* -------------------------------------------------- Emplacement à venir --- */
 /**
- * Bloc réservé pour un contenu que le client doit encore fournir.
- * Volontairement visible : rien ne doit être inventé à la place.
- * Recensé dans docs/A-VALIDER.md.
+ * Emplacement réservé, en attente de matière client.
+ *
+ * Visible uniquement sur l'aperçu (build PAGES=true), invisible en production.
+ * Un prospect n'a rien à faire de nos notes de production, alors qu'Aymeric et
+ * Teddy doivent continuer à voir ce qui manque. Le même interrupteur pilote
+ * déjà le noindex de l'aperçu, dans app/layout.tsx.
+ *
+ * Conséquence : le site peut partir en ligne sans attendre les photos.
  */
 export function Placeholder({
   title,
@@ -219,6 +224,7 @@ export function Placeholder({
   children: ReactNode;
   className?: string;
 }) {
+  if (process.env.NEXT_PUBLIC_PREVIEW !== "true") return null;
   return (
     <div
       className={`rounded-2xl border border-dashed border-sauge bg-sauge-pale/25 p-7 ${className}`}
