@@ -20,7 +20,16 @@ name: Production (Hostinger)
 #
 # Variables :
 #   DEPLOY_FTP     true
-#   FTP_DIR        racine web, avec / final. Chez Hostinger : ./public_html/
+#   FTP_DIR        dossier cible, avec / final.
+#
+# ATTENTION au FTP_DIR. Sur un plan multi-sites, il n'y a pas de public_html
+# à la racine du compte : chaque site vit dans domains/<domaine>/public_html.
+# Se tromper de chemin écrase le site d'un autre client. Le compte FTP dédié
+# à ce site étant cantonné à son propre dossier, FTP_DIR vaut ./
+#
+# Avant le premier envoi réel, lancer le workflow à la main en laissant
+# « essai à blanc » coché : il se connecte et affiche ce qu'il ferait, sans
+# rien écrire.
 #
 # Tant que DEPLOY_FTP n'est pas à "true", le workflow ne fait rien et
 # n'échoue pas.
@@ -30,6 +39,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Essai à blanc : se connecte, liste ce qui serait envoyé, n'écrit rien"
+        type: boolean
+        default: true
 
 concurrency:
   group: production
@@ -87,7 +101,12 @@ jobs:
           local-dir: ./out/
           server-dir: ${{ vars.FTP_DIR }}
           protocol: ftps
+          dry-run: ${{ inputs.dry_run || false }}
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
+
+      - name: Rappel
+        if: ${{ inputs.dry_run }}
+        run: echo "::notice::Essai à blanc terminé, rien n'a été écrit sur le serveur. Vérifiez le chemin cible dans le journal ci-dessus avant un envoi réel."

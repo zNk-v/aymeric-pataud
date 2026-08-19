@@ -53,26 +53,45 @@ Web3Forms : 250 envois par mois, gratuit, pas de compte à créer.
 
 ### 4. Renseigner les accès de déploiement
 
-Le site est déjà créé côté hébergeur. Les valeurs à reporter se lisent dans
-son panneau, `Fichiers > Comptes FTP`. **Ce dépôt est public : aucune de ces
-valeurs ne doit y être écrite.**
+Le site est déjà créé côté hébergeur.
+
+**Créer un compte FTP dédié à ce site**, dans `Fichiers > Comptes FTP`,
+section « Créez un nouveau compte FTP », avec pour répertoire
+`domains/aymericpataud.fr/public_html`.
+
+Ne pas utiliser le bouton « Changer le mot de passe du FTP » de cette page :
+malgré son emplacement, il agit sur le compte FTP d'un autre site du plan. Un
+compte dédié évite le problème et limite la casse en cas de fuite.
+
+**Ce dépôt est public : aucune de ces valeurs ne doit y être écrite.**
 
 Dans le dépôt GitHub, `Settings > Secrets and variables > Actions` :
 
 | | Nom | Où le trouver |
 |---|---|---|
 | Secret | `FTP_SERVER` | « IP FTP (nom d'hôte) », sans le préfixe `ftp://` |
-| Secret | `FTP_USERNAME` | « Nom d'utilisateur FTP » |
-| Secret | `FTP_PASSWORD` | à définir via « Changer le mot de passe du FTP » |
+| Secret | `FTP_USERNAME` | celui du compte FTP dédié créé pour ce site |
+| Secret | `FTP_PASSWORD` | défini à la création de ce compte |
 | Variable | `DEPLOY_FTP` | `true` |
-| Variable | `FTP_DIR` | `./public_html/` |
+| Variable | `FTP_DIR` | `./` (le compte dédié est déjà cantonné au bon dossier) |
 
 Tant que `DEPLOY_FTP` n'est pas à `true`, le workflow ne fait rien.
 
 ### 5. Déployer et vérifier sur la préversion
 
-Lancer le workflow Production, puis ouvrir l'URL de préversion fournie par
-l'hébergeur. Le site doit s'afficher entièrement avant qu'on touche au DNS.
+**Premier lancement en essai à blanc.** Le workflow Production, lancé à la
+main, propose une case « essai à blanc » cochée par défaut : il se connecte,
+affiche le dossier cible et la liste des fichiers, et n'écrit rien. C'est le
+moyen de vérifier le chemin avant d'envoyer quoi que ce soit.
+
+Ce contrôle n'est pas une précaution de principe. Sur un plan qui héberge
+plusieurs sites, il n'existe pas de `public_html` à la racine du compte :
+chaque site vit dans `domains/<domaine>/public_html`. Un chemin erroné écrase
+le site d'un autre client.
+
+Une fois le chemin confirmé, relancer sans la case, ou pousser un commit.
+
+Ouvrir ensuite l'URL de préversion fournie par l'hébergeur. Le site doit s'afficher entièrement avant qu'on touche au DNS.
 
 Cette préversion est traitée à part dans le `.htaccess` : elle est exemptée de
 la redirection vers le domaine définitif, sans quoi elle renverrait vers
