@@ -132,7 +132,7 @@ export function Hero() {
 /* ========================================================= BANDE PREUVE == */
 const PROOFS = [
   { value: "TEDxAmiens", label: "Conférence sur l'émotion gustative", href: "#tedx" },
-  { value: "4 ouvrages", label: "Dont le premier au monde sur le sujet, en 2003", href: "/aymeric-pataud/" },
+  { value: "4 ouvrages", label: "Dont le premier au monde sur le sujet, en 2004", href: "/aymeric-pataud/" },
   { value: "200+", label: "Clients accompagnés en France et en Europe", href: "/references/" },
   { value: `${OIL_COUNT} huiles`, label: "Références culinaires, lipo et hydrosolubles", href: "/huiles-essentielles-culinaires/" },
 ];

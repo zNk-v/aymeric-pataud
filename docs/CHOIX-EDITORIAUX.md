@@ -491,3 +491,37 @@ j'aie eu à relever » pour la sauce burger.
 
 S'y ajoute la mention des dizaines d'entreprises couvertes par des accords de
 confidentialité, qui suggère un volume que le site ne peut pas détailler.
+
+---
+
+## 23. Chronologie corrigée
+
+Aymeric a revu son parcours le 20 août. Deux dates étaient fausses et deux
+jalons manquaient. La frise passe de cinq à sept entrées :
+
+| Année | Jalon |
+|---|---|
+| 1999 | Découverte des huiles essentielles à La Réunion |
+| 2004 | Premier ouvrage au monde sur les huiles essentielles en cuisine |
+| 2005 | Premiers essais sur le prototype de l'éco-extracteur par micro-ondes |
+| 2009 | Création de la marque Délice & Sens |
+| 2013 | Invention des huiles essentielles culinaires hydrosolubles |
+| 2023 | Achat de l'éco-extracteur et créations sur mesure |
+| Aujourd'hui | Deux ateliers du goût, Amiens et La Réunion |
+
+Les deux nouveaux jalons racontent quelque chose que le site ne disait pas :
+dix-huit ans séparent les premiers essais sur le prototype de l'achat de la
+machine. Ce n'est pas un achat d'équipement, c'est une obsession tenue.
+
+**La grille de cartes égales a été remplacée par une liste sur deux colonnes.**
+Cinq entrées de longueur voisine tenaient dans cinq cartes. Sept entrées de
+longueurs très inégales, dont une de dix-sept mots, laissaient des blancs
+absurdes. La liste absorbe n'importe quel nombre d'entrées et n'importe quelle
+longueur, et se lit comme une chronologie dans les deux sens de balayage :
+colonne de gauche et colonne de droite sont toutes deux croissantes.
+
+**Deux corrections hors de la page.** 1998 et 2003 apparaissaient aussi dans le
+texte courant, dans la meta description, dans la section Ouvrages et dans le
+bandeau de preuves de l'accueil. Aymeric n'avait signalé que les trois
+premières. Tout est aligné : le même fait ne peut pas porter deux dates selon
+la page.

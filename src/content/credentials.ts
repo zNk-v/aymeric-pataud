@@ -32,14 +32,14 @@ export const MEMBERSHIPS = [
 
 /**
  * Quatre ouvrages publiés, dont le premier au monde consacré aux huiles
- * essentielles en cuisine, en 2003. Ils ne sont plus commercialisés : le
+ * essentielles en cuisine, en 2004. Ils ne sont plus commercialisés : le
  * client a demandé de les citer comme marqueur d'autorité, sans insister.
  * Pas de couverture, pas de lien d'achat.
  */
 export const BOOKS = {
   count: 4,
-  firstYear: 2003,
-  line: "Auteur de quatre ouvrages, dont le premier au monde consacré à l'usage des huiles essentielles en cuisine, publié en 2003. Ils ne sont plus commercialisés.",
+  firstYear: 2004,
+  line: "Auteur de quatre ouvrages, dont le premier au monde consacré à l'usage des huiles essentielles en cuisine, publié en 2004. Ils ne sont plus commercialisés.",
 };
 
 /**

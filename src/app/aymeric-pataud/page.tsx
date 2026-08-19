@@ -16,15 +16,18 @@ import {
 export const metadata: Metadata = {
   title: "Le chef",
   description:
-    "Chef de formation, membre des Toques Françaises, cofondateur de la marque de crémerie MEALK, auteur du premier ouvrage au monde sur les huiles essentielles en cuisine (2003) et conférencier TEDx.",
+    "Chef de formation, membre des Toques Françaises, cofondateur de la marque de crémerie MEALK, auteur du premier ouvrage au monde sur les huiles essentielles en cuisine (2004) et conférencier TEDx.",
   alternates: { canonical: "/aymeric-pataud/" },
 };
 
+/** Chronologie corrigée par Aymeric le 20 août 2026. */
 const REPERES = [
-  { year: "1998", text: "Découverte des huiles essentielles à La Réunion" },
-  { year: "2003", text: "Premier ouvrage au monde sur les huiles essentielles en cuisine" },
+  { year: "1999", text: "Découverte des huiles essentielles à La Réunion" },
+  { year: "2004", text: "Premier ouvrage au monde sur les huiles essentielles en cuisine" },
+  { year: "2005", text: "Premiers essais sur le prototype de l'éco-extracteur par micro-ondes" },
   { year: "2009", text: `Création de la marque ${SITE.brand}` },
   { year: "2013", text: "Invention des huiles essentielles culinaires hydrosolubles" },
+  { year: "2023", text: "Achat de l'éco-extracteur par micro-ondes et créations d'huiles essentielles culinaires sur mesure" },
   { year: "Aujourd'hui", text: "Deux ateliers du goût, Amiens et La Réunion" },
 ];
 
@@ -42,14 +45,14 @@ export default function Page() {
       {/* Repères */}
       <Section tone="deep" size="sm">
         <Container>
-          <Stagger className="grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
+          <Stagger className="grid gap-x-14 md:grid-cols-2">
             {REPERES.map((r) => (
-              <StaggerItem key={r.year} className="h-full">
-                <div className="flex h-full flex-col bg-surface p-7">
-                  <span className="font-display text-2xl text-vert">
+              <StaggerItem key={r.year}>
+                <div className="flex items-baseline gap-6 border-b border-line py-5">
+                  <span className="font-display w-28 shrink-0 text-xl text-vert">
                     {r.year}
                   </span>
-                  <span className="mt-3 text-sm text-encre-soft">{r.text}</span>
+                  <span className="text-encre-soft">{r.text}</span>
                 </div>
               </StaggerItem>
             ))}
@@ -81,7 +84,7 @@ export default function Page() {
       </SplitBlock>
 
       <SplitBlock
-        kicker="La Réunion, 1998"
+        kicker="La Réunion, 1999"
         title="Une fraction de goutte. Une intensité brute."
         image="/images/agrumes.webp"
         imageAlt="Travail des agrumes"
@@ -108,7 +111,7 @@ export default function Page() {
       </SplitBlock>
 
       <QuoteBanner>
-        En 2003, j&apos;ai publié le premier ouvrage au monde consacré à
+        En 2004, j&apos;ai publié le premier ouvrage au monde consacré à
         l&apos;usage des huiles essentielles en cuisine. À une époque où
         l&apos;aromatique était encore réservée aux laboratoires et aux
         thérapeutes.
