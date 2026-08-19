@@ -56,6 +56,21 @@ export const REFERENCES: Reference[] = [
       "Quand l'huile et l'eau refusent de se mélanger, on invente une troisième voie.",
   },
   {
+    slug: "biscuiterie-jeannette",
+    name: "Biscuiterie Jeannette",
+    sector: "Madeleines, financiers et cakes, depuis 2013",
+    audience: ["industriel", "artisan"],
+    // Logo à déposer dans public/images/logos/biscuiterie-jeannette.webp,
+    // puis renseigner le chemin ici : la marque entrera alors dans le bandeau.
+    logo: null,
+    challenge:
+      "Tenir une identité gustative forte et cohérente sur une gamme emblématique, tout en innovant régulièrement, sans trahir l'ADN de la marque.",
+    work:
+      "Accompagnement aromatique sur mesure depuis plus de dix ans. Développement des solutions aromatisantes haut de gamme pour les madeleines, les financiers et les cakes, et fourniture exclusive d'huiles essentielles culinaires Délice & Sens sur la gamme madeleines. Présence à chaque réflexion produit, de la conception au lancement des nouveautés.",
+    result:
+      "Une signature aromatique reconnaissable, cohérente sur toute la gamme. Treize ans de collaboration, ce qui dit tout.",
+  },
+  {
     slug: "mathieu-blandin",
     name: "Mathieu Blandin",
     sector: "Champion du Monde de Pâtisserie, consultant et formateur international",

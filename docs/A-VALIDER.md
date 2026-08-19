@@ -21,6 +21,7 @@ que le contenu arrive.
 | `/nutrition-sportive/` | Visuels Trek & Adventure | Packaging des trente plats lyophilisés et date de lancement. Son nom et son visage seront associés à la marque : à dire explicitement une fois confirmé. |
 | `/consulting/` | Format des masterclass | Durée, nombre de participants, lieu, matériel, prix. La page décrit l'intention, pas une offre chiffrée. |
 | `/aymeric-pataud/` | Dates et liens de presse | Aymeric juge la presse secondaire (grand public, hors cible). Le bloc reste court. Manquent les dates, et l'identification de l'article de 2026 : Vital Food n°48 est le candidat le plus probable, à confirmer. |
+| `/references/` | Logo Biscuiterie Jeannette | Le fichier est dans le mail d'Aymeric du 21 août. À déposer dans `public/images/logos/biscuiterie-jeannette.webp`, puis renseigner le chemin dans `src/content/references.ts`. La marque entrera alors dans le bandeau de logos. |
 | `/references/` | Nouveaux clients | Aymeric a signé plusieurs clients depuis. Il faut leur accord écrit avant d'afficher leur logo, puis le logo et une ligne de contexte pour chacun. |
 
 ---

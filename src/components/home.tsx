@@ -15,7 +15,11 @@ import { Arrow, Button, Container, Kicker, Section, SectionHeader } from "./ui";
 import { asset } from "@/lib/asset";
 import { SIGNATURE_VIDEO, WORKSHOPS } from "@/lib/site";
 import { PROFILES } from "@/content/profiles";
-import { FEATURED_REFERENCES, REFERENCE_LOGOS } from "@/content/references";
+import {
+  FEATURED_REFERENCES,
+  REFERENCE_LOGOS,
+  REFERENCES,
+} from "@/content/references";
 import { OIL_COUNT } from "@/content/oils";
 
 /* =============================================================== HERO ==== */
@@ -565,7 +569,7 @@ export function FeaturedReferences() {
               href="/references/"
               className="link-underline inline-flex items-center gap-2 text-sm font-semibold text-vert"
             >
-              Les 14 collaborations
+              Les {REFERENCES.length} collaborations
               <Arrow />
             </Link>
           </Reveal>

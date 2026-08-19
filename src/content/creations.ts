@@ -75,7 +75,7 @@ export const DAIRY_RANGES: Range[] = [
     ],
   },
   {
-    name: "Miels",
+    name: "Miels pour fromages",
     flavours: [
       "Yuzu et citron jaune",
       "Fraise et verveine",

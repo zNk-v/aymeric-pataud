@@ -525,3 +525,26 @@ texte courant, dans la meta description, dans la section Ouvrages et dans le
 bandeau de preuves de l'accueil. Aymeric n'avait signalé que les trois
 premières. Tout est aligné : le même fait ne peut pas porter deux dates selon
 la page.
+
+---
+
+## 24. Deux ajouts d'Aymeric, le 21 août
+
+**« Miels » devient « Miels pour fromages ».** Sa remarque est juste : une
+rubrique miel n'a rien à faire dans une page fromage sans ce qualificatif. Le
+produit change de sens avec deux mots.
+
+**Biscuiterie Jeannette entre dans les références**, quinzième collaboration.
+Madeleines, financiers et cakes depuis 2013, avec la fourniture exclusive des
+huiles Délice & Sens sur la gamme madeleines.
+
+Deux détails d'écriture : il écrivait « depuis plus de 10 ans », le site dit
+« treize ans de collaboration », qui se vérifie depuis 2013 et frappe plus
+fort. Et sa formule « ce qui dit tout » est conservée telle quelle.
+
+Le témoignage nominatif de Benoît Martinet, repris du WordPress, existait déjà
+dans `testimonials.ts` sans être rattaché à une référence. Les deux se
+rejoignent maintenant.
+
+Le compteur de collaborations de l'accueil était écrit en dur. Il se calcule
+désormais, pour qu'un seizième ajout ne laisse pas un chiffre faux derrière lui.
