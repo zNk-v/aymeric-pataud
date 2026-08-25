@@ -254,7 +254,50 @@ export const REFERENCES: Reference[] = [
 
 export const FEATURED_REFERENCES = REFERENCES.filter((r) => r.featured);
 
-/** Bandeau de logos. Ceux qui n'ont pas de logo exploitable en sont exclus. */
-export const REFERENCE_LOGOS = REFERENCES.filter(
-  (r) => r.logo && r.slug !== "mathieu-blandin"
-);
+export type ClientLogo = {
+  slug: string;
+  name: string;
+  logo: string;
+};
+
+/**
+ * Clients dont seul le logo est affiché : pas de fiche détaillée sur
+ * /references/, juste la preuve visuelle dans le bandeau. Logos transmis
+ * par Aymeric le 25 août 2026 (mail « TR: Liste clients »).
+ */
+export const CLIENT_LOGOS: ClientLogo[] = [
+  { slug: "affinord", name: "Affinord", logo: "/images/logos/affinord.webp" },
+  { slug: "bears-tavern", name: "Bears' Tavern", logo: "/images/logos/bears-tavern.webp" },
+  { slug: "cakao", name: "Cakao", logo: "/images/logos/cakao.webp" },
+  { slug: "chavant", name: "Chavant", logo: "/images/logos/chavant.webp" },
+  { slug: "confiture-et-compagnie", name: "Confiture et Compagnie", logo: "/images/logos/confiture-et-compagnie.webp" },
+  { slug: "cookal", name: "Cookal", logo: "/images/logos/cookal.webp" },
+  { slug: "coup-djus", name: "Coup d'Jus", logo: "/images/logos/coup-djus.webp" },
+  { slug: "dame-rhubarbe", name: "Dame Rhubarbe", logo: "/images/logos/dame-rhubarbe.webp" },
+  { slug: "distillerie-hautefeuille", name: "Distillerie d'Hautefeuille", logo: "/images/logos/distillerie-hautefeuille.webp" },
+  { slug: "firmin-bouvard", name: "Firmin Bouvard", logo: "/images/logos/firmin-bouvard.webp" },
+  { slug: "fromagerie-de-montbeliard", name: "La Fromagerie de Montbéliard", logo: "/images/logos/fromagerie-de-montbeliard.webp" },
+  { slug: "glaces-des-alpes", name: "Glaces des Alpes", logo: "/images/logos/glaces-des-alpes.webp" },
+  { slug: "glaces-du-dauphine", name: "Glaces du Dauphiné", logo: "/images/logos/glaces-du-dauphine.webp" },
+  { slug: "globexplore", name: "GlobeXplore", logo: "/images/logos/globexplore.webp" },
+  { slug: "huilerie-de-lapalisse", name: "Huilerie de Lapalisse", logo: "/images/logos/huilerie-de-lapalisse.webp" },
+  { slug: "laiterie-fabre", name: "Laiterie Fabre", logo: "/images/logos/laiterie-fabre.webp" },
+  { slug: "maison-becam", name: "Maison Bécam", logo: "/images/logos/maison-becam.webp" },
+  { slug: "maison-brieuc", name: "Maison Brieuc", logo: "/images/logos/maison-brieuc.webp" },
+  { slug: "maison-caffet", name: "Maison Caffet", logo: "/images/logos/maison-caffet.webp" },
+  { slug: "oxalis-et-bergamote", name: "Oxalis & Bergamote", logo: "/images/logos/oxalis-et-bergamote.webp" },
+  { slug: "pm-sweet", name: "PM Sweet", logo: "/images/logos/pm-sweet.webp" },
+];
+
+/**
+ * Bandeau de logos : d'abord les collaborations documentées, puis les clients
+ * logo seul. Ceux qui n'ont pas de logo exploitable en sont exclus.
+ */
+export const LOGO_BAND: ClientLogo[] = [
+  ...REFERENCES.filter((r) => r.logo && r.slug !== "mathieu-blandin").map((r) => ({
+    slug: r.slug,
+    name: r.name,
+    logo: r.logo as string,
+  })),
+  ...CLIENT_LOGOS,
+];

@@ -17,7 +17,7 @@ import { SIGNATURE_VIDEO, WORKSHOPS } from "@/lib/site";
 import { PROFILES } from "@/content/profiles";
 import {
   FEATURED_REFERENCES,
-  REFERENCE_LOGOS,
+  LOGO_BAND,
   REFERENCES,
 } from "@/content/references";
 import { OIL_COUNT } from "@/content/oils";
@@ -552,7 +552,7 @@ export function Hydrosolubles() {
  * ça raconte.
  */
 export function FeaturedReferences() {
-  const logos = [...REFERENCE_LOGOS, ...REFERENCE_LOGOS];
+  const logos = [...LOGO_BAND, ...LOGO_BAND];
 
   return (
     <Section tone="deep" className="overflow-hidden">

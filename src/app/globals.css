@@ -211,7 +211,9 @@ body {
   }
 }
 .marquee-track {
-  animation: marquee 50s linear infinite;
+  /* 35 logos au lieu de 14 : durée allongée pour garder la même vitesse
+     de défilement (~50 px/s). */
+  animation: marquee 120s linear infinite;
 }
 .marquee-mask {
   mask-image: linear-gradient(

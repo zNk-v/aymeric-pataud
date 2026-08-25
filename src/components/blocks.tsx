@@ -7,7 +7,7 @@ import { Arrow, Button, Container, Kicker, Section } from "./ui";
 import LiteYouTube from "./LiteYouTube";
 import { asset } from "@/lib/asset";
 import { SITE } from "@/lib/site";
-import { REFERENCES, REFERENCE_LOGOS } from "@/content/references";
+import { REFERENCES, LOGO_BAND } from "@/content/references";
 import {
   ANONYMOUS_TESTIMONIALS,
   NAMED_TESTIMONIALS,
@@ -89,7 +89,7 @@ export function LogoWall({
   title?: string;
   tone?: "creme" | "deep";
 }) {
-  const row = [...REFERENCE_LOGOS, ...REFERENCE_LOGOS];
+  const row = [...LOGO_BAND, ...LOGO_BAND];
   return (
     <section
       className={`overflow-hidden py-16 lg:py-20 ${tone === "deep" ? "bg-creme-deep" : ""}`}
