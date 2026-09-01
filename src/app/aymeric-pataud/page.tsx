@@ -208,12 +208,12 @@ export default function Page() {
         <p>Parce que le goût se transmet autant qu&apos;il se travaille.</p>
       </SplitBlock>
 
-      {/* Appartenances — deux faits distincts, à ne pas confondre */}
+      {/* Appartenances : les deux institutions dont Aymeric est membre */}
       <Section>
         <Container>
           <SectionHeader
             kicker="Reconnaissances"
-            title="Chef d'abord, et une catégorie qui entre dans l'institution"
+            title="Chef d'abord, et reconnu par les institutions du métier"
             align="center"
           />
           <Stagger className="mt-12 grid gap-4 md:grid-cols-2">

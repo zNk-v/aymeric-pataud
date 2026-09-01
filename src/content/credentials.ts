@@ -1,14 +1,19 @@
 /**
  * Preuves d'autorité : appartenances, ouvrages, presse.
  *
- * Deux choses à ne pas confondre, le client a insisté :
- *  - Aymeric est MEMBRE des Toques Françaises ;
- *  - les huiles essentielles culinaires viennent d'ENTRER au Collège Culinaire
- *    de France, ce qui est une première mondiale. Ce n'est pas une
- *    appartenance personnelle, c'est une reconnaissance de la catégorie.
+ * Aymeric est membre des Toques Françaises et du Collège Culinaire de France.
  *
- * Date de l'entrée au Collège Culinaire : mai 2026, confirmée par Aymeric
- * le 17 août 2026.
+ * Le Collège a longtemps été présenté ici comme une reconnaissance de la
+ * catégorie et non comme une appartenance personnelle. Le courrier
+ * d'intégration, transmis par Aymeric le 1er septembre 2026, dit le
+ * contraire : candidature validée à l'unanimité par les chefs fondateurs le
+ * 19 mai 2026, adhésion à son nom, statut d'Artisan Militant de la Qualité,
+ * fiche établissement dans l'annuaire du Collège, plaque émaillée, cotisation
+ * annuelle.
+ *
+ * Les deux faits tiennent ensemble : c'est par cette adhésion que les huiles
+ * essentielles culinaires entrent dans l'institution. La formulation dit donc
+ * l'appartenance d'abord, la portée pour la catégorie ensuite.
  *
  * MEALK ne figure pas ici. Aymeric en est cofondateur mais n'est plus associé
  * aux sociétés qui exploitent la marque : en faire un marqueur d'autorité
@@ -24,8 +29,8 @@ export const MEMBERSHIPS = [
   },
   {
     name: "Collège Culinaire de France",
-    role: "Les huiles essentielles culinaires y sont entrées en mai 2026",
-    text: "Une première mondiale : la catégorie est désormais reconnue par l'institution qui rassemble les artisans et les producteurs de qualité en France.",
+    role: "Membre depuis mai 2026, Artisan Militant de la Qualité",
+    text: "Candidature validée à l'unanimité par les chefs fondateurs. Avec cette adhésion, les huiles essentielles culinaires entrent dans l'institution qui rassemble les artisans et les producteurs de qualité en France.",
     logo: "/images/institutions/college-culinaire-france.png",
   },
 ];
