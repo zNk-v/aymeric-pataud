@@ -406,12 +406,17 @@ export function LabelArgument() {
             <Reveal delay={0.15}>
               <div className="mt-7 max-w-xl space-y-4 text-lg text-encre-soft">
                 <p>
-                  Mes huiles sont des extraits de plante entière, sans solvant
-                  ni additif. Selon la matrice et le dosage, elles se déclarent
-                  sous leur nom botanique, pas sous la mention générique.
+                  En gamme liposoluble, mes huiles se déclarent sous leur nom
+                  botanique, «&nbsp;huile essentielle de citron&nbsp;» : un
+                  extrait de plante entière, sans solvant ni additif. En gamme
+                  hydrosoluble, la mention légale devient «&nbsp;arôme naturel de
+                  citron&nbsp;», mais la composition ne change pas : 100&nbsp;%
+                  d&apos;huile essentielle et un diluant végétal, rien
+                  d&apos;autre.
                 </p>
                 <p className="font-display text-2xl text-vert">
-                  Un fournisseur d&apos;arômes ne peut pas écrire cette ligne.
+                  Dans les deux cas, aucun arôme de synthèse. Peu de
+                  fournisseurs peuvent en dire autant.
                 </p>
               </div>
             </Reveal>

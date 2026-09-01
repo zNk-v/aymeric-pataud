@@ -89,8 +89,8 @@ export default function Page() {
             text: "Puissante et naturelle, elle résiste à la fabrication et à l'affinage, là où l'aromate déshydraté s'efface.",
           },
           {
-            title: "Une déclaration défendable",
-            text: "Une vraie huile essentielle, pas un arôme. Une naturalité que la marque peut revendiquer en face du consommateur.",
+            title: "Une composition défendable",
+            text: "Sur l'étiquette, la mention légale est « arôme naturel de citron ». Derrière : 100 % d'huile essentielle et un diluant végétal, sans autre additif. Même ligne que le marché, pas la même composition.",
           },
           {
             title: "Des goûts inaccessibles autrement",

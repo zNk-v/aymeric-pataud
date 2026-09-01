@@ -1,7 +1,9 @@
 /**
  * Catalogue repris de /nos-huiles-essentielles-culinaires/.
- * Liste non modifiée. Le PDF téléchargeable du WordPress pointe vers un
- * lien mort : voir docs/A-VALIDER.md.
+ * Neuf références ajoutées le 1er septembre 2026 d'après le mail de Vorombola
+ * « LISTE REF NON CITÉ SUR LE SITE » : entrées absentes du catalogue WordPress
+ * d'origine. Le PDF téléchargeable du WordPress pointe vers un lien mort :
+ * voir docs/A-VALIDER.md.
  */
 
 export type OilFamily = {
@@ -17,6 +19,7 @@ export const OIL_FAMILIES: OilFamily[] = [
     name: "Agrumes & fruits",
     intro: "Attaque franche, longueur nette. La famille la plus demandée en pâtisserie et en boisson.",
     oils: [
+      "Agrumes",
       "Amande amère",
       "Bergamote bio",
       "Cédrat",
@@ -24,11 +27,13 @@ export const OIL_FAMILIES: OilFamily[] = [
       "Citron jaune bio",
       "Citron vert bio",
       "Combava",
+      "Combava bio",
       "Fève de tonka",
       "Mandarine rouge bio",
       "Noix de coco",
       "Orange douce bio",
       "Orange sanguine bio",
+      "Pamplemousse",
       "Pamplemousse bio",
       "Pistache",
       "Yuzu",
@@ -41,7 +46,9 @@ export const OIL_FAMILIES: OilFamily[] = [
     oils: [
       "Aneth bio",
       "Basilic bio",
+      "Céleri",
       "Ciboulette",
+      "Citronnelle bio",
       "Coriandre feuilles",
       "Estragon bio",
       "Herbes de Provence bio",
@@ -72,11 +79,14 @@ export const OIL_FAMILIES: OilFamily[] = [
       "Curry bio",
       "Gingembre bio",
       "Girofle bio",
+      "Macis (fleur de muscade)",
       "Moutarde",
       "Noix de muscade bio",
       "Pain d'épices bio",
       "Piment fort bio",
+      "Poivre blanc",
       "Poivre de Sichuan",
+      "Poivre noir",
       "Poivre noir bio",
       "Vanille d'Indonésie",
       "Vanille Bourbon bio",
@@ -108,6 +118,7 @@ export const OIL_FAMILIES: OilFamily[] = [
       "Houblon",
       "Oignon",
       "Pin sylvestre bio",
+      "Raifort",
       "Sapin argenté bio",
     ],
   },
