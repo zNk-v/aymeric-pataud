@@ -9,6 +9,12 @@ import { asset } from "@/lib/asset";
 import { SITE } from "@/lib/site";
 import { REFERENCES, LOGO_BAND } from "@/content/references";
 import {
+  AWARDS_BY_YEAR,
+  AWARDS_BY_MEDAL,
+  AWARDS_COUNT,
+  AWARDS_FIRST_YEAR,
+} from "@/content/awards";
+import {
   ANONYMOUS_TESTIMONIALS,
   NAMED_TESTIMONIALS,
   type Testimonial,
@@ -366,6 +372,81 @@ export function NextSteps({
             </StaggerItem>
           ))}
         </Stagger>
+      </Container>
+    </Section>
+  );
+}
+
+
+/* ======================================================= Médailles ======= */
+/**
+ * Les médailles appartiennent aux fabricants, pas à Aymeric. Le texte le dit
+ * franchement : c'est ce qui rend la preuve crédible, et ses clients restent
+ * nommés à côté de leurs produits. Voir le commentaire de content/awards.ts.
+ */
+const MEDAL_STYLES: Record<string, string> = {
+  Or: "bg-[#c9a227]/15 text-[#8a6d0b] ring-[#c9a227]/40",
+  Argent: "bg-[#8c8c8c]/15 text-[#5c5c5c] ring-[#8c8c8c]/40",
+  Bronze: "bg-[#a2703f]/15 text-[#7a4f24] ring-[#a2703f]/40",
+};
+
+export function Awards({ tone = "creme" }: { tone?: "creme" | "deep" }) {
+  return (
+    <Section tone={tone === "deep" ? "deep" : undefined}>
+      <Container>
+        <Reveal>
+          <Kicker>Distinctions</Kicker>
+          <h2 className="font-display mt-5 max-w-3xl text-balance text-4xl lg:text-6xl">
+            {AWARDS_COUNT} médailles au Mondial du Fromage.
+          </h2>
+          <p className="lede mt-6 max-w-3xl">
+            Depuis {AWARDS_FIRST_YEAR}, des produits que j&apos;ai aromatisés
+            sont primés à Tours, devant un jury international. Les médailles
+            reviennent aux maisons qui les fabriquent et qui les inscrivent au
+            concours. L&apos;aromatisation, elle, sort de mon atelier.
+          </p>
+          <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-encre-soft">
+            <span>
+              <strong className="text-encre">{AWARDS_BY_MEDAL.Or}</strong> médailles d&apos;or
+            </span>
+            <span>
+              <strong className="text-encre">{AWARDS_BY_MEDAL.Argent}</strong> d&apos;argent
+            </span>
+            <span>
+              <strong className="text-encre">{AWARDS_BY_MEDAL.Bronze}</strong> de bronze
+            </span>
+          </p>
+        </Reveal>
+
+        <div className="mt-12 space-y-10">
+          {AWARDS_BY_YEAR.map(({ year, awards }) => (
+            <Reveal key={year}>
+              <div className="grid gap-4 lg:grid-cols-12 lg:gap-8">
+                <p className="font-display text-3xl text-vert lg:col-span-2 lg:text-4xl">
+                  {year}
+                </p>
+                <ul className="divide-y divide-line border-t border-line lg:col-span-10">
+                  {awards.map((a) => (
+                    <li
+                      key={`${a.year}-${a.product}`}
+                      className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 py-4"
+                    >
+                      <span className="font-medium">{a.product}</span>
+                      <span className="flex items-center gap-4">
+                        <span className="text-sm text-encre-soft">{a.maker}</span>
+                        <span
+                          className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide ring-1 ${MEDAL_STYLES[a.medal]}`}
+                        >
+                          {a.medal}
+                        </span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </Container>
     </Section>
   );

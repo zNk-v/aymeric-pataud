@@ -20,6 +20,7 @@ import {
   LOGO_BAND,
   REFERENCES,
 } from "@/content/references";
+import { AWARDS_COUNT } from "@/content/awards";
 import { OIL_COUNT } from "@/content/oils";
 
 /* =============================================================== HERO ==== */
@@ -136,7 +137,7 @@ export function Hero() {
 /* ========================================================= BANDE PREUVE == */
 const PROOFS = [
   { value: "TEDxAmiens", label: "Conférence sur l'émotion gustative", href: "#tedx" },
-  { value: "4 ouvrages", label: "Dont le premier au monde sur le sujet, en 2004", href: "/aymeric-pataud/" },
+  { value: `${AWARDS_COUNT} médailles`, label: `Au Mondial du Fromage, sur des produits que j'ai aromatisés`, href: "/references/" },
   { value: "200+", label: "Clients accompagnés en France et en Europe", href: "/references/" },
   { value: `${OIL_COUNT} huiles`, label: "Références culinaires, lipo et hydrosolubles", href: "/huiles-essentielles-culinaires/" },
 ];

@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { CtaBand, LogoWall, PageHero, Testimonials } from "@/components/blocks";
+import {
+  Awards,
+  CtaBand,
+  LogoWall,
+  PageHero,
+  Testimonials,
+} from "@/components/blocks";
 import ReferenceExplorer from "@/components/ReferenceExplorer";
 import { Container, Placeholder, Section } from "@/components/ui";
 import { REFERENCES } from "@/content/references";
@@ -7,7 +13,7 @@ import { REFERENCES } from "@/content/references";
 export const metadata: Metadata = {
   title: "Références",
   description:
-    "Quatorze collaborations documentées : un MOF, deux champions du monde, un laboratoire d'innovation, des fromagers, des brasseurs, des industriels. Plus de 200 clients en France et en Europe.",
+    "Quinze médailles au Mondial du Fromage, et quatorze collaborations documentées : un MOF, deux champions du monde, un laboratoire d'innovation, des fromagers, des brasseurs, des industriels. Plus de 200 clients en France et en Europe.",
   alternates: { canonical: "/references/" },
 };
 
@@ -22,6 +28,8 @@ export default function Page() {
       />
 
       <LogoWall title="Ils me font confiance" tone="deep" />
+
+      <Awards />
 
       <ReferenceExplorer />
 
