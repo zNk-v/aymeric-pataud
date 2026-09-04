@@ -9,14 +9,19 @@ import { SITE } from "@/lib/site";
  *
  * Deux modes, un seul interrupteur : ENDPOINT.
  *  - null            → ouvre le client mail du visiteur avec un message prérempli.
- *                      Fonctionne dès aujourd'hui, sans compte ni abonnement.
- *  - "https://…"     → POST direct vers un service tiers (Formspree, Web3Forms,
- *                      Formsubmit…). Le reste du composant ne change pas.
+ *                      Le visiteur doit appuyer sur envoyer lui-même, et sur
+ *                      mobile sans messagerie configurée il ne peut rien faire.
+ *  - "https://…"     → POST vers le relais Sitaly, qui envoie via Brevo.
+ *                      Le reste du composant ne change pas.
+ *
+ * Le relais est un Worker Cloudflare, dépôt sitaly-forms. Il détient la clé
+ * d'API, qu'un site statique ne peut pas garder secrète, filtre les origines
+ * autorisées et adresse le message à Aymeric avec le reply-to du visiteur.
  *
  * WordPress gérait l'envoi nativement via Gravity Forms. Ce n'est plus
  * possible sur un site statique. Voir docs/A-VALIDER.md.
  */
-const ENDPOINT: string | null = null;
+const ENDPOINT: string | null = "https://sitaly-forms.sitaly-forms.workers.dev";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
