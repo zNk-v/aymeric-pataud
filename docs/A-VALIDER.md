@@ -98,10 +98,10 @@ l'adresse réunionnaise, garder Amiens comme siège, ou n'afficher aucune adress
 en dehors des mentions légales ? Modifiable dans
 [`src/lib/site.ts`](../src/lib/site.ts).
 
-### L'adresse e-mail
-Le site utilise `ap@aymericpataud.fr`, la seule documentée publiquement (dans
-les mentions légales). Est-ce bien l'adresse à laquelle il veut recevoir les
-demandes commerciales ?
+### L'adresse e-mail — tranché le 3 septembre 2026
+Aymeric a créé `aymeric@aymericpataud.fr` et demande que ce soit l'adresse
+affichée sur le site et destinataire du formulaire. En ligne depuis le
+4 septembre 2026. L'ancienne, `ap@aymericpataud.fr`, reste active de son côté.
 
 ### Le téléphone
 `06 71 80 31 93`, repris du WordPress. Toujours valide ?

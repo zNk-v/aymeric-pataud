@@ -12,8 +12,9 @@ export const SITE = {
   role: "Expert du goût",
   url: "https://www.aymericpataud.fr",
   locale: "fr_FR",
-  // Seule adresse e-mail documentée publiquement (mentions légales WordPress).
-  email: "ap@aymericpataud.fr",
+  // Adresse de contact choisie par Aymeric le 3 septembre 2026, en remplacement
+  // de ap@aymericpataud.fr. C'est celle qui reçoit les demandes du formulaire.
+  email: "aymeric@aymericpataud.fr",
   phone: "06 71 80 31 93",
   phoneHref: "+33671803193",
   /** Siège social et adresse des mentions légales. */
