@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /mentions-legales/
+Disallow: /politique-de-confidentialite/
+
+Host: https://www.aymericpataud.fr
+Sitemap: https://www.aymericpataud.fr/sitemap.xml
