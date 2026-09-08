@@ -327,6 +327,13 @@ export function Workshops() {
               <p className="font-display mt-4 text-3xl lg:text-4xl">
                 Amiens <span className="text-sauge">·</span> La Réunion
               </p>
+              {/* Le procédé et sa filiation scientifique, autorisés par Aymeric
+                  le 8 septembre 2026. */}
+              <p className="mt-4 text-sm text-encre-soft">
+                L&apos;éco-extracteur qui s&apos;y trouve est né de vingt ans de
+                recherche avec Farid Chemat, titulaire de la chaire UNESCO. Le
+                procédé est protégé par un brevet.
+              </p>
             </Reveal>
           </div>
           <Stagger className="grid gap-8 sm:grid-cols-2 lg:col-span-8">

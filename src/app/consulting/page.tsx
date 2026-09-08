@@ -18,9 +18,9 @@ import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
 import { OFFERS, PROJECT_FORMATS } from "@/content/offers";
 
 export const metadata: Metadata = {
-  title: "Consulting & masterclass",
+  title: "Consulting & formations",
   description:
-    "Team building du goût, masterclass, coaching en cuisine et en R&D : quatre formats chiffrés autour des huiles essentielles culinaires. Un chef consultant qui règle un problème de goût, pas un fournisseur d'ingrédients.",
+    "Team building du goût, coaching en cuisine et coaching R&D : trois formats chiffrés autour des huiles essentielles culinaires. Un chef consultant qui règle un problème de goût, pas un fournisseur d'ingrédients.",
   alternates: { canonical: "/consulting/" },
 };
 
@@ -54,7 +54,7 @@ export default function Page() {
   return (
     <>
       <PageHero
-        kicker="Consulting & masterclass"
+        kicker="Consulting & formations"
         title="Je ne vends pas des flacons. Je règle un problème."
         lede="Le plus souvent en une phrase, après avoir goûté. C'est pour cela que mes clients acceptent un tarif deux à quatre fois supérieur au marché, et qu'ils ne repartent pas."
         image="/images/portrait-atelier.webp"
@@ -86,15 +86,15 @@ export default function Page() {
         <Container>
           <SectionHeader
             kicker="Formations et interventions"
-            title="Quatre formats, quatre besoins"
+            title="Trois formats, trois besoins"
             lede="Des points de départ, pas des cadres figés. La durée, le nombre de participants et le contenu s'ajustent à votre contexte."
           />
-          <Stagger className="mt-14 grid gap-5 lg:grid-cols-2">
+          <Stagger className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {OFFERS.map((offer) => (
               <StaggerItem key={offer.title} className="h-full">
-                <article className="card flex h-full flex-col rounded-3xl p-8 lg:p-10">
+                <article className="card flex h-full flex-col rounded-3xl p-8">
                   <Kicker>{offer.audience}</Kicker>
-                  <h3 className="font-display mt-4 text-2xl lg:text-3xl">
+                  <h3 className="font-display mt-4 text-2xl">
                     {offer.title}
                   </h3>
                   <p className="mt-2 text-vert">{offer.tagline}</p>
@@ -106,7 +106,7 @@ export default function Page() {
                         key={spec.label}
                         className="flex flex-wrap gap-x-6 gap-y-1 py-3.5"
                       >
-                        <dt className="w-28 shrink-0 text-sm uppercase tracking-[0.14em] text-vert">
+                        <dt className="w-full shrink-0 text-sm uppercase tracking-[0.14em] text-vert xl:w-24">
                           {spec.label}
                         </dt>
                         <dd className="flex-1 text-sm text-encre-soft">
@@ -195,67 +195,6 @@ export default function Page() {
           </TextLink>
         </p>
       </SplitBlock>
-
-      {/* Masterclass — demandée par le client le 17 août 2026. Le format
-          commercial n'est pas encore arrêté : la page décrit l'intention, pas
-          une offre chiffrée. */}
-      <Section tone="deep" id="masterclass">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
-            <div className="lg:col-span-5">
-              <Reveal>
-                <Kicker>Masterclass</Kicker>
-                <h2 className="font-display mt-5 text-balance text-4xl leading-[1.08] lg:text-5xl">
-                  Apprendre à lire un goût, pas à suivre une recette
-                </h2>
-                <p className="lede mt-6">
-                  Un format né des démonstrations que je fais depuis vingt ans
-                  en cuisine et en laboratoire. On goûte, on démonte, on
-                  reconstruit.
-                </p>
-              </Reveal>
-            </div>
-            <div className="lg:col-span-7">
-              <Stagger className="grid gap-4 sm:grid-cols-2">
-                {[
-                  {
-                    t: "Pour une brigade",
-                    d: "Sortir des assaisonnements réflexes et signer une carte avec des goûts qu'on ne trouve pas ailleurs.",
-                  },
-                  {
-                    t: "Pour une équipe R&D",
-                    d: "Comprendre ce que l'aromatique peut et ne peut pas corriger, avant de lancer un développement.",
-                  },
-                  {
-                    t: "Pour une équipe commerciale",
-                    d: "Savoir raconter un produit en parlant de ce qui se passe en bouche, pas de sa fiche technique.",
-                  },
-                  {
-                    t: "En teambuilding",
-                    d: "Un atelier qui fonctionne parce que personne n'a jamais goûté ce que je fais goûter.",
-                  },
-                ].map((m) => (
-                  <StaggerItem key={m.t} className="h-full">
-                    <div className="card h-full rounded-3xl p-7">
-                      <h3 className="font-display text-xl">{m.t}</h3>
-                      <p className="mt-3 text-sm text-encre-soft">{m.d}</p>
-                    </div>
-                  </StaggerItem>
-                ))}
-              </Stagger>
-              <Reveal delay={0.15}>
-                <p className="mt-6 text-encre-soft">
-                  Le format est arrêté : six participants, une demi-journée,
-                  déjeuner inclus, matériel fourni.{" "}
-                  <TextLink href="#formats">
-                    Voir le détail et le tarif
-                  </TextLink>
-                </p>
-              </Reveal>
-            </div>
-          </div>
-        </Container>
-      </Section>
 
       <Section>
         <Container>

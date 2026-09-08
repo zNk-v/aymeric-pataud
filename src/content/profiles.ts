@@ -41,12 +41,14 @@ export const PROFILES: Profile[] = [
     label: "Chef ou traiteur",
     title: "Chefs & traiteurs",
     // Retour client du 17/08/2026 : sur cette carte, mettre en avant le
-    // consulting et les masterclass plutôt que la vente de flacons.
+    // consulting et la formation plutôt que la vente de flacons. La masterclass
+    // qui figurait ici est sortie du catalogue le 8 septembre, le coaching en
+    // cuisine la remplace.
     need:
       "Vous cherchez quelqu'un qui vienne débloquer une recette, signer une carte, ou former votre brigade à lire un goût.",
     proofs: [
       "Consulting à la journée, en cuisine ou en laboratoire",
-      "Masterclass pour brigades et équipes",
+      "Coaching en cuisine pour former votre brigade",
       "Créations exclusives extraites à l'atelier",
     ],
     image: "/images/gourmand-asperges.webp",

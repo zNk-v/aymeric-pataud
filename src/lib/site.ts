@@ -93,7 +93,7 @@ export const NAV: NavGroup[] = [
         description: "Lire une recette avant de la corriger",
       },
       {
-        label: "Consulting & masterclass",
+        label: "Consulting & formations",
         href: "/consulting/",
         description: "Chefs, R&D, industriels, formation",
       },

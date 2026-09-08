@@ -19,7 +19,6 @@ que le contenu arrive.
 | `/huiles-essentielles-culinaires/` | Catalogue PDF | Le lien de téléchargement du WordPress ne répond plus. Et la position à tenir sur les prix publics. |
 | `/creations-fromageres/` | Photos des créations MEALK | Yaourts, tommes, raclettes, beurres, gamme par gamme. Sans elles, la page reste une liste. |
 | `/nutrition-sportive/` | Visuels Trek & Adventure | Packaging des trente plats lyophilisés et date de lancement. Son nom et son visage seront associés à la marque : à dire explicitement une fois confirmé. |
-| `/aymeric-pataud/` | Quatre dates du parcours de chef | Début d'activité comme chef, cofondation de MEALK, conférence TEDxAmiens, entrée aux Toques Françaises. Les quatre faits sont déjà dans le texte de la page, sans année. La colonne « Le chef » de la frise reste courte tant qu'elles manquent. |
 | `/aymeric-pataud/` | Dates et liens de presse | Aymeric juge la presse secondaire (grand public, hors cible). Le bloc reste court. Manquent les dates, et l'identification de l'article de 2026 : Vital Food n°48 est le candidat le plus probable, à confirmer. |
 | `/references/` | Nouveaux clients | Aymeric a signé plusieurs clients depuis. Il faut leur accord écrit avant d'afficher leur logo, puis le logo et une ligne de contexte pour chacun. |
 
@@ -142,6 +141,11 @@ publiée. Il pense en avoir plus de 70 aujourd'hui. Le chiffre exact sera
 À récupérer auprès de Vorombola. Décision prise : pas de prix affichés. Le
 catalogue sera téléchargeable contre une adresse e-mail, ce qui alimente sa
 base de contacts, et les tarifs se discutent au téléphone.
+
+Il s'agit du catalogue des huiles, pas des prestations. Les trois formats
+d'intervention de `/consulting/` affichent leur prix depuis le 8 septembre
+2026, à la demande d'Aymeric. Les deux décisions ne se contredisent pas :
+une journée de coaching se compare, un flacon se négocie.
 
 ### ~~La confirmation MEALK~~ — obtenue le 17/08/2026
 Confirmé par écrit : cofondateur de la marque MEALK, libre de communiquer sur

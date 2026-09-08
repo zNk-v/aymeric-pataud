@@ -592,3 +592,55 @@ Françaises. Un emplacement réservé les demande. Les dates des deux Ateliers d
 Goût, elles, viennent du catalogue : Amiens en 2025, La Réunion en 2026. Le
 « Aujourd'hui, deux ateliers » de l'ancienne frise devient donc deux jalons
 datés.
+
+---
+
+## 26. Le catalogue arbitré, le soir même
+
+Aymeric a tranché les cinq points soulevés à la publication, quelques heures
+après.
+
+**La masterclass sort du catalogue.** Elle se faisait doubler par le coaching
+en cuisine : 1 800 € la demi-journée à six participants contre 2 000 € la
+journée entière chez le client. Aymeric la retire sans fusion ni renommage. La
+section qui la vendait disparaît avec elle, sinon un visiteur lisait une offre
+qu'il ne pouvait plus acheter.
+
+Cette section portait quatre publics : brigade, équipe R&D, équipe commerciale,
+teambuilding. Trois retrouvent leur offre dans le catalogue. L'équipe
+commerciale n'en a plus, personne ne lui vendait rien de chiffré.
+
+**La page change de nom.** « Consulting & masterclass » ne décrivait plus la
+page, dans le titre, dans le hero et dans la navigation. Elle devient
+« Consulting & formations ». La carte « Chef ou traiteur » de l'accueil
+promettait elle aussi une masterclass : elle promet maintenant le coaching en
+cuisine.
+
+**Le team building passe à quinze.** Le seuil de douze et la mécanique par
+trios jusqu'à trente disparaissent. Au-delà de quinze, on en parle.
+
+**Trois offres, un seul prix.** Les trois formats restants tiennent en une
+journée à 2 000 €, ingrédients et déplacement en sus. Le catalogue se lit d'un
+coup d'œil, ce que quatre lignes à deux tarifs ne permettaient pas.
+
+**La frise est complète.** Débuts de chef en 2002, MEALK en 2017, TEDxAmiens en
+2023, Toques Françaises en 2024. Sept jalons à gauche, six à droite.
+
+Ces dates corrigent au passage la lecture de la frise : la découverte de 1999
+précède les débuts de chef de trois ans. L'outil n'est pas venu réparer une
+carrière déjà faite, les deux fils avancent ensemble depuis le premier jour.
+L'introduction de la section le dit maintenant.
+
+**Le procédé et sa filiation.** Aymeric autorise deux précisions tirées de son
+catalogue : vingt ans de recherche avec Farid Chemat, titulaire de la chaire
+UNESCO, et un procédé d'éco-extraction protégé par un brevet. Elles sont posées
+sur l'accueil, dans le bandeau des deux ateliers, et sur la page méthode, où
+elles répondent à la question que le lecteur se pose : que faire quand le goût
+visé n'existe dans aucun flacon.
+
+La page du chef présentait déjà Farid Chemat comme « spécialiste mondial de
+l'éco-extraction ». Le même homme ne peut pas porter deux descriptions selon la
+page : son titre y est ajouté.
+
+Les deux cents clients, eux, étaient déjà là, dans le bandeau de preuves et
+sous le carrousel de logos. L'autorisation confirme ce qui s'affichait.

@@ -24,13 +24,19 @@ export const metadata: Metadata = {
  * Chronologie corrigée par Aymeric le 20 août 2026, puis scindée en deux
  * parcours le 8 septembre à sa demande : le chef d'un côté, les huiles
  * essentielles de l'autre. Lire les deux colonnes en parallèle montre ce
- * qu'une liste unique écrasait : la découverte de 1999 n'a pas fait dévier un
- * chef vers l'aromatique, elle lui a donné un outil qu'il a mis vingt-cinq ans
- * à tailler pendant qu'il continuait d'exercer.
+ * qu'une liste unique écrasait : la découverte de 1999 précède ses débuts de
+ * chef en 2002. L'outil n'est pas venu corriger une carrière déjà faite, les
+ * deux fils avancent ensemble depuis le premier jour.
  *
  * Les dates des ateliers viennent du catalogue d'offres du 8 septembre 2026.
+ * Les quatre autres jalons du parcours de chef ont été datés par Aymeric le
+ * soir même : ils figuraient dans le texte de la page sans année.
  */
 const PARCOURS_CHEF = [
+  { year: "2002", text: "Débuts comme chef" },
+  { year: "2017", text: "Cofondation de MEALK, marque de crémerie dont il crée la plupart des recettes" },
+  { year: "2023", text: "Conférence TEDxAmiens, « Émotions culinaires : la goutte qui fait la différence »" },
+  { year: "2024", text: "Entrée aux Toques Françaises" },
   { year: "2025", text: "Ouverture du premier Atelier du Goût, à Amiens" },
   { year: "Mai 2026", text: "Adhésion au Collège Culinaire de France, validée à l'unanimité par les chefs fondateurs. Artisan Militant de la Qualité" },
   { year: "2026", text: "Ouverture du second Atelier du Goût, à La Réunion" },
@@ -88,22 +94,12 @@ export default function Page() {
           <SectionHeader
             kicker="Repères"
             title="Deux parcours, menés de front"
-            lede="Un chef qui n'a jamais quitté la cuisine, et un outil qu'il met vingt-cinq ans à tailler. Les deux colonnes se lisent en parallèle."
+            lede="Il découvre les huiles essentielles trois ans avant ses débuts de chef. Depuis, les deux fils avancent ensemble. Les colonnes se lisent en parallèle."
           />
           <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-x-16 lg:gap-x-20">
             <Frise title="Le chef" items={PARCOURS_CHEF} />
             <Frise title="Les huiles essentielles" items={PARCOURS_HUILES} />
           </div>
-          <Reveal delay={0.15}>
-            <Placeholder title="Quatre dates du parcours de chef" className="mt-10">
-              La colonne de gauche est courte tant qu&apos;Aymeric n&apos;a pas
-              donné quatre années : le début de son activité de chef, la
-              cofondation de MEALK, la conférence TEDxAmiens et son entrée aux
-              Toques Françaises. Ces quatre jalons existent déjà dans le texte
-              de la page, sans date. Une fois datés, les deux colonnes
-              s&apos;équilibrent.
-            </Placeholder>
-          </Reveal>
         </Container>
       </Section>
 
@@ -147,9 +143,11 @@ export default function Page() {
         <p>
           Deux rencontres structurent ma manière de travailler. Victor Goeb,
           médecin et aromathérapeute, m&apos;apprend à lire le végétal : son
-          équilibre, sa puissance, ses limites. Farid Chemat, spécialiste
-          mondial de l&apos;éco-extraction, m&apos;ouvre à une aromatique plus
-          juste, respectueuse du végétal et de l&apos;environnement.
+          équilibre, sa puissance, ses limites. Farid Chemat, titulaire de la
+          chaire UNESCO et spécialiste mondial de l&apos;éco-extraction,
+          m&apos;ouvre à une aromatique plus juste, respectueuse du végétal et
+          de l&apos;environnement. Vingt ans de recherche avec lui ont donné le
+          procédé breveté qui équipe mes ateliers.
         </p>
         <p>
           De là naît une conviction fondatrice : les huiles essentielles

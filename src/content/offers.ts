@@ -1,5 +1,5 @@
 /**
- * Formations et interventions : les quatre formats commerciaux.
+ * Formations et interventions : les trois formats commerciaux.
  *
  * Source : « Catalogue_offres_Aymeric_Pataud.pdf », transmis par Aymeric le
  * 8 septembre 2026 avec la consigne de publier directement, sans nouveau
@@ -7,16 +7,23 @@
  * ouvert depuis le 17 août : durée, nombre de participants, lieu, matériel et
  * prix étaient les cinq lignes manquantes.
  *
- * Deux écarts assumés par rapport au PDF, signalés à Aymeric par mail :
+ * Arbitré par Aymeric le soir même, après relecture :
  *
- * 1. La voix. Le catalogue est écrit au « nous » (« Nos formations »). Le site
- *    entier parle à la première personne du singulier. Les textes sont donc
- *    repris au « je », sans rien changer aux faits ni aux chiffres.
+ * 1. La masterclass du goût sort du catalogue. Elle se faisait doubler par le
+ *    coaching en cuisine, 1 800 € la demi-journée à six contre 2 000 € la
+ *    journée entière chez le client. Aymeric la retire sans fusion ni
+ *    renommage : elle disparaît, la section qui la vendait aussi.
  *
- * 2. Le tarif du coaching R&D. Le PDF affiche « 2 000 € » sans unité là où les
- *    trois autres lignes portent « / jour », pour une durée d'une journée.
- *    Aligné sur « 2 000 € / jour » : à corriger si l'intention était un
- *    forfait.
+ * 2. Le team building passe à quinze participants en atelier direct, et la
+ *    mécanique par trios jusqu'à trente disparaît. Un acheteur ne savait ni ce
+ *    qu'il achetait, ni ce qu'il payait au-delà de douze.
+ *
+ * 3. Le tarif du coaching R&D reste « / jour ». Le PDF affichait « 2 000 € »
+ *    sans unité, pour une prestation d'une journée comme les deux autres.
+ *
+ * La voix, enfin : le catalogue est écrit au « nous », le site entier parle à
+ * la première personne du singulier. Les textes sont repris au « je », sans
+ * rien changer aux faits ni aux chiffres.
  *
  * Les prix sont affichés publiquement, ce qui est un choix du client. Ils
  * restent des points de départ : le PDF le dit, la page le répète.
@@ -44,26 +51,12 @@ export const OFFERS: Offer[] = [
     specs: [
       { label: "Pour qui", value: "Entreprises qui cherchent un événement d'équipe dont on reparle" },
       { label: "Où", value: "Dans vos locaux ou dans un hôtel partenaire" },
-      { label: "Format", value: "Jusqu'à 12 personnes en atelier direct. Au-delà, les participants travaillent en équipes de trois, jusqu'à trente" },
+      { label: "Format", value: "Jusqu'à quinze personnes en atelier direct. Au-delà, on en parle ensemble" },
       { label: "Durée", value: "Une journée" },
       { label: "Matériel", value: "Entièrement fourni" },
     ],
     price: "2 000 € / jour",
     priceNote: "Ingrédients et frais de déplacement en sus",
-  },
-  {
-    audience: "Chefs & professionnels",
-    title: "Masterclass du goût",
-    tagline: "Un savoir-faire rare, transmis en petit comité",
-    text: "Un format volontairement resserré. Je transmets ma manière de travailler les huiles essentielles culinaires au service de vos propres créations, jamais comme une fin en soi. Six participants au maximum, pour que chacun reparte avec une compréhension réelle plutôt qu'une démonstration vue de loin.",
-    specs: [
-      { label: "Pour qui", value: "Chefs et professionnels de la cuisine" },
-      { label: "Où", value: "Dans la cuisine professionnelle d'un chef partenaire" },
-      { label: "Format", value: "Six personnes maximum" },
-      { label: "Durée", value: "Une demi-journée, déjeuner inclus" },
-      { label: "Matériel", value: "Entièrement fourni" },
-    ],
-    price: "300 € / personne",
   },
   {
     audience: "Restaurants & palaces",

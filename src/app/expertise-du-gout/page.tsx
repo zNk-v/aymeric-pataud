@@ -101,6 +101,16 @@ export default function Page() {
           construction gustative. Ajouter un arôme ne le corrige pas, il le
           masque.
         </p>
+        {/* Le procédé d'éco-extraction : Aymeric a autorisé ces précisions le
+            8 septembre 2026, la chaire de Farid Chemat et le brevet. */}
+        <p>
+          Quand le goût visé n&apos;existe dans aucun flacon, je l&apos;extrais.
+          Mon procédé d&apos;éco-extraction sur mesure est né de vingt ans de
+          recherche avec Farid Chemat, titulaire de la chaire UNESCO, et il est
+          protégé par un brevet. Il travaille au plus près de la plante et du
+          producteur, sur des volumes qu&apos;aucun industriel de
+          l&apos;arôme ne descend chercher.
+        </p>
       </SplitBlock>
 
       {/* Le triangle aromatique */}
