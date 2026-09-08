@@ -19,7 +19,7 @@ que le contenu arrive.
 | `/huiles-essentielles-culinaires/` | Catalogue PDF | Le lien de téléchargement du WordPress ne répond plus. Et la position à tenir sur les prix publics. |
 | `/creations-fromageres/` | Photos des créations MEALK | Yaourts, tommes, raclettes, beurres, gamme par gamme. Sans elles, la page reste une liste. |
 | `/nutrition-sportive/` | Visuels Trek & Adventure | Packaging des trente plats lyophilisés et date de lancement. Son nom et son visage seront associés à la marque : à dire explicitement une fois confirmé. |
-| `/consulting/` | Format des masterclass | Durée, nombre de participants, lieu, matériel, prix. La page décrit l'intention, pas une offre chiffrée. |
+| `/aymeric-pataud/` | Quatre dates du parcours de chef | Début d'activité comme chef, cofondation de MEALK, conférence TEDxAmiens, entrée aux Toques Françaises. Les quatre faits sont déjà dans le texte de la page, sans année. La colonne « Le chef » de la frise reste courte tant qu'elles manquent. |
 | `/aymeric-pataud/` | Dates et liens de presse | Aymeric juge la presse secondaire (grand public, hors cible). Le bloc reste court. Manquent les dates, et l'identification de l'article de 2026 : Vital Food n°48 est le candidat le plus probable, à confirmer. |
 | `/references/` | Nouveaux clients | Aymeric a signé plusieurs clients depuis. Il faut leur accord écrit avant d'afficher leur logo, puis le logo et une ligne de contexte pour chacun. |
 

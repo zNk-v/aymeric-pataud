@@ -554,3 +554,41 @@ depuis les bords uniquement, pour que les blancs intérieurs (le tablier, le
 bonnet, la chemise) restent opaques. Un détourage par seuil global aurait
 troué l'illustration. Les logos du bandeau sont posés sur un crème très clair :
 sans transparence, le carré blanc se serait vu.
+
+---
+
+## 25. Les offres chiffrées, et la frise scindée, le 8 septembre
+
+Aymeric a transmis un catalogue de quatre offres et demandé de publier sans
+nouveau cadrage. C'est la fin de l'emplacement réservé le plus ancien de la
+page Consulting : durée, participants, lieu, matériel et prix manquaient depuis
+le 17 août.
+
+**L'ancienne grille « Quatre façons de travailler ensemble » disparaît.** Elle
+décrivait quatre intentions, dont deux ne se vendent pas à la journée. Les
+quatre formats du catalogue prennent sa place, avec leurs cinq lignes de
+concret et leur tarif. L'accompagnement R&D et la création de recette
+descendent dans un bloc « Au-delà de la journée », sur devis : le catalogue
+renvoie lui-même vers une offre R&D dédiée qu'Aymeric n'a pas chiffrée.
+
+**Deux écarts par rapport au PDF.** Le catalogue parle au « nous », le site
+parle au « je » depuis la première ligne : les textes sont repris au singulier,
+sans toucher aux faits. Et le coaching R&D affichait « 2 000 € » sans unité là
+où les trois autres portent « / jour », pour une durée d'une journée : aligné
+sur « 2 000 € / jour », à corriger si l'intention était un forfait.
+
+**Les prix sont publics.** C'est un choix du client, pas une recommandation.
+La page redit ce que dit le catalogue : ces formats sont des points de départ.
+
+**La frise passe à deux colonnes.** Le chef d'un côté, les huiles essentielles
+de l'autre, à la demande d'Aymeric. La lecture parallèle dit ce que la liste
+unique écrasait : la découverte de 1999 n'a pas fait dévier un chef vers
+l'aromatique, elle lui a donné un outil taillé pendant vingt-cinq ans
+d'exercice.
+
+La colonne du chef reste courte. Quatre jalons de sa carrière figurent dans le
+texte de la page sans année : ses débuts, MEALK, TEDxAmiens, les Toques
+Françaises. Un emplacement réservé les demande. Les dates des deux Ateliers du
+Goût, elles, viennent du catalogue : Amiens en 2025, La Réunion en 2026. Le
+« Aujourd'hui, deux ateliers » de l'ancienne frise devient donc deux jalons
+datés.

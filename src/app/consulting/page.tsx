@@ -15,32 +15,14 @@ import {
   TextLink,
 } from "@/components/ui";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
+import { OFFERS, PROJECT_FORMATS } from "@/content/offers";
 
 export const metadata: Metadata = {
   title: "Consulting & masterclass",
   description:
-    "Accompagnement R&D, création de recette, masterclass autour du goût et des huiles essentielles culinaires. Un chef consultant qui règle un problème de goût, pas un fournisseur d'ingrédients.",
+    "Team building du goût, masterclass, coaching en cuisine et en R&D : quatre formats chiffrés autour des huiles essentielles culinaires. Un chef consultant qui règle un problème de goût, pas un fournisseur d'ingrédients.",
   alternates: { canonical: "/consulting/" },
 };
-
-const FORMATS = [
-  {
-    title: "Accompagnement R&D",
-    text: "Je travaille avec vos équipes sur une reformulation, un remplacement d'arôme ou la création d'un profil signature. De la première dégustation au dossier de validation.",
-  },
-  {
-    title: "Création de recette",
-    text: "Développement complet, du concept au produit fini. Ce que le produit doit dire, ce que le marché attend, ce que la bouche perçoit réellement.",
-  },
-  {
-    title: "Masterclass du goût",
-    text: "Une journée pour comprendre la structure d'un goût, apprendre à doser une huile essentielle au dixième de goutte et sortir des réflexes d'aromatisation. Pour brigades, équipes R&D ou commerciales.",
-  },
-  {
-    title: "Événements d'entreprise",
-    text: "Ateliers de type teambuilding autour du goût. Un format qui fonctionne parce que personne n'a jamais goûté ce que je fais goûter.",
-  },
-];
 
 const CAS = [
   {
@@ -97,11 +79,67 @@ export default function Page() {
         cloche.
       </QuoteBanner>
 
+      {/* Formats chiffrés. Le catalogue transmis par Aymeric le 8 septembre
+          2026 remplace l'ancienne grille descriptive : mêmes façons de
+          travailler, mais avec le concret que les prospects réclamaient. */}
+      <Section id="formats">
+        <Container>
+          <SectionHeader
+            kicker="Formations et interventions"
+            title="Quatre formats, quatre besoins"
+            lede="Des points de départ, pas des cadres figés. La durée, le nombre de participants et le contenu s'ajustent à votre contexte."
+          />
+          <Stagger className="mt-14 grid gap-5 lg:grid-cols-2">
+            {OFFERS.map((offer) => (
+              <StaggerItem key={offer.title} className="h-full">
+                <article className="card flex h-full flex-col rounded-3xl p-8 lg:p-10">
+                  <Kicker>{offer.audience}</Kicker>
+                  <h3 className="font-display mt-4 text-2xl lg:text-3xl">
+                    {offer.title}
+                  </h3>
+                  <p className="mt-2 text-vert">{offer.tagline}</p>
+                  <p className="mt-5 text-encre-soft">{offer.text}</p>
+
+                  <dl className="mt-8 divide-y divide-line border-y border-line">
+                    {offer.specs.map((spec) => (
+                      <div
+                        key={spec.label}
+                        className="flex flex-wrap gap-x-6 gap-y-1 py-3.5"
+                      >
+                        <dt className="w-28 shrink-0 text-sm uppercase tracking-[0.14em] text-vert">
+                          {spec.label}
+                        </dt>
+                        <dd className="flex-1 text-sm text-encre-soft">
+                          {spec.value}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+
+                  <div className="mt-auto pt-7">
+                    <p className="font-display text-3xl">{offer.price}</p>
+                    {offer.priceNote ? (
+                      <p className="mt-1 text-sm text-encre-soft">
+                        {offer.priceNote}
+                      </p>
+                    ) : null}
+                  </div>
+                </article>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </Container>
+      </Section>
+
+      {/* Le long cours reste sur devis : le catalogue renvoie lui-même vers une
+          offre R&D dédiée qu'Aymeric n'a pas chiffrée. */}
       <FeatureGrid
-        kicker="Formats d'intervention"
-        title="Quatre façons de travailler ensemble"
+        kicker="Au-delà de la journée"
+        title="Les projets qui se comptent en semaines"
+        lede="Un développement produit ne se règle pas en une intervention. Ces deux formats se cadrent ensemble, puis se chiffrent au projet."
         columns={2}
-        items={FORMATS}
+        tone="surface"
+        items={PROJECT_FORMATS}
       />
 
       <SplitBlock
@@ -206,12 +244,13 @@ export default function Page() {
                 ))}
               </Stagger>
               <Reveal delay={0.15}>
-                <Placeholder title="Format, durée et tarif" className="mt-6">
-                  Aymeric doit arrêter le format commercial : durée, nombre de
-                  participants, lieu, matériel fourni et prix. Tant que ce
-                  n&apos;est pas cadré, la page décrit l&apos;intention sans
-                  afficher d&apos;offre.
-                </Placeholder>
+                <p className="mt-6 text-encre-soft">
+                  Le format est arrêté : six participants, une demi-journée,
+                  déjeuner inclus, matériel fourni.{" "}
+                  <TextLink href="#formats">
+                    Voir le détail et le tarif
+                  </TextLink>
+                </p>
               </Reveal>
             </div>
           </div>
