@@ -12,8 +12,14 @@
  * annuelle.
  *
  * Les deux faits tiennent ensemble : c'est par cette adhésion que les huiles
- * essentielles culinaires entrent dans l'institution. La formulation dit donc
- * l'appartenance d'abord, la portée pour la catégorie ensuite.
+ * essentielles culinaires entrent dans l'institution.
+ *
+ * Ordre arbitré par Aymeric le 2 septembre 2026, contre ma première version.
+ * Son argument : « je fais partie de très nombreuses personnes rentrées au
+ * collège culinaire, par contre les huiles essentielles culinaires, c'est une
+ * première mondiale ». Il a raison sur ce qui différencie. La catégorie passe
+ * donc en titre, l'adhésion reste juste en dessous : elle est ce qui rend la
+ * première vérifiable, et il y a été admis comme expert de ces huiles.
  *
  * MEALK ne figure pas ici. Aymeric en est cofondateur mais n'est plus associé
  * aux sociétés qui exploitent la marque : en faire un marqueur d'autorité
@@ -29,8 +35,8 @@ export const MEMBERSHIPS = [
   },
   {
     name: "Collège Culinaire de France",
-    role: "Membre depuis mai 2026, Artisan Militant de la Qualité",
-    text: "Candidature validée à l'unanimité par les chefs fondateurs. Avec cette adhésion, les huiles essentielles culinaires entrent dans l'institution qui rassemble les artisans et les producteurs de qualité en France.",
+    role: "Les huiles essentielles culinaires y entrent en mai 2026",
+    text: "Aymeric y a été admis comme expert des huiles essentielles culinaires, à l'unanimité des chefs fondateurs. Des centaines d'artisans rejoignent le collectif ; la catégorie, elle, y entre pour la première fois.",
     logo: "/images/institutions/college-culinaire-france.png",
   },
 ];
