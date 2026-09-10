@@ -67,6 +67,7 @@ export const WORKSHOPS = [
     role: "Siège et atelier historique",
     text: "Le laboratoire de recherche et d'innovation culinaire, et l'éco-extracteur breveté. C'est d'ici que partent les développements pour la France et l'Europe.",
     image: "/images/atelier-amiens-1.webp",
+    address: { street: "213 rue Jules Barni", locality: null, postalCode: "80000", city: "Amiens" },
     lead: true,
   },
   {
@@ -75,6 +76,8 @@ export const WORKSHOPS = [
     role: "Atelier du goût",
     text: "Un second atelier au cœur de l'océan Indien, hébergé par Randofruits. Les plantes et les fruits y sont travaillés à pleine maturité, à quelques kilomètres de la récolte.",
     image: "/images/atelier-extracteur.webp",
+    // Adresse donnée par Aymeric le 10 septembre 2026.
+    address: { street: "180 rue Luciano", locality: "La Saline-les-Hauts", postalCode: "97422", city: "Saint-Paul" },
     lead: false,
   },
 ] as const;

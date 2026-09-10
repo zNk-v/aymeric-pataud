@@ -34,7 +34,7 @@ export const metadata: Metadata = {
  */
 const PARCOURS_CHEF = [
   { year: "2002", text: "Débuts comme chef" },
-  { year: "2017", text: "Cofondation de MEALK, marque de crémerie dont il crée la plupart des recettes" },
+  { year: "2017", text: "Cofondation de MEALK, entre restauration et fromages, beurres et yaourts aux parfums inédits qu'il imagine lui-même" },
   { year: "2023", text: "Conférence TEDxAmiens, « Émotions culinaires : la goutte qui fait la différence »" },
   { year: "2024", text: "Entrée aux Toques Françaises" },
   { year: "2025", text: "Ouverture du premier Atelier du Goût, à Amiens" },
@@ -143,8 +143,9 @@ export default function Page() {
         <p>
           Deux rencontres structurent ma manière de travailler. Victor Goeb,
           médecin et aromathérapeute, m&apos;apprend à lire le végétal : son
-          équilibre, sa puissance, ses limites. Farid Chemat, titulaire de la
-          chaire UNESCO et spécialiste mondial de l&apos;éco-extraction,
+          équilibre, sa puissance, ses limites. Farid Chemat, chercheur, titulaire
+          d&apos;une chaire à l&apos;UNESCO et spécialiste mondial de
+          l&apos;éco-extraction,
           m&apos;ouvre à une aromatique plus juste, respectueuse du végétal et
           de l&apos;environnement. Vingt ans de recherche avec lui ont donné le
           procédé breveté qui équipe mes ateliers.

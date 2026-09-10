@@ -331,8 +331,8 @@ export function Workshops() {
                   le 8 septembre 2026. */}
               <p className="mt-4 text-sm text-encre-soft">
                 L&apos;éco-extracteur qui s&apos;y trouve est né de vingt ans de
-                recherche avec Farid Chemat, titulaire de la chaire UNESCO. Le
-                procédé est protégé par un brevet.
+                recherche avec Farid Chemat, chercheur et titulaire d&apos;une
+                chaire à l&apos;UNESCO. Le procédé est protégé par un brevet.
               </p>
             </Reveal>
           </div>

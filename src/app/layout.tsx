@@ -107,12 +107,19 @@ const jsonLd = {
         addressCountry: SITE.address.country,
       },
       sameAs: [SITE.social.linkedin, SITE.social.instagram],
+      // Les deux ateliers avec leur voie et leur code postal depuis le
+      // 10 septembre 2026 : Google demande une adresse complète pour rattacher
+      // un lieu à une recherche locale.
       location: WORKSHOPS.map((w) => ({
         "@type": "Place",
         name: `Atelier du goût — ${w.city}`,
         address: {
           "@type": "PostalAddress",
-          addressLocality: w.city,
+          streetAddress: w.address.locality
+            ? `${w.address.street}, ${w.address.locality}`
+            : w.address.street,
+          postalCode: w.address.postalCode,
+          addressLocality: w.address.city,
           addressRegion: w.region,
           addressCountry: "FR",
         },

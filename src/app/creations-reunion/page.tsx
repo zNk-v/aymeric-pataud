@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { WORKSHOPS } from "@/lib/site";
 import { CtaBand, NextSteps, PageHero } from "@/components/blocks";
 import { QuoteBanner, SplitBlock } from "@/components/page-blocks";
 import { Container, Section, SectionHeader } from "@/components/ui";
@@ -81,6 +82,14 @@ export default function Page() {
           C&apos;est aussi de là que sortent les gammes de nutrition sportive
           100 % réunionnaises développées avec Randofruits.
         </p>
+        {/* Adresse donnée par Aymeric le 10 septembre 2026. */}
+        <address className="not-italic text-sm text-encre-soft">
+          {WORKSHOPS[1].address.street}
+          <br />
+          {WORKSHOPS[1].address.locality}
+          <br />
+          {WORKSHOPS[1].address.postalCode} {WORKSHOPS[1].address.city}
+        </address>
       </SplitBlock>
 
       <QuoteBanner attribution="SNC Pré Grandin">

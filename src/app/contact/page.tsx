@@ -91,13 +91,17 @@ export default function Page() {
                           </span>
                         </p>
                         <p className="mt-1 text-sm text-vert">{w.role}</p>
-                        {w.lead ? (
-                          <address className="mt-2 not-italic text-sm text-encre-soft">
-                            {SITE.address.street}
-                            <br />
-                            {SITE.address.postalCode} {SITE.address.city}
-                          </address>
-                        ) : null}
+                        <address className="mt-2 not-italic text-sm text-encre-soft">
+                          {w.address.street}
+                          <br />
+                          {w.address.locality ? (
+                            <>
+                              {w.address.locality}
+                              <br />
+                            </>
+                          ) : null}
+                          {w.address.postalCode} {w.address.city}
+                        </address>
                       </div>
                     ))}
                   </div>

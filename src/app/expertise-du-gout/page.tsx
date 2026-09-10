@@ -106,8 +106,8 @@ export default function Page() {
         <p>
           Quand le goût visé n&apos;existe dans aucun flacon, je l&apos;extrais.
           Mon procédé d&apos;éco-extraction sur mesure est né de vingt ans de
-          recherche avec Farid Chemat, titulaire de la chaire UNESCO, et il est
-          protégé par un brevet. Il travaille au plus près de la plante et du
+          recherche avec Farid Chemat, chercheur et titulaire d&apos;une chaire
+          à l&apos;UNESCO, et il est protégé par un brevet. Il travaille au plus près de la plante et du
           producteur, sur des volumes qu&apos;aucun industriel de
           l&apos;arôme ne descend chercher.
         </p>
