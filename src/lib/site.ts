@@ -221,4 +221,5 @@ export const LEGAL_LINKS: NavLink[] = [
   { label: "Mentions légales", href: "/mentions-legales/" },
   { label: "Politique de confidentialité", href: "/politique-de-confidentialite/" },
   { label: "Plan du site", href: "/plan-du-site/" },
+  { label: "Gérer les cookies", href: "#gerer-cookies" },
 ];

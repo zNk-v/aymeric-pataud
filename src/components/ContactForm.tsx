@@ -73,6 +73,11 @@ export default function ContactForm() {
       if (!res.ok) throw new Error(String(res.status));
       form.reset();
       setStatus("sent");
+      // Événement clé GA4, envoyé seulement si le visiteur a accepté les cookies.
+      (window as Window & { apTrack?: (a: string, p?: object) => void }).apTrack?.(
+        "generate_lead",
+        { formulaire: "contact" }
+      );
     } catch {
       setStatus("error");
     }

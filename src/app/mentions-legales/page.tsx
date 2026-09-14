@@ -97,8 +97,10 @@ export default function Page() {
 
             <h2>Cookies</h2>
             <p>
-              Ce site ne dépose aucun cookie de mesure d&apos;audience ni de
-              publicité. Les vidéos intégrées ne se chargent qu&apos;après un
+              Ce site ne dépose aucun cookie publicitaire. Avec votre accord
+              uniquement, il utilise Google Analytics 4 pour mesurer son audience
+              (détails dans la politique de confidentialité ;{" "}
+              <a href="#gerer-cookies">gérer les cookies</a>). Les vidéos intégrées ne se chargent qu&apos;après un
               clic explicite, via le domaine youtube-nocookie.com : aucun cookie
               tiers n&apos;est déposé tant que la vidéo n&apos;est pas lancée.
             </p>

@@ -34,9 +34,9 @@ export default function Page() {
 
             <h2>Données collectées</h2>
             <p>
-              Ce site est un site statique. Il ne crée aucun compte, ne suit
-              aucun parcours de navigation et ne dépose aucun cookie de mesure
-              d&apos;audience.
+              Ce site est un site statique. Il ne crée aucun compte. Avec votre
+              accord uniquement, il mesure son audience avec Google Analytics 4
+              (voir « Cookies et services tiers » ci-dessous).
             </p>
             <p>
               Les seules données collectées sont celles que vous saisissez
@@ -89,6 +89,20 @@ export default function Page() {
               Aucun cookie n&apos;est déposé à l&apos;arrivée sur le site. Les
               polices de caractères sont servies depuis le site lui-même, sans
               appel à un domaine tiers.
+            </p>
+            <p>
+              Avec votre accord, donné dans le bandeau affiché lors de votre
+              première visite, le site utilise Google Analytics 4 (Google Ireland
+              Limited) pour mesurer son audience : pages consultées, provenance
+              des visites, clics sur le téléphone ou l&apos;e-mail et envoi du
+              formulaire de contact. Ces données ne servent pas à des fins
+              publicitaires. Les cookies <code>_ga</code> et <code>_ga_*</code> ont
+              une durée de vie maximale de 13 mois. Votre choix est conservé 13
+              mois en cas d&apos;accord et 6 mois en cas de refus.
+            </p>
+            <p>
+              Vous pouvez modifier votre choix à tout moment :{" "}
+              <a href="#gerer-cookies">gérer les cookies</a>.
             </p>
             <p>
               Les vidéos sont intégrées via youtube-nocookie.com et ne se

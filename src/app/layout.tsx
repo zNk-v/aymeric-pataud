@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import { SITE, WORKSHOPS } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 /**
  * Sur Mac et iOS, la pile de polices commence par -apple-system : le visiteur
@@ -161,6 +162,9 @@ export default function RootLayout({
         <Header />
         <main id="contenu">{children}</main>
         <Footer />
+        {/* Consentement cookies (RGPD/CNIL) + Google Analytics 4 : voir public/consent.js.
+            Aucun cookie Google n'est déposé avant le clic sur « Accepter ». */}
+        <script src={asset("/consent.js")} defer />
       </body>
     </html>
   );
