@@ -13,6 +13,7 @@ import {
 } from "./motion-primitives";
 import { Arrow, Button, Container, Kicker, Section, SectionHeader } from "./ui";
 import { asset } from "@/lib/asset";
+import HeroFilm from "./HeroFilm";
 import { SIGNATURE_VIDEO, WORKSHOPS } from "@/lib/site";
 import { PROFILES } from "@/content/profiles";
 import {
@@ -26,34 +27,31 @@ import { OIL_COUNT } from "@/content/oils";
 /* =============================================================== HERO ==== */
 
 /**
- * Bloc média du hero. Aujourd'hui : la photo signature.
- * Quand la vidéo Poire et Cactus arrive, on renseigne SIGNATURE_VIDEO.src
- * dans lib/site.ts et ce bloc bascule sans toucher à la mise en page.
+ * Bloc média du hero. Depuis le 15 septembre 2026 : le film Poire et Cactus,
+ * en entier et en 9:16, avec ses commandes. Si SIGNATURE_VIDEO.src repasse à
+ * null dans lib/site.ts, la photo signature revient dans son cadre 4:5.
  */
 function SignatureMedia() {
   if (SIGNATURE_VIDEO.src) {
     return (
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
+      <HeroFilm
+        src={asset(SIGNATURE_VIDEO.src)}
         poster={asset(SIGNATURE_VIDEO.poster)}
-        className="h-full w-full object-cover"
-      >
-        <source src={asset(SIGNATURE_VIDEO.src)} type="video/mp4" />
-      </video>
+        credit={SIGNATURE_VIDEO.credit}
+      />
     );
   }
   return (
-    <Image
-      src={asset(SIGNATURE_VIDEO.poster)}
-      alt="Aymeric Pataud, chef et expert du goût"
-      fill
-      priority
-      sizes="(max-width: 1024px) 100vw, 42vw"
-      className="object-cover"
-    />
+    <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line bg-creme-deep shadow-[0_50px_100px_-60px_rgba(22,26,24,0.6)]">
+      <Image
+        src={asset("/images/hero-poster.webp")}
+        alt="Aymeric Pataud, chef et expert du goût"
+        fill
+        priority
+        sizes="(max-width: 1024px) 100vw, 42vw"
+        className="object-cover"
+      />
+    </div>
   );
 }
 
@@ -68,8 +66,24 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden pt-32 pb-16 lg:min-h-[100svh] lg:pt-40 lg:pb-24"
+      className="relative isolate overflow-hidden pt-32 pb-16 lg:min-h-[100svh] lg:pt-40 lg:pb-24"
     >
+      {/* Voile photo : le portrait signature, en fondu derrière tout le hero.
+          Plus dense à gauche, sous le titre, pour garder la lecture nette. */}
+      <div aria-hidden="true" className="absolute inset-0 -z-10">
+        <Image
+          src={asset("/images/hero-poster.webp")}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_42%] opacity-40 blur-[2px]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-creme via-creme/75 to-creme/40" />
+        <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-creme to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-creme to-transparent" />
+      </div>
+
       <span className="halo left-[-12%] top-[6%] h-[44vw] w-[44vw] max-h-[600px] max-w-[600px]" />
       <span className="halo halo-soft right-[2%] bottom-[4%] h-[34vw] w-[34vw] max-h-[440px] max-w-[440px]" />
 
@@ -123,7 +137,6 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.35 }}
-              className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line bg-creme-deep shadow-[0_50px_100px_-60px_rgba(22,26,24,0.6)]"
             >
               <SignatureMedia />
             </motion.div>

@@ -50,10 +50,24 @@ export const SITE = {
   brandTagline: "l'aromatisation végétale",
 } as const;
 
-/** Chemin de la vidéo signature Poire et Cactus. Voir docs/A-VALIDER.md. */
-export const SIGNATURE_VIDEO: { src: string | null; poster: string } = {
-  src: null,
-  poster: "/images/hero-poster.webp",
+/**
+ * Film signature du Studio Poire et Cactus, reçu le 15 septembre 2026.
+ * Affiché en entier, en 9:16, dans le hero de l'accueil. Le studio demande
+ * ce crédit dès que la vidéo est publique. Repasser `src` à null remet la
+ * photo signature. Voir docs/A-VALIDER.md.
+ */
+export const SIGNATURE_VIDEO: {
+  src: string | null;
+  poster: string;
+  credit: { studio: string; handle: string; href: string };
+} = {
+  src: "/videos/aymeric-pataud-film.mp4",
+  poster: "/images/film-poster.jpg",
+  credit: {
+    studio: "Studio Poire et Cactus",
+    handle: "@studiopoireetcactus",
+    href: "https://www.instagram.com/studiopoireetcactus/",
+  },
 };
 
 /**

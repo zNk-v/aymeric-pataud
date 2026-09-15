@@ -13,7 +13,6 @@ que le contenu arrive.
 
 | Page | Emplacement | Ce qu'il faut |
 |---|---|---|
-| `/aymeric-pataud/` | Vidéo signature | Le film Poire et Cactus, annoncé pour fin août 2026. |
 | `/consulting/` | Deux cas industriels chiffrés | Cas anonymisés mais typés, avec contexte, volume et résultat mesuré. |
 | `/creation-sur-mesure/` | Photos de l'atelier | Vues de La Saline-les-Hauts et de la machine en fonctionnement. Plus le numéro et l'intitulé exact du brevet. |
 | `/huiles-essentielles-culinaires/` | Catalogue PDF | Le lien de téléchargement du WordPress ne répond plus. Et la position à tenir sur les prix publics. |
@@ -24,25 +23,24 @@ que le contenu arrive.
 
 ---
 
-## 2. La vidéo Poire et Cactus
+## 2. La vidéo Poire et Cactus — en ligne le 15 septembre 2026
 
-L'emplacement est déjà construit, en haut de la page d'accueil, à droite du
-titre. Il affiche aujourd'hui une photo. Quand la vidéo arrive, une seule ligne
-change dans [`src/lib/site.ts`](../src/lib/site.ts) :
+Le film est dans le hero de l'accueil, à droite du titre, en entier et dans son
+format d'origine 9:16, sans recadrage. Choix de Teddy le 15 septembre 2026.
 
-```ts
-export const SIGNATURE_VIDEO = {
-  src: "/videos/signature.mp4",   // au lieu de null
-  poster: "/images/hero-poster.webp",
-};
-```
+- Lecture automatique en boucle, son coupé au départ (les navigateurs bloquent
+  l'autoplay sonore). Pas d'autoplay si le visiteur réduit les animations.
+- Commandes sous l'image, pour ne rien masquer : lecture et pause, son et
+  volume, barre pour avancer. Composant
+  [`src/components/HeroFilm.tsx`](../src/components/HeroFilm.tsx).
+- Crédit exigé par le studio, affiché sous le film :
+  « Studio Poire et Cactus / @studiopoireetcactus ».
+- Fichier : `public/videos/aymeric-pataud-film.mp4`, 1080 × 1920, H.264 + AAC,
+  1 min 32, 22 Mo. L'original reçu pesait 221 Mo en HEVC, illisible sur une
+  partie des navigateurs. Image d'attente : `public/images/film-poster.jpg`,
+  la première image du film.
 
-Le bloc bascule en lecture automatique, en boucle, sans son. Aucune retouche de
-mise en page.
-
-Format attendu : MP4 H.264, format portrait 4/5, moins de 3 Mo si possible, à
-déposer dans `public/videos/`. Prévoir une version sous-titrée si la voix off
-porte du contenu.
+Reste à faire : des sous-titres, la voix off porte tout le propos.
 
 ---
 
