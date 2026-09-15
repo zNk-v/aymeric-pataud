@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { CtaBand, NextSteps, PageHero, TedxBlock } from "@/components/blocks";
 import { QuoteBanner, SplitBlock } from "@/components/page-blocks";
-import { Container, Kicker, Placeholder, Section, SectionHeader } from "@/components/ui";
+import { Container, Kicker, Placeholder, Section, SectionHeader, TextLink } from "@/components/ui";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
 import { SITE } from "@/lib/site";
 import { asset } from "@/lib/asset";
@@ -278,6 +278,13 @@ export default function Page() {
                   <h3 className="font-display mt-7 text-2xl">{m.name}</h3>
                   <p className="mt-2 text-sm text-vert">{m.role}</p>
                   <p className="mt-4 flex-1 text-encre-soft">{m.text}</p>
+                  {m.url ? (
+                    <p className="mt-6">
+                      <TextLink href={m.url} external>
+                        {m.urlLabel}
+                      </TextLink>
+                    </p>
+                  ) : null}
                 </div>
               </StaggerItem>
             ))}

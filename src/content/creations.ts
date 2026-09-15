@@ -198,6 +198,44 @@ export const REUNION_CREATIONS = [
   },
 ];
 
+/**
+ * Ingrédients séchés et en poudre du partenaire AGRORUN, transmis par Aymeric
+ * le 15 septembre 2026. Présentation seule : pas de prix, pas de commande.
+ * Texte repris tel quel, coquille « mes huile essentielles » corrigée et mot
+ * « culinaires » harmonisé (l'atelier SEO garde « culinaire » dans les textes).
+ */
+export const AGRORUN = {
+  intro:
+    "En résidence professionnelle à La Réunion, mon atelier de R&D est installé chez AGRORUN, au cœur de leur outil de séchage artisanal. Fruits, légumes, épices et tubercules cultivés sur place, séchés sans additif, puis transformés en morceaux, granulés ou poudres selon les besoins de formulation.",
+  bridge:
+    "Une matière première brute et traçable, que j'intègre directement dans vos projets, aux côtés de mes huiles essentielles culinaires.",
+  outro:
+    "Ces ingrédients s'associent à mes huiles essentielles culinaires pour construire une offre complète : l'aromatique et la matière, la précision et le terroir.",
+};
+
+export const AGRORUN_FAMILIES = [
+  {
+    name: "Fruits séchés en morceaux",
+    list: "Mangue, ananas, banane, letchis, pitaya, pastèque, noix de coco, poire de terre, galabé (cube 3 g ou demi-bille).",
+    text: "Des textures franches pour vos mix fruités, snacking ou pâtisserie.",
+  },
+  {
+    name: "Légumes et épices séchés",
+    list: "Aubergine, tomate, poivron, gros piment, butternut et betterave en chips.",
+    text: "Pour des recettes salées ancrées dans le terroir réunionnais.",
+  },
+  {
+    name: "Poudres de fruits, légumes et épices",
+    list: "Goyavier, ananas, mangue, gros piment, petit piment, gingembre.",
+    text: "Des concentrés faciles à doser, en industrie comme en cuisine.",
+  },
+  {
+    name: "Poudres de tubercule",
+    list: "Patate douce blanche et patate douce orange.",
+    text: "Une base neutre ou colorée selon vos besoins.",
+  },
+];
+
 /* ============================================== TARTINABLES & CONDIMENTS == */
 
 /**

@@ -9,9 +9,9 @@ import { REFERENCES } from "@/content/references";
 import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
-  title: "Huiles essentielles hydrosolubles",
+  title: "Huiles essentielles alimentaires hydrosolubles",
   description:
-    "Des huiles essentielles culinaires solubles dans le lait, l'eau et les bases aqueuses. Développées il y a plus de dix ans pour les fromagers et les fabricants de boissons.",
+    "Des huiles essentielles alimentaires solubles dans le lait, l'eau et les bases aqueuses. Développées il y a plus de dix ans pour les fromagers et les fabricants de boissons.",
   alternates: { canonical: "/huiles-essentielles-hydrosolubles/" },
 };
 

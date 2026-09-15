@@ -10,6 +10,7 @@ import {
 import { Container, Kicker, Section, TextLink } from "@/components/ui";
 import { Reveal } from "@/components/motion-primitives";
 import { asset } from "@/lib/asset";
+import { DISTINCTIONS } from "@/content/credentials";
 
 export const metadata: Metadata = {
   title: "L'expertise du goût",
@@ -207,6 +208,44 @@ export default function Page() {
           </TextLink>
         </p>
       </SplitBlock>
+
+      {/* Distinctions transmises par Aymeric le 15 septembre 2026. Le texte
+          est le sien ; la bande preuve de l'accueil renvoie ici. */}
+      <Section id="reconnaissances" tone="deep">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
+            <div className="lg:col-span-6">
+              <Reveal>
+                <Kicker>Reconnaissances</Kicker>
+                <h2 className="font-display mt-5 text-balance text-4xl lg:text-5xl">
+                  Primé, incubé, et adhérent des réseaux de l&apos;agroalimentaire.
+                </h2>
+                <p className="lede mt-6">{DISTINCTIONS.text}</p>
+              </Reveal>
+            </div>
+            <div className="lg:col-span-6">
+              <ul className="divide-y divide-line border-y border-line">
+                {DISTINCTIONS.items.map((d, i) => (
+                  <Reveal key={d.name} delay={0.08 * i}>
+                    <li className="grid grid-cols-[4.5rem_1fr] gap-4 py-6">
+                      <p className="font-display text-2xl text-vert">{d.year}</p>
+                      <div>
+                        <h3 className="font-display text-2xl">{d.name}</h3>
+                        <p className="mt-1 text-encre-soft">{d.role}</p>
+                        <p className="mt-3">
+                          <TextLink href={d.url} external>
+                            Voir le site
+                          </TextLink>
+                        </p>
+                      </div>
+                    </li>
+                  </Reveal>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Container>
+      </Section>
 
       <Testimonials
         variant="anonymous"

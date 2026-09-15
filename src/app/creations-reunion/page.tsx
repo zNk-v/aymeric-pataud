@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { WORKSHOPS } from "@/lib/site";
 import { CtaBand, NextSteps, PageHero } from "@/components/blocks";
 import { QuoteBanner, SplitBlock } from "@/components/page-blocks";
-import { Container, Section, SectionHeader } from "@/components/ui";
+import { Button, Container, Section, SectionHeader } from "@/components/ui";
 import { Stagger, StaggerItem } from "@/components/motion-primitives";
-import { REUNION_CREATIONS } from "@/content/creations";
+import { AGRORUN, AGRORUN_FAMILIES, REUNION_CREATIONS } from "@/content/creations";
 
 export const metadata: Metadata = {
   title: "Créations à partir du terroir réunionnais",
@@ -62,6 +62,36 @@ export default function Page() {
               </StaggerItem>
             ))}
           </Stagger>
+        </Container>
+      </Section>
+
+      {/* Offre matière première AGRORUN, ajoutée le 15 septembre 2026.
+          La page Huiles essentielles pointe sur cette ancre. */}
+      <Section id="matieres-premieres" tone="surface">
+        <Container>
+          <SectionHeader
+            kicker="Matière première réunionnaise"
+            title="Une matière première locale, pensée pour vos créations"
+            lede={AGRORUN.intro}
+          />
+          <p className="mt-6 max-w-3xl text-encre-soft">{AGRORUN.bridge}</p>
+          <Stagger className="mt-12 grid gap-4 md:grid-cols-2">
+            {AGRORUN_FAMILIES.map((f) => (
+              <StaggerItem key={f.name} className="h-full">
+                <div className="card h-full rounded-3xl p-8">
+                  <h3 className="font-display text-2xl lg:text-3xl">{f.name}</h3>
+                  <p className="mt-5 text-encre">{f.list}</p>
+                  <p className="mt-3 text-encre-soft">{f.text}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+          <div className="mt-12 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <p className="lede max-w-2xl">{AGRORUN.outro}</p>
+            <Button href="/contact/" className="shrink-0">
+              Parler de votre projet
+            </Button>
+          </div>
         </Container>
       </Section>
 

@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 import { CtaBand, NextSteps, PageHero, Testimonials } from "@/components/blocks";
 import { FeatureGrid, QuoteBanner, SplitBlock } from "@/components/page-blocks";
-import { Container, Placeholder, Section, SectionHeader } from "@/components/ui";
+import { Container, Placeholder, Section, SectionHeader, TextLink } from "@/components/ui";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
 import { OIL_COUNT, OIL_FAMILIES } from "@/content/oils";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Huiles essentielles culinaires",
+  // Atelier SEO : « alimentaire » est cherché 170 fois par mois, « culinaire »
+  // 20 fois. Le mot d'Aymeric reste dans les textes, « alimentaire » et
+  // « comestible » vont dans les titres et les balises. L'URL ne bouge pas :
+  // l'export statique ne permet pas de redirection 301.
+  title: "Huiles essentielles alimentaires et culinaires",
   description:
-    "Plus de 60 huiles essentielles culinaires professionnelles, 100 % issues de plantes, sans solvant ni additif. Versions liposolubles et hydrosolubles, dosage jusqu'à 0,05 g/kg.",
+    "Plus de 60 huiles essentielles alimentaires professionnelles, comestibles, 100 % issues de plantes, sans solvant ni additif. Versions liposolubles et hydrosolubles, dosage jusqu'à 0,05 g/kg.",
   alternates: { canonical: "/huiles-essentielles-culinaires/" },
 };
 
@@ -96,7 +100,7 @@ export default function Page() {
         <Container>
           <SectionHeader
             kicker="Le catalogue"
-            title={`${OIL_COUNT} huiles essentielles culinaires`}
+            title={`${OIL_COUNT} huiles essentielles alimentaires`}
             lede="Certaines références sont rares, voire introuvables ailleurs en qualité alimentaire professionnelle. Les créations sur-mesure ne figurent pas dans cette liste."
           />
 
@@ -137,6 +141,17 @@ export default function Page() {
               hydrosoluble, ainsi que la position à tenir sur les prix
               publics.
             </Placeholder>
+          </Reveal>
+
+          {/* Renvoi court vers l'offre AGRORUN, demandé le 15 septembre 2026. */}
+          <Reveal delay={0.15}>
+            <p className="mt-10 text-encre-soft">
+              Besoin aussi de matière ? Fruits, légumes, épices et tubercules
+              réunionnais, séchés ou en poudre.{" "}
+              <TextLink href="/creations-reunion/#matieres-premieres">
+                Voir les ingrédients AGRORUN
+              </TextLink>
+            </p>
           </Reveal>
         </Container>
       </Section>

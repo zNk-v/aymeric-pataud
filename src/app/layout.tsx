@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: `%s — ${SITE.name}`,
   },
   description:
-    "Chef de formation et expert du goût. Je crée, reformule et signe des recettes pour les industriels de l'agroalimentaire, les chefs et les artisans. Les huiles essentielles culinaires comme outil de précision.",
+    "Chef de formation et expert du goût. Je crée, reformule et signe des recettes pour les industriels de l'agroalimentaire, les chefs et les artisans. Les huiles essentielles alimentaires comme outil de précision.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -83,6 +83,7 @@ const jsonLd = {
       ],
       knowsAbout: [
         "Huiles essentielles culinaires",
+        "Huiles essentielles alimentaires",
         "Signature gustative",
         "Reformulation agroalimentaire",
         "Clean label",

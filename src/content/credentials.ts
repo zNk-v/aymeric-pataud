@@ -32,14 +32,58 @@ export const MEMBERSHIPS = [
     role: "Membre",
     text: "Aymeric est chef, et il le reste. Porter la toque, c'est ce qui fonde sa lecture du goût avant toute considération technique.",
     logo: "/images/institutions/toques-francaises.svg",
+    url: null,
+    urlLabel: null,
   },
   {
     name: "Collège Culinaire de France",
     role: "Les huiles essentielles culinaires y entrent en mai 2026",
     text: "Aymeric y a été admis comme expert des huiles essentielles culinaires, à l'unanimité des chefs fondateurs. Des centaines d'artisans rejoignent le collectif ; la catégorie, elle, y entre pour la première fois.",
     logo: "/images/institutions/college-culinaire-france.png",
+    // Fiche d'adhérent transmise par Aymeric le 15 septembre 2026.
+    url: "https://college-culinaire-de-france.fr/adherent/38280-aymeric-pataud",
+    urlLabel: "Voir sa fiche au Collège",
   },
 ];
+
+/**
+ * Distinctions et réseaux professionnels, transmis par Aymeric le
+ * 15 septembre 2026 : il s'est aperçu en rendez-vous que le site n'affichait
+ * que les médailles du Mondial du Fromage.
+ *
+ * Deux usages : une ligne courte chacun dans la bande preuve de l'accueil
+ * (Food Creativ et INNOV'A seulement), et le bloc « Reconnaissances » de
+ * /expertise-du-gout/, où le texte est le sien, repris tel quel.
+ */
+export const DISTINCTIONS = {
+  text: "En 2024, mon sirop aux huiles essentielles de citron noir et de poivre de Sichuan de Picardie a été récompensé par le concours Food Creativ, qui distingue chaque année les produits agroalimentaires les plus innovants des Hauts-de-France. Un an plus tard, en octobre 2025, INNOV'A m'a sélectionné et incubé au titre d'entreprise innovante, un accompagnement soutenu par Amiens Métropole, la CCI Amiens Picardie et la Région Hauts-de-France. Je suis par ailleurs adhérent d'Agro-Sphères et d'ADRIANOR depuis 2021, deux réseaux qui réunissent industriels et centres techniques de l'agroalimentaire des Hauts-de-France.",
+  items: [
+    {
+      name: "Food Creativ",
+      year: "2024",
+      role: "Lauréat, sirop citron noir et poivre de Sichuan de Picardie",
+      url: "https://foodcreativ.fr/#edition",
+    },
+    {
+      name: "INNOV'A",
+      year: "2025",
+      role: "Incubé au titre d'entreprise innovante, Amiens",
+      url: "https://www.innov-a.com/",
+    },
+    {
+      name: "Agro-Sphères",
+      year: "2021",
+      role: "Adhérent",
+      url: "https://agrospheres.eu/",
+    },
+    {
+      name: "ADRIANOR",
+      year: "2021",
+      role: "Adhérent",
+      url: "https://www.adrianor.com/",
+    },
+  ],
+};
 
 /**
  * Quatre ouvrages publiés, dont le premier au monde consacré aux huiles

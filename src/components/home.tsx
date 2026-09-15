@@ -153,20 +153,27 @@ const PROOFS = [
   { value: `${AWARDS_COUNT} médailles`, label: `Au Mondial du Fromage, sur des produits que j'ai aromatisés`, href: "/references/" },
   { value: "200+", label: "Clients accompagnés en France et en Europe", href: "/references/" },
   { value: `${OIL_COUNT} huiles`, label: "Références culinaires, lipo et hydrosolubles", href: "/huiles-essentielles-culinaires/" },
+  // Ajouts du 15 septembre 2026, détaillés sur /expertise-du-gout/.
+  { value: "Food Creativ", label: "Lauréat 2024, concours d'innovation agroalimentaire des Hauts-de-France", href: "/expertise-du-gout/#reconnaissances" },
+  { value: "INNOV'A", label: "Incubé en 2025 au titre d'entreprise innovante", href: "/expertise-du-gout/#reconnaissances" },
 ];
 
 export function ProofBar() {
   return (
     <section className="border-y border-line bg-surface">
       <Container>
-        <Stagger className="grid divide-y divide-line sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4">
+        {/* Six preuves : deux colonnes sur tablette, trois sur desktop. Chaque
+            breakpoint pose ses bordures explicitement, sans classe en conflit. */}
+        <Stagger className="grid divide-y divide-line sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-3">
           {PROOFS.map((p, i) => (
             <StaggerItem key={p.value}>
               <Link
                 href={p.href}
-                className={`group flex h-full flex-col justify-center px-1 py-8 lg:px-6 lg:py-12 ${
-                  i > 0 ? "lg:border-l lg:border-line" : ""
-                } ${i % 2 === 1 ? "sm:border-l sm:border-line lg:border-l" : ""}`}
+                className={`group flex h-full flex-col justify-center border-line px-1 py-8 lg:px-6 lg:py-12 ${
+                  i % 2 === 1 ? "sm:border-l" : "sm:border-l-0"
+                } ${i >= 2 ? "sm:border-t" : "sm:border-t-0"} ${
+                  i % 3 !== 0 ? "lg:border-l" : "lg:border-l-0"
+                } ${i >= 3 ? "lg:border-t" : "lg:border-t-0"}`}
               >
                 <span className="font-display text-3xl text-vert lg:text-4xl">
                   {p.value}
