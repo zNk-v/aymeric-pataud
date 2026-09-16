@@ -222,6 +222,25 @@ export default function Page() {
                 </h2>
                 <p className="lede mt-6">{DISTINCTIONS.text}</p>
               </Reveal>
+              {/* Photo du produit primé, envoyée par Aymeric le 16 septembre
+                  2026 : c'est bien le sirop, pas la crème de vinaigre. */}
+              <Reveal delay={0.1}>
+                <figure className="mt-10">
+                  <div className="relative aspect-square w-full max-w-sm overflow-hidden rounded-3xl">
+                    <Image
+                      src={asset("/images/sirop-food-creativ.jpg")}
+                      alt="Le sirop aux huiles essentielles de citron noir et de poivre de Sichuan de Picardie"
+                      fill
+                      sizes="(min-width: 1024px) 24rem, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="mt-4 text-sm text-encre-soft">
+                    Le sirop citron noir et poivre de Sichuan de Picardie,
+                    primé par Food Creativ en 2024.
+                  </figcaption>
+                </figure>
+              </Reveal>
             </div>
             <div className="lg:col-span-6">
               <ul className="divide-y divide-line border-y border-line">
