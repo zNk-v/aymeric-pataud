@@ -261,7 +261,7 @@ const CREATIONS = [
     href: "/nutrition-sportive/",
     kicker: "Nutrition sportive",
     title: "Rendre gourmand un plat lyophilisé",
-    text: "Trente plats avec Marie de Livinhac, des barres 100 % réunionnaises avec Randofruits. Sans aucune huile essentielle.",
+    text: "Trente plats avec Marie de Livinhac, des barres 100 % réunionnaises avec AGRORUN. Sans aucune huile essentielle.",
     image: "/images/endurance.webp",
     alt: "Repas d'effort et nutrition sportive",
   },

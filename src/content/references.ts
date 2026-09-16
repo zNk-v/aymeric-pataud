@@ -222,9 +222,12 @@ export const REFERENCES: Reference[] = [
     pullQuote: "Quand le champ devient la recette.",
   },
   {
+    // Le slug et le logo ne bougent pas : Randofruits reste la marque qui
+    // porte les produits. Le nom affiché passe à AGRORUN, la société, sur
+    // arbitrage d'Aymeric du 16 septembre 2026.
     slug: "randofruits",
-    name: "Randofruits",
-    sector: "Barres énergétiques et nutrition sportive, 100 % terroir réunionnais",
+    name: "AGRORUN",
+    sector: "Barres énergétiques Randofruits, 100 % terroir réunionnais",
     audience: ["industriel", "artisan"],
     logo: "/images/logos/randofruits.webp",
     website: "https://www.randofruits.re/",

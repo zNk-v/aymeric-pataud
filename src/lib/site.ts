@@ -88,7 +88,9 @@ export const WORKSHOPS = [
     city: "La Saline-les-Hauts",
     region: "La Réunion",
     role: "Atelier du goût",
-    text: "Un second atelier au cœur de l'océan Indien, hébergé par Randofruits. Les plantes et les fruits y sont travaillés à pleine maturité, à quelques kilomètres de la récolte.",
+    // AGRORUN est la société, Randofruits l'une de ses marques. Arbitrage
+    // d'Aymeric le 16 septembre 2026 : tout passe sous le nom AGRORUN.
+    text: "Un second atelier au cœur de l'océan Indien, hébergé par AGRORUN. Les plantes et les fruits y sont travaillés à pleine maturité, à quelques kilomètres de la récolte.",
     image: "/images/atelier-extracteur.webp",
     // Adresse donnée par Aymeric le 10 septembre 2026.
     address: { street: "180 rue Luciano", locality: "La Saline-les-Hauts", postalCode: "97422", city: "Saint-Paul" },

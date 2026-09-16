@@ -114,7 +114,7 @@ export default function Page() {
         </p>
       </SplitBlock>
 
-      <QuoteBanner attribution="Randofruits">
+      <QuoteBanner attribution="AGRORUN">
         Quand la limite devient l&apos;identité.
       </QuoteBanner>
 
@@ -134,7 +134,7 @@ export default function Page() {
         items={[
           {
             title: "Terroir de La Réunion",
-            text: "Créer à partir d'ingrédients locaux, avec Randofruits.",
+            text: "Créer à partir d'ingrédients locaux, avec AGRORUN.",
             href: "/creations-reunion/",
           },
           {

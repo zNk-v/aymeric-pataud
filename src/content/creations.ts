@@ -156,8 +156,8 @@ export const SPORT_PROJECTS = [
     slug: "marie-de-livinhac",
   },
   {
-    partner: "Randofruits",
-    brands: "Barres énergétiques et nutrition sportive, 100 % terroir réunionnais",
+    partner: "AGRORUN",
+    brands: "Randofruits, barres énergétiques et nutrition sportive 100 % terroir réunionnais",
     text: "Une contrainte non négociable : uniquement des ingrédients issus du terroir de La Réunion. Fruits, épices, plantes locales. Pas de compromis sur l'origine, pas de compromis sur le goût.",
     result:
       "Des produits qui racontent un territoire autant qu'ils nourrissent un athlète. La contrainte est devenue la signature.",

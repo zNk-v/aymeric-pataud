@@ -97,7 +97,7 @@ export default function Page() {
 
       <SplitBlock
         kicker="L'atelier du goût"
-        title="La Saline-les-Hauts, hébergé par Randofruits."
+        title="La Saline-les-Hauts, hébergé par AGRORUN."
         image="/images/atelier-extracteur.webp"
         imageAlt="L'atelier de La Saline et son éco-extracteur"
         tone="deep"
@@ -110,7 +110,7 @@ export default function Page() {
         </p>
         <p>
           C&apos;est aussi de là que sortent les gammes de nutrition sportive
-          100 % réunionnaises développées avec Randofruits.
+          100 % réunionnaises développées avec AGRORUN.
         </p>
         {/* Adresse donnée par Aymeric le 10 septembre 2026. */}
         <address className="not-italic text-sm text-encre-soft">
@@ -135,7 +135,7 @@ export default function Page() {
         items={[
           {
             title: "Nutrition sportive",
-            text: "Les gammes d'effort développées avec Randofruits.",
+            text: "Les gammes d'effort développées avec AGRORUN.",
             href: "/nutrition-sportive/",
           },
           {
