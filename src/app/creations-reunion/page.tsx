@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { WORKSHOPS } from "@/lib/site";
 import { CtaBand, NextSteps, PageHero } from "@/components/blocks";
 import { QuoteBanner, SplitBlock } from "@/components/page-blocks";
+import Image from "next/image";
 import { Button, Container, Section, SectionHeader } from "@/components/ui";
-import { Stagger, StaggerItem } from "@/components/motion-primitives";
+import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
+import { asset } from "@/lib/asset";
 import { AGRORUN, AGRORUN_FAMILIES, REUNION_CREATIONS } from "@/content/creations";
 
 export const metadata: Metadata = {
@@ -69,6 +71,28 @@ export default function Page() {
           La page Huiles essentielles pointe sur cette ancre. */}
       <Section id="matieres-premieres" tone="surface">
         <Container>
+          {/* Bandeau d'ambiance, image fournie par Aymeric le 16 septembre
+              2026. Elle est générée, donc elle ouvre la section sans jamais
+              illustrer une famille de produits : la légende le dit, et le
+              texte alternatif ne prétend rien montrer de réel. */}
+          <Reveal>
+            <figure className="mb-14">
+              <div className="relative aspect-[2055/765] w-full overflow-hidden rounded-3xl">
+                <Image
+                  src={asset("/images/agrorun-reunion.jpg")}
+                  alt="Paysage de La Réunion, fruits et épices séchés"
+                  fill
+                  sizes="(min-width: 1024px) 1200px, 100vw"
+                  className="object-cover"
+                  priority={false}
+                />
+              </div>
+              <figcaption className="mt-3 text-sm text-encre-soft">
+                Illustration
+              </figcaption>
+            </figure>
+          </Reveal>
+
           <SectionHeader
             kicker="Matière première réunionnaise"
             title="Une matière première locale, pensée pour vos créations"
