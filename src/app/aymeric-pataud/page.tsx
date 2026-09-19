@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Le chef",
   description:
-    "Chef de formation, membre des Toques Françaises, cofondateur de la marque de crémerie MEALK, auteur du premier ouvrage au monde sur les huiles essentielles en cuisine (2004) et conférencier TEDx.",
+    "Chef consultant, membre des Toques Françaises, cofondateur de la marque de crémerie MEALK, auteur du premier ouvrage au monde sur les huiles essentielles en cuisine (2004) et conférencier TEDx.",
   alternates: { canonical: "/aymeric-pataud/" },
 };
 
@@ -83,7 +83,7 @@ export default function Page() {
       <PageHero
         kicker="Le chef"
         title="Chef, interprète du goût. Créateur de signatures gustatives."
-        lede="Chef de formation et cuisinier dans l'âme. Depuis plus de vingt ans, je travaille le goût comme un langage. Pas comme un arôme à ajouter, pas comme une note à plaquer. Comme une matière vivante, faite d'équilibre, de mémoire et d'émotion."
+        lede="Chef consultant et cuisinier dans l'âme. Depuis plus de vingt ans, je travaille le goût comme un langage. Pas comme un arôme à ajouter, pas comme une note à plaquer. Comme une matière vivante, faite d'équilibre, de mémoire et d'émotion."
         image="/images/portrait-noir.webp"
         imageAlt="Portrait d'Aymeric Pataud"
       />

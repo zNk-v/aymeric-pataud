@@ -95,7 +95,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
             >
-              <Kicker>Chef de formation · Expert du goût</Kicker>
+              <Kicker>Chef consultant · Expert du goût</Kicker>
             </motion.div>
 
             {/* Temps 1 : l'accroche sensorielle */}

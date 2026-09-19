@@ -14,7 +14,7 @@ import { CtaBand, TedxBlock } from "@/components/blocks";
 export const metadata: Metadata = {
   title: "Aymeric Pataud — Expert du goût",
   description:
-    "Chef de formation et expert du goût. Je crée, reformule et signe des recettes pour les industriels de l'agroalimentaire, les chefs et les artisans. Huiles essentielles alimentaires lipo et hydrosolubles.",
+    "Chef consultant et expert du goût. Je crée, reformule et signe des recettes pour les industriels de l'agroalimentaire, les chefs et les artisans. Huiles essentielles alimentaires lipo et hydrosolubles.",
   alternates: { canonical: "/" },
 };
 

@@ -18,7 +18,7 @@ export default function Footer() {
               className="h-9 w-auto"
             />
             <p className="mt-6 max-w-xs text-encre-soft">
-              Chef de formation et expert du goût. Création, reformulation et
+              Chef consultant et expert du goût. Création, reformulation et
               signatures gustatives pour chefs, artisans et marques
               agroalimentaires.
             </p>

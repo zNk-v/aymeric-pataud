@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: `%s — ${SITE.name}`,
   },
   description:
-    "Chef de formation et expert du goût. Je crée, reformule et signe des recettes pour les industriels de l'agroalimentaire, les chefs et les artisans. Les huiles essentielles alimentaires comme outil de précision.",
+    "Chef consultant et expert du goût. Je crée, reformule et signe des recettes pour les industriels de l'agroalimentaire, les chefs et les artisans. Les huiles essentielles alimentaires comme outil de précision.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE.name} — ${SITE.role}`,
     description:
-      "Chef de formation et expert du goût. Création, reformulation et signatures gustatives.",
+      "Chef consultant et expert du goût. Création, reformulation et signatures gustatives.",
     images: ["/images/portrait-signature.webp"],
   },
   // La build GitHub Pages sert d'aperçu client : elle ne doit jamais être
@@ -73,7 +73,7 @@ const jsonLd = {
       url: SITE.url,
       image: `${SITE.url}/images/portrait-signature.webp`,
       description:
-        "Chef de formation, expert du goût. Création de signatures gustatives et d'huiles essentielles culinaires pour l'agroalimentaire, les chefs et les artisans.",
+        "Chef consultant, expert du goût. Création de signatures gustatives et d'huiles essentielles culinaires pour l'agroalimentaire, les chefs et les artisans.",
       telephone: SITE.phone,
       email: SITE.email,
       sameAs: [
