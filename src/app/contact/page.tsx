@@ -47,7 +47,7 @@ export default function Page() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             {/* Formulaire */}
-            <div className="lg:col-span-7">
+            <div id="formulaire" className="scroll-mt-32 lg:col-span-7">
               <div className="card rounded-3xl p-8 lg:p-10">
                 <ContactForm />
               </div>

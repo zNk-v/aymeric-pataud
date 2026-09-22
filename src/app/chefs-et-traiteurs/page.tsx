@@ -15,6 +15,7 @@ import {
 import { Container, Section, SectionHeader } from "@/components/ui";
 import { Stagger, StaggerItem } from "@/components/motion-primitives";
 import { BESPOKE_EXAMPLES } from "@/content/oils";
+import { OfferPicks } from "@/components/offers";
 
 export const metadata: Metadata = {
   title: "Chefs & traiteurs",
@@ -123,6 +124,8 @@ export default function Page() {
 
       <Testimonials limit={4} />
 
+      <OfferPicks slugs={["coaching-cuisine", "creation-recettes", "team-building"]} />
+
       <CtaBand
         title="Une recette à twister, une carte à signer ?"
         lede="Décrivez le plat et ce qui vous manque en bouche."
@@ -143,7 +146,7 @@ export default function Page() {
           },
           {
             title: "Consulting",
-            text: "Formation de brigade et accompagnement sur une carte.",
+            text: "Coaching en cuisine, création de recettes : le détail et les tarifs.",
             href: "/consulting/",
           },
         ]}

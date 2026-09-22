@@ -281,7 +281,7 @@ export default function Page() {
         items={[
           {
             title: "Consulting",
-            text: "Accompagnement R&D, création de recette, formation et démonstration.",
+            text: "Tests R&D, création de recettes, coaching, team building, et un accompagnement gratuit.",
             href: "/consulting/",
           },
           {

@@ -1,26 +1,24 @@
 import type { Metadata } from "next";
 import { CtaBand, NextSteps, PageHero, Testimonials } from "@/components/blocks";
 import {
-  FeatureGrid,
   ListBlock,
   QuoteBanner,
   SplitBlock,
 } from "@/components/page-blocks";
 import {
   Container,
-  Kicker,
   Placeholder,
   Section,
   SectionHeader,
   TextLink,
 } from "@/components/ui";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
-import { OFFERS, PROJECT_FORMATS } from "@/content/offers";
+import { FreeOffer, OfferGrid } from "@/components/offers";
 
 export const metadata: Metadata = {
   title: "Consulting & formations",
   description:
-    "Team building du goût, coaching en cuisine et coaching R&D : trois formats chiffrés autour des huiles essentielles culinaires. Un chef consultant qui règle un problème de goût, pas un fournisseur d'ingrédients.",
+    "Tests R&D, création de recettes, coaching R&D, coaching en cuisine, team building : des offres distinctes autour des huiles essentielles culinaires, et un accompagnement gratuit pour vous orienter.",
   alternates: { canonical: "/consulting/" },
 };
 
@@ -79,68 +77,11 @@ export default function Page() {
         cloche.
       </QuoteBanner>
 
-      {/* Formats chiffrés. Le catalogue transmis par Aymeric le 8 septembre
-          2026 remplace l'ancienne grille descriptive : mêmes façons de
-          travailler, mais avec le concret que les prospects réclamaient. */}
-      <Section id="formats">
-        <Container>
-          <SectionHeader
-            kicker="Formations et interventions"
-            title="Trois formats, trois besoins"
-            lede="Des points de départ, pas des cadres figés. La durée, le nombre de participants et le contenu s'ajustent à votre contexte."
-          />
-          <Stagger className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {OFFERS.map((offer) => (
-              <StaggerItem key={offer.title} className="h-full">
-                <article className="card flex h-full flex-col rounded-3xl p-8">
-                  <Kicker>{offer.audience}</Kicker>
-                  <h3 className="font-display mt-4 text-2xl">
-                    {offer.title}
-                  </h3>
-                  <p className="mt-2 text-vert">{offer.tagline}</p>
-                  <p className="mt-5 text-encre-soft">{offer.text}</p>
-
-                  <dl className="mt-8 divide-y divide-line border-y border-line">
-                    {offer.specs.map((spec) => (
-                      <div
-                        key={spec.label}
-                        className="flex flex-wrap gap-x-6 gap-y-1 py-3.5"
-                      >
-                        <dt className="w-full shrink-0 text-sm uppercase tracking-[0.14em] text-vert xl:w-24">
-                          {spec.label}
-                        </dt>
-                        <dd className="flex-1 text-sm text-encre-soft">
-                          {spec.value}
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
-
-                  <div className="mt-auto pt-7">
-                    <p className="font-display text-3xl">{offer.price}</p>
-                    {offer.priceNote ? (
-                      <p className="mt-1 text-sm text-encre-soft">
-                        {offer.priceNote}
-                      </p>
-                    ) : null}
-                  </div>
-                </article>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </Container>
-      </Section>
-
-      {/* Le long cours reste sur devis : le catalogue renvoie lui-même vers une
-          offre R&D dédiée qu'Aymeric n'a pas chiffrée. */}
-      <FeatureGrid
-        kicker="Au-delà de la journée"
-        title="Les projets qui se comptent en semaines"
-        lede="Un développement produit ne se règle pas en une intervention. Ces deux formats se cadrent ensemble, puis se chiffrent au projet."
-        columns={2}
-        tone="surface"
-        items={PROJECT_FORMATS}
-      />
+      {/* Cinq offres distinctes, chacune avec son bouton de contact, puis
+          l'accompagnement gratuit à part. Demande d'Aymeric du 21 septembre
+          2026, voir content/offers.ts. */}
+      <OfferGrid />
+      <FreeOffer />
 
       <SplitBlock
         kicker="La méthode"

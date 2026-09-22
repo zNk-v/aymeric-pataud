@@ -28,15 +28,19 @@ export default function Page() {
         imageAlt="Verrerie de l'éco-extracteur en fonctionnement"
       />
 
+      {/* Le 21 septembre 2026, Aymeric sépare ses offres. La création
+          complète de recette devient l'offre « Création de recettes » de
+          /consulting/ : cette page ne garde que ce qui lui est propre,
+          l'huile extraite à l'atelier. */}
       <ListBlock
-        kicker="Du concept au produit"
-        title="Quatre niveaux d'intervention"
+        kicker="Ce que l'atelier produit"
+        title="Une huile qui n'existe pas encore"
         intro="Chaque projet suit la même logique : moins de matière, plus de perception."
         items={[
-          "Création complète de recette",
-          "Reformulation ou optimisation gustative",
-          "Ajustement aromatique fin",
-          "Construction d'une signature gustative",
+          "Une huile extraite d'une plante que vous me confiez, parfois celle de votre potager",
+          "Un arôme exclusif pour signer une gamme ou une carte",
+          "Des micro-séries, sans minimum industriel",
+          "Des plantes locales jamais exploitées sur le marché",
         ]}
       />
 
@@ -168,9 +172,9 @@ export default function Page() {
             href: "/huiles-essentielles-hydrosolubles/",
           },
           {
-            title: "Références",
-            text: "Les collaborations nées d'une création exclusive.",
-            href: "/references/",
+            title: "Création de recettes",
+            text: "Une recette complète, de votre idée à la fiche technique.",
+            href: "/consulting/#creation-recettes",
           },
         ]}
       />

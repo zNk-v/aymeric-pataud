@@ -12,6 +12,7 @@ import {
   SplitBlock,
   Steps,
 } from "@/components/page-blocks";
+import { OfferPicks } from "@/components/offers";
 
 export const metadata: Metadata = {
   title: "Artisans & producteurs",
@@ -145,6 +146,8 @@ export default function Page() {
         lede="Un agriculteur transformateur, un fabricant de barres 100 % terroir, une brasserie, un chocolatier, un confiturier champion du monde."
       />
 
+      <OfferPicks slugs={["creation-recettes", "tests-rd"]} />
+
       <CtaBand
         title="Une production à transformer en gamme ?"
         lede="Parlez-moi de ce que vous cultivez et de ce que vous vendez aujourd'hui."
@@ -164,7 +167,7 @@ export default function Page() {
           },
           {
             title: "Consulting",
-            text: "Développement complet, du concept au produit fini.",
+            text: "Création de recettes, tests en laboratoire : le détail et les tarifs.",
             href: "/consulting/",
           },
         ]}

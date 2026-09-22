@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { OFFER_SUBJECTS } from "@/content/offers";
 import { PROFILES } from "@/content/profiles";
 import { SITE } from "@/lib/site";
 
@@ -25,17 +26,26 @@ const ENDPOINT: string | null = "https://sitaly-forms.sitaly-forms.workers.dev";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
+// Une ligne par offre de /consulting/, puis les demandes hors offres.
+// Chaque bouton d'offre arrive ici avec ?offre=<slug> et présélectionne la sienne.
 const SUBJECTS = [
-  "Création ou reformulation d'une recette",
+  ...Object.values(OFFER_SUBJECTS),
+  "Reformulation d'un produit existant",
   "Huiles essentielles culinaires",
   "Huiles hydrosolubles (fromages, boissons)",
   "Création sur-mesure à l'atelier",
-  "Consulting, formation, démonstration",
   "Autre",
 ];
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const [subject, setSubject] = useState("");
+
+  // Export statique : le paramètre se lit côté client, après hydratation.
+  useEffect(() => {
+    const slug = new URLSearchParams(window.location.search).get("offre");
+    if (slug && OFFER_SUBJECTS[slug]) setSubject(OFFER_SUBJECTS[slug]);
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -72,6 +82,7 @@ export default function ContactForm() {
       });
       if (!res.ok) throw new Error(String(res.status));
       form.reset();
+      setSubject("");
       setStatus("sent");
       // Événement clé GA4, envoyé seulement si le visiteur a accepté les cookies.
       (window as Window & { apTrack?: (a: string, p?: object) => void }).apTrack?.(
@@ -152,7 +163,14 @@ export default function ContactForm() {
         <label htmlFor="subject" className={label}>
           Votre demande <span className="text-vert">*</span>
         </label>
-        <select id="subject" name="subject" required defaultValue="" className={field}>
+        <select
+          id="subject"
+          name="subject"
+          required
+          value={subject}
+          onChange={(e) => setSubject(e.target.value)}
+          className={field}
+        >
           <option value="" disabled>
             Choisir…
           </option>

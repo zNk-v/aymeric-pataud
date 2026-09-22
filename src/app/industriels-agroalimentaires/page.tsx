@@ -14,6 +14,7 @@ import {
   Steps,
 } from "@/components/page-blocks";
 import { LabelArgument } from "@/components/home";
+import { OfferPicks } from "@/components/offers";
 
 export const metadata: Metadata = {
   title: "Industriels agroalimentaires",
@@ -141,6 +142,8 @@ export default function Page() {
         lede="Le milieu agroalimentaire est discret. La majorité des collaborations sont couvertes par des accords de confidentialité."
       />
 
+      <OfferPicks slugs={["tests-rd", "coaching-rd", "creation-recettes"]} />
+
       <CtaBand
         title="Un produit à reformuler, une étiquette à défendre ?"
         lede="Envoyez-moi le produit et la contrainte. Je vous dis en trente minutes si je peux la lever."
@@ -156,7 +159,7 @@ export default function Page() {
           },
           {
             title: "Consulting",
-            text: "Accompagnement R&D, création et formation d'équipe.",
+            text: "Tests R&D, coaching R&D, création de recettes : le détail et les tarifs.",
             href: "/consulting/",
           },
           {
