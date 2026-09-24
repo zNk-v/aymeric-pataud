@@ -6,6 +6,7 @@ import { Container, Kicker, Placeholder, Section, SectionHeader, TextLink } from
 import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
 import { SITE } from "@/lib/site";
 import { asset } from "@/lib/asset";
+import { OIL_COUNT } from "@/content/oils";
 import {
   BOOKS,
   MEMBERSHIPS,
@@ -99,6 +100,60 @@ export default function Page() {
           <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-x-16 lg:gap-x-20">
             <Frise title="Le chef" items={PARCOURS_CHEF} />
             <Frise title="Les huiles essentielles" items={PARCOURS_HUILES} />
+          </div>
+        </Container>
+      </Section>
+
+      {/* Création de la marque, texte fourni par Aymeric le 24 septembre 2026,
+          avec le visuel PLV vertical du même mail. Placé juste après les deux
+          frises : l'histoire de 2009 prolonge la ligne des huiles. */}
+      <Section id="delice-et-sens">
+        <Container>
+          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-7">
+              <Kicker>La marque</Kicker>
+              <h2 className="font-display mt-5 text-balance text-4xl lg:text-5xl">
+                {SITE.brand}, née d&apos;un marché de Saint-Paul.
+              </h2>
+              <div className="mt-8 space-y-5 text-encre-soft">
+                <p>
+                  En 2009, je crée {SITE.brand}, ma marque d&apos;huiles
+                  essentielles alimentaires, à La Réunion. L&apos;histoire de la
+                  marque commence sur le marché de Saint-Paul, où je découvre
+                  une huile essentielle de géranium rosat bourbon qui oriente
+                  durablement mon regard sur le goût. De cette rencontre naît
+                  l&apos;idée d&apos;une gamme d&apos;huiles essentielles
+                  pensées pour la cuisine, et non pour la cosmétique : des
+                  extractions naturelles pures, dosables, capables de
+                  transformer une recette sans la dénaturer.
+                </p>
+                {/* Aymeric écrit « 2015 » dans son mail du 24 septembre 2026,
+                    mais il avait daté cette invention de 2013 le 20 août, et la
+                    frise ci-dessus le dit. On garde 2013 des deux côtés, la
+                    question lui est posée par mail. */}
+                <p>
+                  En 2013, je mets au point des huiles essentielles alimentaires
+                  hydrosolubles, pensées pour aromatiser les produits laitiers
+                  et les boissons, un savoir-faire alors unique au monde.
+                  Depuis, {SITE.brand} accompagne plus de 200 chefs, artisans et
+                  industriels de l&apos;agroalimentaire dans leurs créations,
+                  avec aujourd&apos;hui {OIL_COUNT} huiles essentielles
+                  alimentaires au catalogue.
+                </p>
+              </div>
+            </div>
+
+            <Reveal delay={0.1} className="lg:col-span-5">
+              <div className="relative mx-auto aspect-[464/1200] w-full max-w-[300px] overflow-hidden rounded-3xl border border-line bg-white">
+                <Image
+                  src={asset("/images/delice-et-sens-plv.jpg")}
+                  alt={`Kakémono ${SITE.brand} : flacon d'huile essentielle de basilic, certification AB, depuis 2009`}
+                  fill
+                  sizes="300px"
+                  className="object-contain"
+                />
+              </div>
+            </Reveal>
           </div>
         </Container>
       </Section>

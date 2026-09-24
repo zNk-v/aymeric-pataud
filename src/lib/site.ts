@@ -199,7 +199,9 @@ export const FOOTER_LINKS: { title: string; links: NavLink[] }[] = [
     ],
   },
   {
-    title: "Huiles essentielles",
+    // Le titre nomme la marque depuis le 24 septembre 2026. Il ne sert que
+    // d'intitulé de colonne, les URL des liens ne changent pas.
+    title: `Huiles essentielles ${SITE.brand}`,
     links: [
       { label: "La gamme culinaire", href: "/huiles-essentielles-culinaires/" },
       { label: "Les hydrosolubles", href: "/huiles-essentielles-hydrosolubles/" },

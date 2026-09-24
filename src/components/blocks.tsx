@@ -283,6 +283,38 @@ export function CtaBand({
   );
 }
 
+/* ================================================ Marque Délice & Sens === */
+/**
+ * Bandeau de marque, demandé par Aymeric le 24 septembre 2026 : la marque
+ * derrière toutes les huiles du site n'apparaissait nulle part. Le visuel
+ * est la bâche PLV 200x90 fournie le même jour, recadrée pour le web.
+ */
+export function BrandBand() {
+  return (
+    <Section size="sm" tone="surface">
+      <Container size="narrow">
+        <Reveal>
+          <figure>
+            <div className="relative aspect-[2000/946] w-full overflow-hidden rounded-3xl border border-line bg-white">
+              <Image
+                src={asset("/images/delice-et-sens-bandeau.jpg")}
+                alt={`Logo ${SITE.brand}, huiles essentielles culinaires, entouré d'épices et d'aromates`}
+                fill
+                sizes="(min-width: 1024px) 820px, 100vw"
+                className="object-contain"
+              />
+            </div>
+            <figcaption className="mt-5 text-center text-encre-soft">
+              {SITE.brand}, la marque d&apos;huiles essentielles alimentaires
+              que j&apos;ai créée en 2009.
+            </figcaption>
+          </figure>
+        </Reveal>
+      </Container>
+    </Section>
+  );
+}
+
 /* =============================================== Références filtrées ===== */
 export function ReferenceCards({
   slugs,

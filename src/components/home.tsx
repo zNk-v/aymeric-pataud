@@ -14,7 +14,7 @@ import {
 import { Arrow, Button, Container, Kicker, Section, SectionHeader } from "./ui";
 import { asset } from "@/lib/asset";
 import HeroFilm from "./HeroFilm";
-import { SIGNATURE_VIDEO, WORKSHOPS } from "@/lib/site";
+import { SIGNATURE_VIDEO, SITE, WORKSHOPS } from "@/lib/site";
 import { PROFILES } from "@/content/profiles";
 import {
   FEATURED_REFERENCES,
@@ -152,7 +152,9 @@ const PROOFS = [
   { value: "TEDxAmiens", label: "Conférence sur l'émotion gustative", href: "#tedx" },
   { value: `${AWARDS_COUNT} médailles`, label: `Au Mondial du Fromage, sur des produits que j'ai aromatisés`, href: "/references/" },
   { value: "200+", label: "Clients accompagnés en France et en Europe", href: "/references/" },
-  { value: `${OIL_COUNT} huiles`, label: "Références culinaires, lipo et hydrosolubles", href: "/huiles-essentielles-culinaires/" },
+  // Demande d'Aymeric du 24 septembre 2026 : la marque derrière les huiles
+  // doit être nommée, et sa date de création lisible dès l'accueil.
+  { value: `${OIL_COUNT} huiles ${SITE.brand}`, label: "Une marque que j'ai créée en 2009", href: "/huiles-essentielles-culinaires/" },
   // Ajouts du 15 septembre 2026, détaillés sur /expertise-du-gout/.
   { value: "Food Creativ", label: "Lauréat 2024, concours d'innovation agroalimentaire des Hauts-de-France", href: "/expertise-du-gout/#reconnaissances" },
   { value: "INNOV'A", label: "Incubé en 2025 au titre d'entreprise innovante", href: "/expertise-du-gout/#reconnaissances" },

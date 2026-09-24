@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CtaBand, NextSteps, PageHero } from "@/components/blocks";
+import { BrandBand, CtaBand, NextSteps, PageHero } from "@/components/blocks";
 import { FeatureGrid, QuoteBanner, SplitBlock } from "@/components/page-blocks";
 import { Container, Section, SectionHeader, TextLink } from "@/components/ui";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
@@ -55,6 +55,8 @@ export default function Page() {
         image="/images/yaourt.webp"
         imageAlt="Aromatisation directe d'un produit laitier"
       />
+
+      <BrandBand />
 
       <SplitBlock
         kicker="Le verrou technique"

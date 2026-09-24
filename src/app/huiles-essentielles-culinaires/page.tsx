@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { CtaBand, NextSteps, PageHero, Testimonials } from "@/components/blocks";
+import {
+  BrandBand,
+  CtaBand,
+  NextSteps,
+  PageHero,
+  Testimonials,
+} from "@/components/blocks";
 import { FeatureGrid, QuoteBanner, SplitBlock } from "@/components/page-blocks";
 import { Container, Placeholder, Section, SectionHeader, TextLink } from "@/components/ui";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion-primitives";
@@ -27,6 +33,8 @@ export default function Page() {
         image="/images/goutte.webp"
         imageAlt="Dosage à la goutte d'une huile essentielle culinaire"
       />
+
+      <BrandBand />
 
       <FeatureGrid
         kicker="Une approche culinaire, pas aromatique"
