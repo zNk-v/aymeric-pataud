@@ -74,6 +74,23 @@ export const SIGNATURE_VIDEO: {
  * Les deux ateliers. Le siège ne bouge pas ; c'est la pondération entre les
  * deux qui basculera au retour en métropole, en changeant `lead`.
  */
+/**
+ * Passage média mis en avant sous le film du hero. Demande d'Aymeric du
+ * 6 octobre 2026 : les visiteurs venus du reportage doivent voir La Réunion
+ * dès l'arrivée. Passer à null pour retirer la mention.
+ */
+export const PRESS_FEATURE: {
+  outlet: string;
+  subject: string;
+  date: string;
+  href: string;
+} | null = {
+  outlet: "Antenne Réunion",
+  subject: "Masterclass au lycée Christian Antou",
+  date: "5 octobre 2026",
+  href: "https://www.linfo.re/la-reunion/societe/revisiter-le-gateau-patate-avec-des-huiles-essentielles-le-defi-des-eleves-du-lycee-christian-antou",
+};
+
 export const WORKSHOPS = [
   {
     city: "Amiens",

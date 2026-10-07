@@ -14,7 +14,7 @@ import {
 import { Arrow, Button, Container, Kicker, Section, SectionHeader } from "./ui";
 import { asset } from "@/lib/asset";
 import HeroFilm from "./HeroFilm";
-import { SIGNATURE_VIDEO, SITE, WORKSHOPS } from "@/lib/site";
+import { PRESS_FEATURE, SIGNATURE_VIDEO, SITE, WORKSHOPS } from "@/lib/site";
 import { PROFILES } from "@/content/profiles";
 import {
   FEATURED_REFERENCES,
@@ -95,7 +95,9 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
             >
-              <Kicker>Chef consultant · Expert du goût</Kicker>
+              {/* Les deux implantations dès la première ligne, demande
+                  d'Aymeric du 6 octobre 2026. */}
+              <Kicker>Chef consultant · Expert du goût · Amiens &amp; La Réunion</Kicker>
             </motion.div>
 
             {/* Temps 1 : l'accroche sensorielle */}
@@ -139,6 +141,30 @@ export function Hero() {
               transition={{ duration: 1, delay: 0.35 }}
             >
               <SignatureMedia />
+              {PRESS_FEATURE ? (
+                <motion.a
+                  href={PRESS_FEATURE.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                  className="group mx-auto mt-5 flex max-w-sm items-center gap-3 rounded-2xl border border-line bg-surface/80 px-4 py-3 text-left backdrop-blur-sm transition-colors hover:border-vert"
+                >
+                  <span className="shrink-0 rounded-full bg-vert px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-creme">
+                    Vu à la télé
+                  </span>
+                  <span className="min-w-0 text-sm leading-snug">
+                    <span className="block font-medium">
+                      {PRESS_FEATURE.outlet}, {PRESS_FEATURE.date}
+                    </span>
+                    <span className="block text-encre-soft">
+                      {PRESS_FEATURE.subject}
+                    </span>
+                  </span>
+                  <Arrow className="ml-auto shrink-0 opacity-60 transition-transform duration-300 group-hover:translate-x-1" />
+                </motion.a>
+              ) : null}
             </motion.div>
           </div>
         </div>
@@ -337,10 +363,12 @@ export function Creations() {
  * Double implantation demandée par le client : le siège reste Amiens, un
  * second atelier existe à La Réunion. Bande volontairement courte, sur le
  * modèle « Paris–New York ». Au retour en métropole, seul WORKSHOPS change.
+ * Remontée juste sous la bande preuve le 7 octobre 2026, après le reportage
+ * d'Antenne Réunion : elle prolonge cette bande, d'où la seule bordure basse.
  */
 export function Workshops() {
   return (
-    <section className="border-y border-line bg-surface">
+    <section className="border-b border-line bg-surface">
       <Container>
         <div className="grid gap-8 py-12 lg:grid-cols-12 lg:items-center lg:gap-12 lg:py-14">
           <div className="lg:col-span-4">

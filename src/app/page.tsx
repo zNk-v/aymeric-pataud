@@ -27,17 +27,19 @@ export const metadata: Metadata = {
  *  - l'atelier        -> /creation-sur-mesure/
  *  - le consulting    -> /consulting/
  *  - les témoignages  -> /references/ et les pages profil
+ * Les deux ateliers remontent sous la bande preuve depuis le 7 octobre 2026 :
+ * le visiteur réunionnais comme le client d'Amiens doit se reconnaître vite.
  */
 export default function Home() {
   return (
     <>
       <Hero />
       <ProofBar />
+      <Workshops />
       <ProfileFork />
       <LabelArgument />
       <Hydrosolubles />
       <Creations />
-      <Workshops />
       <FeaturedReferences />
       <TedxBlock compact />
       <CtaBand />
